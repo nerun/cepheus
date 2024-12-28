@@ -1,4 +1,4 @@
-<span style="font-size:200%; font-weight:bold">OPEN GAME LICENSE Version 1.0a</span>
+# OPEN GAME LICENSE Version 1.0a
 
 The following text is the property of Wizards of the Coast, Inc. and is
 Copyright 2000 Wizards of the Coast, Inc ("Wizards"). All Rights
@@ -112,26 +112,20 @@ necessary to make it enforceable.
 
 **15. COPYRIGHT NOTICE**
 
-Open Game License v1.0a Copyright 2000, Wizards of the Coast, Inc.
+_**Open Game License v1.0a**_ Copyright 2000, Wizards of the Coast, Inc.
 
-Open Game License v 1.0a Copyright 2000, Wizards of the Coast, Inc.
+_**High Guard System Reference Document**_ Copyright © 2008, Mongoose Publishing.
 
-High Guard System Reference Document Copyright © 2008, Mongoose Publishing.
+_**Mercenary System Reference Document**_ Copyright © 2008, Mongoose Publishing.
 
-Mercenary System Reference Document Copyright © 2008, Mongoose Publishing.
+_**Modern System Reference Document**_ Copyright 2002-2004, Wizards of the Coast, Inc.; Authors Bill Slavicsek, Jeff Grubb, Rich Redman, Charles Ryan, Eric Cagle, David Noonan, Stan!, Christopher Perkins, Rodney Thompson, and JD Wiker, based on material by Jonathan Tweet, Monte Cook, Skip Williams, Richard Baker, Peter Adkison, Bruce R. Cordell, John Tynes, Andy Collins, and JD Wiker.
 
-Modern System Reference Document Copyright 2002-2004, Wizards of the Coast, Inc.; Authors Bill Slavicsek, Jeff Grubb, Rich Redman, Charles Ryan, Eric Cagle, David Noonan, Stan!, Christopher Perkins, Rodney Thompson, and JD Wiker, based on material by Jonathan Tweet, Monte Cook, Skip Williams, Richard Baker, Peter Adkison, Bruce R. Cordell, John Tynes, Andy Collins, and JD Wiker.
+_**Swords & Wizardry Core Rules**_, Copyright 2008, Matthew J. Finch.
 
-Swords & Wizardry Core Rules, Copyright 2008, Matthew J. Finch.
+_**System Reference Document**_, Copyright 2000, Wizards of the Coast, Inc.; Authors Jonathan Tweet, Monte Cook, Skip Williams, based on original material by E. Gary Gygax and Dave Arneson.
 
-System Reference Document, Copyright 2000, Wizards of the Coast, Inc.; Authors Jonathan Tweet, Monte Cook, Skip Williams, based on original material by E. Gary Gygax and Dave Arneson.
+_**T20 - The Traveller’s Handbook**_ Copyright 2002, Quiklink Interactive, Inc. Traveller is a trademark of Far Future Enterprises and is used under license.
 
-T20 - The Traveller’s Handbook Copyright 2002, Quiklink Interactive, Inc.
+_**Traveller System Reference Document**_ Copyright © 2008, Mongoose Publishing. Traveller is © 2008 Mongoose Publishing. Traveller and related logos, character, names, and distinctive likenesses thereof are trademarks of Far Future Enterprises unless otherwise noted. All Rights Reserved. Mongoose Publishing Ltd Authorized User.
 
-Traveller is a trademark of Far Future Enterprises and is used under license.
-
-Traveller System Reference Document Copyright © 2008, Mongoose Publishing.
-
-Traveller is © 2008 Mongoose Publishing. Traveller and related logos, character, names, and distinctive likenesses thereof are trademarks of Far Future Enterprises unless otherwise noted. All Rights Reserved. Mongoose Publishing Ltd Authorized User.
-
-Cepheus Engine System Reference Document, Copyright © 2016 Samardan Press; Author Jason "Flynn" Kemp.
+_**Cepheus Engine System Reference Document**_, Copyright © 2016 Samardan Press; Author Jason "Flynn" Kemp.

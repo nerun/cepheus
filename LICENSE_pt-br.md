@@ -1,4 +1,7 @@
-LICENÇA DE JOGO ABERTO Versão 1.0a
+<span style="font-size:200%; font-weight:bold">LICENÇA DE JOGO ABERTO Versão 1.0a</span>
+
+> [!Warning|style:flat]
+> Esta é uma tradução não-oficial da OGL. Foi disponibilizada apenas para facilitar o entendimento da licença. Sempre que houver dúvidas quanto ao sentido e abrangência da OGL entre esta tradução e o texto em inglês, prevalece o entendimento do original em inglês.
 
 O texto a seguir é de propriedade da Wizards of the Coast, Inc. e foi
 registrado como Copyright da Wizards of the Coast, Inc ("Wizards") no
@@ -127,8 +130,6 @@ para torná-la exequível.
 
 Licença de Jogo Aberto v1.0a Copyright 2000, Wizards of the Coast, Inc.
 
----
-
-**Tradução:** Daniel Dias Rodrigues \<<danieldiasr@gmail.com>\>
-
-**Última atualização:** 18 de maio de 2023
+> [!Note|style:flat]
+> **Tradução:** Daniel Dias Rodrigues \<<danieldiasr@gmail.com>\>
+> **Última atualização:** 18 de maio de 2023

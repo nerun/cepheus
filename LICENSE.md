@@ -1,4 +1,4 @@
-OPEN GAME LICENSE Version 1.0a
+<span style="font-size:200%; font-weight:bold">OPEN GAME LICENSE Version 1.0a</span>
 
 The following text is the property of Wizards of the Coast, Inc. and is
 Copyright 2000 Wizards of the Coast, Inc ("Wizards"). All Rights

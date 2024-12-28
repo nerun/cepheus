@@ -132,4 +132,5 @@ Licença de Jogo Aberto v1.0a Copyright 2000, Wizards of the Coast, Inc.
 
 > [!Note|style:flat]
 > **Tradução:** Daniel Dias Rodrigues \<<danieldiasr@gmail.com>\>
+>
 > **Última atualização:** 18 de maio de 2023

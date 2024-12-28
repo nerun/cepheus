@@ -1,1 +1,2 @@
-- [Leia-me](README.md)
+- [Licença](LICENSE.md)
+- [Licença (PT-BR)](LICENSE_pt-br.md)

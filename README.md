@@ -1,6 +1,4 @@
-<h1 style="text-align:center">Cepheus Engine</h1> <!-- {docsify-ignore-all} -->
-
-<h1 style="text-align:center">Documento de Referência do Sistema</h1>
+<h1 style="text-align:center">Cepheus Engine<br>Documento de Referência do Sistema</h1> <!-- {docsify-ignore-all} -->
 
 _<center>Um Sistema de Jogo Aberto, baseado em 2D6, de Ficção Científica na Era Clássica.</center>_
 

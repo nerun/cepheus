@@ -1,3 +1,9 @@
+<!-- Logo -->
+[![.](./_media/favicon.ico)](/)
+
+<!-- Title -->
+Cepheus Engine SRD
+
 * [Introdução](introducao/Introducao.md)
 
 * [Livro I - Personagens](livro1/temp.md)
@@ -23,3 +29,5 @@
 * Favoritos
   * [GURP*Zine*](https://www.gurpzine.com.br)
   * [Docsify](https://docsify.js.org)
+
+* [![GitHub Repo stars](https://img.shields.io/github/stars/nerun/cepheus ':class=badge')](https://github.com/nerun/cepheus/)

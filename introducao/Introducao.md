@@ -1,11 +1,5 @@
 # Introdução
 
-> [!Warning|style:flat]
-> 
-> É preciso revisar tanto a formatação quanto a tradução.
-> 
-> Também é preciso adicionar termos traduzidos à planilha de termos de tradução.
-
 Bem-vindo ao ***Documento de Referência do Sistema Cepheus Engine***. Este documento descreve as regras básicas de um Sistema
 de Jogo Aberto baseado em 2D6 de Ficção Científica na Era Clássica. Esta
 Introdução fornece uma visão geral do que é o Cepheus Engine e como

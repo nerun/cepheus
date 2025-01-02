@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .search .input-wrap {
-    margin-top: 30px!important;
+    margin-top: 10px!important;
 }
 
 .sidebar-toggle {
@@ -16,8 +16,24 @@ h1, h2, h3, h4, h5, h6 {
     bottom: unset;
 }
 
+@media screen and (max-width: 770px) {
+    .search .input-wrap {
+        margin-top: 53px!important;
+    }
+}
+
 @media screen and (max-width: 768px) {
     #docsify-darklight-theme {
         left: unset;
+    }
+    .search .input-wrap {
+        margin-top: 10px!important;
+    }
+}
+
+@media screen and (max-width: 482px) {
+    .sidebar-toggle {
+        top: unset;
+        bottom: 0;
     }
 }

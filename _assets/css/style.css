@@ -1,6 +1,11 @@
 body {
     --siteFont: 'Open Sans', sans-serif;
     --headingFont: 'Orbitron', sans-serif;
+    margin-top: -17px;
+}
+
+.app-nav {
+    margin-top: 17px !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,9 +34,30 @@ h1, h2, h3, h4, h5, h6 {
     .search .input-wrap {
         margin-top: 10px!important;
     }
+    body {
+        margin-top: 20px;
+    }
+    .app-nav {
+      margin-top: -20px !important;
+    }
+}
+
+@media screen and (max-width: 689px) {
+    body {
+        margin-top: 45px;
+    }
+    .app-nav {
+      margin-top: -45px !important;
+    }
 }
 
 @media screen and (max-width: 482px) {
+    body {
+        margin-top: 70px;
+    }
+    .app-nav {
+      margin-top: -70px !important;
+    }
     .sidebar-toggle {
         top: unset;
         bottom: 0;

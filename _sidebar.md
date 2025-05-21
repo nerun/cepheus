@@ -1,6 +1,6 @@
 * [Introdução](introducao/Introducao.md)
 
-* Livro I - Personagens
+* <span style="font-size:10pt;">Livro I - Personagens</span>
   * [1 Criação de Personagens](livro1/01_personagens.md)
 
 * [Livro II - Espaçonaves e Viagens Interestelares](livro2/temp.md)

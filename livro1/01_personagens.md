@@ -193,9 +193,8 @@ parênteses.
 
 #### Tabela: Títulos de nobreza por posição social
 
-|                    |                                       |
+| Posição social     | Título de nobreza                     |
 |--------------------|---------------------------------------|
-| **Posição social** | **Título de nobreza**                 |
 | **10 (A)**         | Senhor (Senhora)                      |
 | **11 (B)**         | Cavaleiro (Knightess, Dame)           |
 | **12 (C)**         | Barão (Baronesa), Baronete            |
@@ -253,21 +252,20 @@ modificadores, já calculados para você.
 
 #### Tabela: Modificador de característica por faixa de pontuação
 
-|                        |               |                                   |
-|------------------------|---------------|-----------------------------------|
-| **Faixa de pontuação** | **PseudoHex** | **Modificador de característica** |
-| **0 a 2**              | 0-2           | -2                                |
-| **3 a 5**              | 3-5           | -1                                |
-| **6 a 8**              | 6-8           | +0                                |
-| **9 a 11**             | 9-B           | +1                                |
-| **12 a 14**            | C-E           | +2                                |
-| **15 a 17**            | F-H           | +3                                |
-| **18 a 20**            | J-L           | +4                                |
-| **21 a 23**            | M-P           | +5                                |
-| **24 a 26**            | Q-S           | +6                                |
-| **27 a 29**            | T-V           | +7                                |
-| **30 a 32**            | W-Y           | +8                                |
-| **33 ou superior**     | Z             | +9                                |
+| Faixa de pontuação | PseudoHex | Modificador de característica |
+|--------------------|-----------|-------------------------------|
+| **0 a 2**          | 0-2       | -2                            |
+| **3 a 5**          | 3-5       | -1                            |
+| **6 a 8**          | 6-8       | +0                            |
+| **9 a 11**         | 9-B       | +1                            |
+| **12 a 14**        | C-E       | +2                            |
+| **15 a 17**        | F-H       | +3                            |
+| **18 a 20**        | J-L       | +4                            |
+| **21 a 23**        | M-P       | +5                            |
+| **24 a 26**        | Q-S       | +6                            |
+| **27 a 29**        | T-V       | +7                            |
+| **30 a 32**        | W-Y       | +8                            |
+| **33 ou superior** | Z         | +9                            |
 
 ### Alteração das pontuações de características
 
@@ -407,9 +405,8 @@ planeta natal. Se você veio de um planeta já estabelecido no universo do
 
 #### Tabela: Habilidades do planeta natal por descrição planetária
 
-|                      |                           |
+| Descritor            | Habilidade                |
 |----------------------|---------------------------|
-| **Descritor**        | **Habilidade**            |
 | **Nenhuma lei**      | Combate com armas-0       |
 | **Lei de Baixo**     | Combate com armas-0       |
 | **Direito Médio**    | Combate com armas-0       |
@@ -417,9 +414,8 @@ planeta natal. Se você veio de um planeta já estabelecido no universo do
 
 #### Tabela: Habilidades do mundo doméstico por código de profissão
 
-|                      |                 |
+| Código comercial     | Habilidade      |
 |----------------------|-----------------|
-| **Código comercial** | **Habilidade**  |
 | **Agrícola**         | Animais-0       |
 | **Asteroide**        | Zero-G-0        |
 | **Deserto**          | Sobrevivência-0 |
@@ -576,15 +572,14 @@ sempre aberta.
 
 #### Tabela: O rascunho
 
-|          |                                                         |
-|----------|---------------------------------------------------------|
-| **Rolo** | **Carreira no Draft**                                   |
-| **1**    | Defesa do sistema aeroespacial (Força Aérea Planetária) |
-| **2**    | Marinha                                                 |
-| **3**    | Defesa do Sistema Marítimo (Marinha Planetária)         |
-| **4**    | Marinha                                                 |
-| **5**    | Escoteiro                                               |
-| **6**    | Defesa do sistema de superfície (Exército Planetário)   |
+| Rolo     | Carreira no Draft                                      |
+|----------|--------------------------------------------------------|
+| **1**    | Defesa do sistema aeroespacial (Força Aérea Planetária)|
+| **2**    | Marinha                                                |
+| **3**    | Defesa do Sistema Marítimo (Marinha Planetária)        |
+| **4**    | Marinha                                                |
+| **5**    | Escoteiro                                              |
+| **6**    | Defesa do sistema de superfície (Exército Planetário)  |
 
 ## Termos de Serviço
 
@@ -619,15 +614,14 @@ benefício apenas para o período atual.
 
 #### Tabela: Acidentes de sobrevivência
 
-|         |                                                                                                                                                                           |
-|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **1D6** | **Acidente**                                                                                                                                                              |
+| 1D6     | Acidente                                         |
+|---------|--------------------------------------------------|
 | **1**   | Ferido em ação. (Isso é o mesmo que um resultado de 2 na tabela de ferimentos.) Como alternativa, role duas vezes na tabela de ferimentos e pegue o resultado mais baixo. |
-| **2**   | Foi dispensado do serviço com honra.                                                                                                                                      |
-| **3**   | Foi dispensado do serviço com honra após uma longa batalha judicial. Os problemas legais geram uma dívida de Cr10.000.                                                    |
-| **4**   | Dispensado do serviço por desonra. Perderá todos os benefícios.                                                                                                           |
-| **5**   | Dispensado do serviço com desonra após cumprir mais 4 anos de prisão por um crime. Perde todos os benefícios.                                                             |
-| **6**   | Dispensado do serviço por motivos médicos. Faça o rolamento na tabela Injury (Ferimento).                                                                                 |
+| **2**   | Foi dispensado do serviço com honra. |
+| **3**   | Foi dispensado do serviço com honra após uma longa batalha judicial. Os problemas legais geram uma dívida de Cr10.000. |
+| **4**   | Dispensado do serviço por desonra. Perderá todos os benefícios. |
+| **5**   | Dispensado do serviço com desonra após cumprir mais 4 anos de prisão por um crime. Perde todos os benefícios. |
+| **6**   | Dispensado do serviço por motivos médicos. Faça o rolamento na tabela Injury (Ferimento). |
 
 ## Comissão e promoção
 
@@ -692,15 +686,14 @@ criação do personagem devem rolar na tabela Injury (Ferimento).
 
 #### Tabela: Tabela de lesões
 
-|         |                                                                                                                                  |
-|---------|----------------------------------------------------------------------------------------------------------------------------------|
-| **1D6** | **Lesões**                                                                                                                       |
+| 1D6     | Lesões                                                  |
+|---------|---------------------------------------------------------|
 | **1**   | Quase morto. Reduzir uma característica física em 1D6, reduzir ambas as outras características físicas em 2 (ou uma delas em 4). |
-| **2**   | Gravemente ferido. Reduzir uma característica física em 1D6.                                                                     |
-| **3**   | Falta de um olho ou membro. Reduzir a força ou a destreza em 2.                                                                  |
-| **4**   | Cicatrizado. Você tem cicatrizes e está ferido. Reduzir qualquer característica física em 2.                                     |
-| **5**   | Ferido. Reduzir qualquer característica física em 1.                                                                             |
-| **6**   | Levemente ferido. Nenhum efeito permanente.                                                                                      |
+| **2**   | Gravemente ferido. Reduzir uma característica física em 1D6. |
+| **3**   | Falta de um olho ou membro. Reduzir a força ou a destreza em 2. |
+| **4**   | Cicatrizado. Você tem cicatrizes e está ferido. Reduzir qualquer característica física em 2. |
+| **5**   | Ferido. Reduzir qualquer característica física em 1. |
+| **6**   | Levemente ferido. Nenhum efeito permanente. |
 
 ### Crise de lesões
 

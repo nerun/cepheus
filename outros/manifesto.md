@@ -1,4 +1,3 @@
-
 # Manifesto Apologético do Formato Universal
 
 ## Um Formato para Durar no Tempo
@@ -37,10 +36,10 @@ O nome do arquivo `teste.md` diz ao Pandoc qual arquivo converter. A opção `-s
 
 A aparência geral do arquivo convertido é excelente — não há realmente nada do que reclamar.
 
-27 de julho de 2023 (_revisado em 11 de julho de 2025_)
+27 de julho de 2023 (_revisado em 17 de julho de 2025_)
 
 Daniel Dias Rodrigues
 
-[^1]: Hart, Michael (agosto de 1992). _The History and Philosophy of Project Gutenberg_. Project Gutenberg. https://www.gutenberg.org/about/background/history_and_philosophy.html
+[^1]: Michael Hart, "The History and Philosophy of Project Gutenberg", *Project Gutenberg*, Agosto de 1992, [https://www.gutenberg.org/about/<wbr>background/history\_and\_<wbr>philosophy.html](https://www.gutenberg.org/about/background/history_and_philosophy.html#the-project-gutenberg-philosophy-continued-2).
 
-[^2]: _Getting started with pandoc: Step 6 - Converting a file_. Pandoc: a universal document converter. https://pandoc.org/getting-started.html#step-6-converting-a-file
+[^2]: "Getting started with pandoc. Step 6: Converting a File", *Pandoc*, acessado em 27 de Julho de 2023, https://pandoc.org/getting-started.html#step-6-converting-a-file.

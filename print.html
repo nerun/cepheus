@@ -1,0 +1,2680 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR" class="rust sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Cepheus SRD</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "rust";
+            const default_dark_theme = "rust";
+            window.path_to_searchindex_js = "searchindex-ee3da493.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-8fbdb078.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Cepheus SRD</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <p><img src="ce-compatible.png" alt="logo de compatibilidade"></p>
+<h1 id="cepheus-enginedocumento-de-referência-do-sistema"><a class="header" href="#cepheus-enginedocumento-de-referência-do-sistema">Cepheus Engine<br>Documento de Referência do Sistema</a></h1>
+<p><em>Um Sistema de Jogo Aberto, baseado em 2D6, de Ficção Científica na Era Clássica.</em></p>
+<p>Por Jason “Flynn” Kemp.</p>
+<p>Copyright © 2016 Samardan Press.</p>
+<p>Cepheus Engine e Samardan Press são marcas comerciais de Jason “Flynn” Kemp.</p>
+<h2 id="créditos"><a class="header" href="#créditos">Créditos</a></h2>
+<p><strong>Revisão do texto em inglês:</strong> Jeff Hopper.</p>
+<p><strong>Tradução:</strong> Daniel Dias Rodrigues.</p>
+<h2 id="designação-de-conteúdo-de-jogo-aberto"><a class="header" href="#designação-de-conteúdo-de-jogo-aberto">Designação de Conteúdo de Jogo Aberto</a></h2>
+<p>Todo o texto neste documento é designado como Conteúdo de Jogo Aberto, exceto pelos títulos de produtos publicados pela Samardan Press e pelas marcas comerciais “Cepheus Engine” e “Samardan Press”.</p>
+<h2 id="designação-de-identidade-do-produto"><a class="header" href="#designação-de-identidade-do-produto">Designação de Identidade do Produto</a></h2>
+<p>Qualquer título de um produto publicado pela Samardan Press é designado como Identidade do Produto.</p>
+<blockquote class="blockquote-tag blockquote-tag-note">
+<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<p>Este Produto é derivado do Traveller System Reference Document e de outros Conteúdos de Jogos Abertos disponibilizados sob a Open Game License, e não contém conteúdo fechado de produtos publicados pela Mongoose Publishing ou pela Far Future Enterprises. Este Produto não é afiliado à Mongoose Publishing ou à Far Future Enterprises, e não reivindica nem contesta quaisquer marcas registradas detidas por qualquer uma das entidades. O uso do Traveller System Reference Document não representa o endosso deste Produto pela Mongoose Publishing ou pela Far Future Enterprises como sendo um produto de qualquer uma das suas linhas de produtos.</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="introdução"><a class="header" href="#introdução">Introdução</a></h1>
+<p>Bem-vindo ao <em><strong>Documento de Referência do Sistema Cepheus Engine</strong></em>. Este documento descreve as regras básicas de um Sistema
+de Jogo Aberto baseado em 2D6 de Ficção Científica na Era Clássica. Esta
+Introdução fornece uma visão geral do que é o Cepheus Engine e como
+funciona, enquanto os capítulos posteriores mostram como criar
+personagens e embarcar em suas próprias aventuras emocionantes de ficção
+científica.</p>
+<h2 id="o-que-é-roleplaying"><a class="header" href="#o-que-é-roleplaying">O que é Roleplaying?</a></h2>
+<p>Se você é novo no roleplaying, você deve estar se perguntando: “O que é
+um jogo de RPG?”</p>
+<p>Um <em>roleplaying game</em> (às vezes abreviado como RPG) é um jogo no qual os
+jogadores assumem o papel de personagens em um cenário fictício. Os
+jogadores assumem a responsabilidade de interpretar esses papéis dentro
+de uma narrativa, seja por meio de atuação literal ou através de um
+processo de decisão estruturada ou desenvolvimento de personagens. As
+ações tomadas em muitos jogos são bem-sucedidas ou fracassam de acordo
+com um sistema formal de regras e diretrizes, como as regras do Cepheus
+Engine.</p>
+<p>Uma sessão do jogo Cepheus Engine é conduzida através da discussão. Um
+jogador, o Mestre, geralmente arbitra qualquer decisão com base nas
+regras e apresenta o cenário do jogo, enquanto cada um dos outros
+jogadores desempenha o papel de um único personagem. Juntos, o Mestre e
+os jogadores criam uma história, da mesma forma que muitos de nós
+costumávamos fazer quando crianças, nas brincadeiras de faz de conta,
+exceto que com mais dados e mais estrutura.</p>
+<h2 id="o-que-é-a-cepheus-engine"><a class="header" href="#o-que-é-a-cepheus-engine">O que é a Cepheus Engine?</a></h2>
+<p>O Cepheus Engine é simplesmente um conjunto de regras para conduzir um
+jogo baseado em ficção científica clássica. Dentro de suas páginas, você
+encontrará regras para criar personagens, resolver ações, lutar contra
+outras criaturas e se envolver em grandes batalhas espaciais, construir
+mundos, aproveitar os riscos do comércio especulativo interestelar,
+explorar novos mundos e uma série de outras atividades diversas. Embora
+nenhum conjunto de regras possa ser completo, o Cepheus Engine tenta
+fornecer regras suficientes para permitir que você crie quase qualquer
+aventura de ficção científica.</p>
+<p>O Cepheus Engine é inspirado em jogos de ficção científica clássicos,
+publicados nos primeiros dias do roleplaying e compartilha muitas
+semelhanças com esses sistemas. Materiais desses conjuntos de regras
+mais antigos e aqueles criados sob o Cepheus Engine são mutuamente
+compatíveis com apenas um mínimo de ajustes necessários.</p>
+<p>Para jogar, você precisa de uma cópia das regras do Cepheus Engine;
+vários dados de seis lados, disponíveis nas lojas de jogos e hobby (você
+precisará de dois no mínimo, mas mais é melhor); e um lápis e algum
+papel.</p>
+<h2 id="a-mecânica-básica-de-resolução-de-tarefas"><a class="header" href="#a-mecânica-básica-de-resolução-de-tarefas">A Mecânica Básica de Resolução de Tarefas</a></h2>
+<p>O Cepheus Engine usa uma mecânica básica de resolução de tarefas para
+resolver ações. Sempre que seu personagem tentar realizar qualquer ação
+em que tenha chance de falha, faça o seguinte:</p>
+<ol>
+<li>
+<p>Role dois dados de seis lados (abreviadamente 2D6).</p>
+</li>
+<li>
+<p>Adicione quaisquer modificadores relevantes (para coisas como características, habilidades, dificuldade e circunstâncias).</p>
+</li>
+<li>
+<p>Se o resultado for igual ou superior a 8, a ação será bem-sucedida. Se o resultado for inferior a 8, a ação falhará.</p>
+</li>
+</ol>
+<p>Este sistema simples é usado em quase tudo no Cepheus Engine, com
+variações baseadas nos modificadores adicionados a uma rolagem e os
+efeitos de sucesso e falha.</p>
+<h2 id="o-mestre"><a class="header" href="#o-mestre">O Mestre</a></h2>
+<p>Dentro das regras do Cepheus Engine, um dos jogadores é convidado a
+assumir o manto do Mestre. O Mestre é a pessoa que atuará como
+organizador, interprete das regras, árbitro e moderador numa sessão de
+jogos do Cepheus Engine ou numa campanha do Cepheus Engine em andamento.
+O papel do Mestre é costurar as histórias dos personagens dos jogadores,
+controlar os aspectos não-jogadores do jogo, criar ambientes nos quais
+os jogadores possam interagir e resolver conflitos entre jogadores.</p>
+<h2 id="os-personagens"><a class="header" href="#os-personagens">Os Personagens</a></h2>
+<p>Um personagem do jogador (PdJ) é um personagem ficcional em um jogo
+Cepheus Engine cujas ações são controladas diretamente por um jogador do
+jogo e não pelas regras do jogo. Os personagens que não são controlados
+por um jogador são chamados de personagens do mestre (PdM). As ações dos
+personagens do mestre são geralmente controladas pelo Mestre.</p>
+<p>Usando as regras do Cepheus Engine como diretrizes, um jogador criará um
+personagem que reflete o tipo de função que eles gostariam de ter no
+jogo. O personagem geralmente é de certa raça (dependendo daquelas
+disponíveis com o universo do Mestre) e possui uma combinação única de
+habilidades e níveis de especialização. Os atributos de um personagem
+são dados como valores numéricos que podem mudar à medida que o jogador
+progride, e os personagens crescem e se desenvolvem ao longo de suas
+aventuras.</p>
+<h2 id="atributos"><a class="header" href="#atributos">Atributos</a></h2>
+<p>Todos os personagens possuem certas características básicas que definem
+o que são capazes de fazer. Essas características são Força, Destreza,
+Resistência, Inteligência, Educação e Posição Social. Cada uma tem um
+valor numérico, com uma média de 7 para um humano normalmente capaz.
+Valores de atributo maiores garantem um bônus (+1 ou mais) em testes de
+resolução de tarefas, enquanto valores de atributo menores garantem
+penalidades (tão baixas quanto -2). Como parte da criação do seu
+personagem, você decide o quão forte, inteligente e resistente é o seu
+personagem escolhendo os valores apropriados para os atributos. Consulte
+o <strong>Capítulo 1: Criação de Personagens</strong> para obter mais informações.</p>
+<h2 id="carreiras"><a class="header" href="#carreiras">Carreiras</a></h2>
+<p>Como parte de seu desenvolvimento, os personagens seguem certos caminhos
+de vida chamados de carreiras. O Cepheus Engine oferece uma variedade de
+opções de carreira a serem seguidas pelos personagens, o que abre
+oportunidades para os personagens ganharem níveis de perícias,
+aprimoramentos de atributos e benefícios importantes antes de entrarem
+em jogo. Consulte o <strong>Capítulo 1: Criação de Personagens</strong> para obter
+mais informações.</p>
+<h2 id="perícias"><a class="header" href="#perícias">Perícias</a></h2>
+<p>As perícias representam treinamento em um determinado tipo de tarefa ou
+conhecimento, tudo, desde manobras acrobáticas até negociação, pilotar
+uma nave estelar ou programar um computador. Alguém treinado em
+atletismo é capaz de escalar mais rápido e com mais confiança do que
+alguém que não é, por exemplo. As perícias são medidas em níveis,
+refletindo a quantidade de treinamento que um personagem possui nela. Ao
+anotar perícias e seus níveis associados, o nome da perícia é escrito
+primeiro, seguido de um hífen e, em seguida, o número de níveis que o
+personagem possui nessa perícia. Por exemplo, Jogatina-2 significa que o
+personagem tem dois níveis na perícia Jogatina.</p>
+<p>Cada nível de perícia representa cerca de dois anos de estudo e
+treinamento naquela perícia. Nas perícias de inclinação acadêmica, isso
+pode ser equiparado a uma Graduação incompleta (ou programa acadêmico
+similar de dois anos) no nível um, um Bacharelado (ou outro programa de
+quatro anos) no nível dois, um Mestrado no nível três, um Doutorado no
+nível quatro, e assim por diante. Os níveis de perícia atuam como um
+bônus nas rolagens de resolução de tarefas quando um personagem tenta
+uma ação relacionada a uma perícia. À medida que seu personagem segue
+sua carreira, ela ganha perícias. Consulte o <strong>Capítulo 2: Perícias</strong>
+para obter mais informações sobre perícias específicas.</p>
+<h2 id="o-jogo"><a class="header" href="#o-jogo">O Jogo</a></h2>
+<p>Jogar uma sessão usando as regras do Cepheus Engine lembra uma leitura e
+voz alta dos capítulos de uma novela de ficção científica. As sessões de
+jogo podem durar desde sessões curtas de uma ou duas horas, até jogos de
+maratona cobrindo a maior parte de um fim de semana. No entanto, a
+sessão média do jogo tende a durar de três a cinco horas. Ao longo de
+uma sessão, os personagens dos jogadores perseguem suas aventuras.
+Algumas se resolvem rapidamente, em uma única sessão, enquanto outras
+podem se dividir em vários atos espalhados por diversas sessões.</p>
+<p>Cada aventura é como sua própria história, consistindo de uma série de
+cenas que são exploradas durante o jogo. Em geral, a maioria das cenas
+são simplesmente os jogadores interagindo com os personagens do mestre e
+com o universo criado pelo Mestre. Os jogadores descrevem suas ações, e
+o Mestre descreve os resultados dessas ações, e assim por diante, até o
+fim do jogo. Certos tipos de situações, como o combate pessoal ou
+espacial, têm mais estrutura e mais regras para ajudar os jogadores a
+resolver suas ações de forma a refletir as habilidades de seus
+personagens.</p>
+<h2 id="temas-recorrentes"><a class="header" href="#temas-recorrentes">Temas Recorrentes</a></h2>
+<p>Os jogos que usam as regras do Cepheus Engine geralmente são planejados
+em torno de um tema. Com base na era clássica da ficção científica,
+essas regras se prestam a jogos que seguem certos temas comuns, que são
+detalhados na tabela 0-1: Temas Recorrentes. Esta não é uma lista
+completa dos tipos de jogo que o Cepheus Engine foi projetado para
+reproduzir. Esta é simplesmente uma lista geral de temas mais frequentes
+a serem considerados.</p>
+<h4 id="tabela-0-1-temas-recorrentes"><a class="header" href="#tabela-0-1-temas-recorrentes">Tabela 0-1: Temas Recorrentes</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Tema</th><th>Descrição</th></tr>
+</thead>
+<tbody>
+<tr><td>Colonial</td><td>Os aventureiros estão nas fronteiras do espaço explorado, ajudando a selecionar um novo mundo para uma colônia e, em seguida, instalá-lo. Essas campanhas permitem que um grupo desenvolva um mundo único extensivamente.</td></tr>
+<tr><td>Comércio</td><td>Os aventureiros vivem a bordo de um navio mercante ou de fronteira, ganhando a vida através do transporte de frete, passageiros, carga especulativa e um ocasional trabalho estranho. Essas campanhas exploram fortemente as regras de trocas e comércio.</td></tr>
+<tr><td>Vagamundo</td><td>Os aventureiros se movem constantemente de um lugar para outro, sem qualquer casa ou trabalho fixo, buscando emprego através de trabalhos estranhos, enquanto exploram o universo que o Mestre criou. Essas campanhas às vezes são chamados de “Campanhas Sandbox” porque exploram livremente uma área previamente criada e desenvolvida pelo Mestre.</td></tr>
+<tr><td>Espionagem</td><td>Todos os aventureiros pertencem ao mesmo governo ou agência de inteligência corporativa e ganham a vida em missões de espionagem contra seus inimigos. Essas campanhas tendem a ser mais episódicas do que outros temas comuns de campanha.</td></tr>
+<tr><td>Exploração</td><td>Os aventureiros servem a bordo de um navio de pesquisa, ganhando a vida viajando por regiões do espaço inexploradas, explorando novos mundos, pesquisando novas vidas, novas civilizações, audaciosamente indo, onde nenhum ser jamais esteve. Essas campanhas fazem uso intenso das regras de criação de mundos.</td></tr>
+<tr><td>Mercenário</td><td>Todos os aventureiros pertencem à mesma unidade mercenária, ganhando a vida participando de ações militares como contratados de uma parte interessada no conflito. Essas campanhas fazem uso significativo das regras de combate pessoal, com um foco particular em cenários militares de grande escala.</td></tr>
+<tr><td>Político</td><td>Os aventureiros estão fortemente envolvidos na arena social e política interestelar, lidando com diplomatas, nobres e outras facções com vastos interesses no controle de aspectos do governo. Essas campanhas tendem a se concentrar na diplomacia e na intriga política.</td></tr>
+<tr><td>Rebelião</td><td>Os aventureiros estão envolvidos em uma guerra civil florescente, buscando preservar ou derrubar o atual governo. Essas campanhas normalmente começam com intriga e terminam com ação.</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="rolagens-de-dados"><a class="header" href="#rolagens-de-dados">Rolagens de Dados</a></h2>
+<p>Usando o Cepheus Engine, quando você precisa fazer uma rolagem de dados
+para resolver uma ação, normalmente seguirá a mecânica básica de rolar
+2D6 mais modificadores versus um número alvo de 8+ (ler como oito ou
+mais). Isso é chamado de teste. Você sempre vai querer conseguir um
+resultado alto em um teste. Rolar um 12 antes de adicionar os
+modificadores (quando dois seis aparecem nos dados naturalmente) não é
+um sucesso automático, e rolar 2 antes de adicionar os modificadores
+(quando ambos os dados mostram o número 1 naturalmente) não é uma falha
+automática.</p>
+<h3 id="dificuldade-e-efeito"><a class="header" href="#dificuldade-e-efeito">Dificuldade e Efeito</a></h3>
+<p>A Dificuldade de teste é um número definido pelo Mestre que modifica o
+resultado do teste. Quando não é dada Dificuldade, presume-se que
+Modificador de Dificuldade é 0. Então, para uma tarefa com uma
+Dificuldade de +2, você deve adicionar +2 ao resultado do teste. Você é
+bem-sucedido se conseguir um total de 8 ou maior. A lista de níveis de
+dificuldade pode ser encontrada na Tabela 0-2: Dificuldade das Tarefas.</p>
+<h4 id="tabela-0-2-dificuldade-das-tarefas"><a class="header" href="#tabela-0-2-dificuldade-das-tarefas">Tabela 0-2: Dificuldade das Tarefas</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Dificuldade</th><th style="text-align: center">MD</th></tr>
+</thead>
+<tbody>
+<tr><td>Simples</td><td style="text-align: center">+6</td></tr>
+<tr><td>Fácil</td><td style="text-align: center">+4</td></tr>
+<tr><td>Rotineira</td><td style="text-align: center">+2</td></tr>
+<tr><td>Média</td><td style="text-align: center">0</td></tr>
+<tr><td>Difícil</td><td style="text-align: center">-2</td></tr>
+<tr><td>Muito Difícil</td><td style="text-align: center">-4</td></tr>
+<tr><td>Formidável</td><td style="text-align: center">-6</td></tr>
+</tbody>
+</table>
+</div>
+<p>Em alguns casos, as consequências de um teste variam de acordo com o
+quão o resultado do teste está acima ou abaixo do número alvo 8. A
+diferença entre o resultado do teste e o número alvo 8 é chamado de
+Efeito. Se o Efeito for 6 ou superior, o teste é considerado um Sucesso
+Crítico. Quando o Efeito é -6 ou inferior, o teste é considerado uma
+Falha Crítica. Consulte o <strong>Capítulo 2: Perícias</strong> para obter mais
+detalhes.</p>
+<h4 id="tabela-0-3-graus-de-sucesso"><a class="header" href="#tabela-0-3-graus-de-sucesso">Tabela 0-3: Graus de Sucesso</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Alcance do Efeito</th><th>Grau de Sucesso</th></tr>
+</thead>
+<tbody>
+<tr><td>-6 ou mais baixo</td><td>Falha Crítica</td></tr>
+<tr><td>-1 to -5</td><td>Falha</td></tr>
+<tr><td>0 to +5</td><td>Sucesso</td></tr>
+<tr><td>+6 ou maior</td><td>Sucesso Crítico</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="testes-opostos"><a class="header" href="#testes-opostos">Testes Opostos</a></h3>
+<p>Se dois personagens se opuserem diretamente em uma tarefa, o personagem
+que obtiver o maior Efeito ganha. Nos empates em testes opostos, o
+personagem com o maior valor no atributo pertinente ganha. Se os
+personagens empatarem no valor dos atributos, eles jogarão de novo.</p>
+<h3 id="tentando-novamente"><a class="header" href="#tentando-novamente">Tentando Novamente</a></h3>
+<p>No geral, você pode tentar um teste novamente se você falhar, e
+continuar tentando indefinidamente. Algumas tarefas, no entanto, têm
+consequências para o fracasso. Por exemplo, a falha em um teste de
+atletismo ao escalar um penhasco pode significar que você caiu, o que
+pode dificultar a tentativa novamente. Algumas tarefas não podem ser
+tentadas novamente quando um teste falhou. Para a maioria das tarefas,
+uma vez que você tenha conseguido, sucessos adicionais não têm sentido.
+Uma vez descoberta a senha de uma conta de computador usando a perícia
+Computação, por exemplo, não haverá benefícios extras por testes
+adicionais de Computação para determinar a senha da conta.</p>
+<h3 id="modificadores-de-circunstância"><a class="header" href="#modificadores-de-circunstância">Modificadores de Circunstância</a></h3>
+<p>Algumas circunstâncias tornam um teste mais fácil ou mais difícil,
+resultando em um bônus ou penalidade que é adicionado ao resultado do
+teste. O Mestre pode alterar as chances de sucesso de duas maneiras:</p>
+<p>• Se um personagem tiver ajuda, como boas ferramentas, auxiliares
+competentes ou outras circunstâncias benéficas, ele recebe um bônus de
++1 em seu teste de perícia.</p>
+<p>• Se um personagem for atrapalhado, como ter ferramentas defeituosas,
+auxiliares incompetentes ou outras circunstâncias negativas, ele recebe
+uma penalidade de -1 em seu teste de perícia.</p>
+<h3 id="tempo-e-testes"><a class="header" href="#tempo-e-testes">Tempo e Testes</a></h3>
+<p>Fora de situações estressantes, como combate, a realização de uma
+determinada tarefa geralmente leva uma quantidade aleatória de tempo,
+dependendo das circunstâncias. Para a maioria das tarefas, role 1D6 e
+multiplique-o pelo incremento que o Mestre fornecer para essa ação. Por
+exemplo, quebrar uma porta de madeira frágil pode exigir apenas 1D6
+segundos, enquanto uma cirurgia delicada pode demorar 1D6 horas. Mais
+informações sobre incrementos de tempo podem ser encontradas no
+<strong>Capítulo 2: Perícias</strong>.</p>
+<p>Durante o combate, a maioria das ações é mais refinada para um período
+finito. Algumas dessas ações são consideradas ações menores, enquanto
+outras são consideradas ações significativas. Mais informações são
+fornecidas no <strong>Capítulo 5: Combate Pessoal</strong>.</p>
+<h3 id="auxiliando-outrem"><a class="header" href="#auxiliando-outrem">Auxiliando Outrem</a></h3>
+<p>Às vezes, os personagens trabalham juntos e ajudam-se mutuamente. Neste
+caso, um personagem (geralmente aquele com o maior total de
+modificadores no teste) é considerado o líder do esforço e faz o teste
+normalmente, enquanto cada auxiliar faz o mesmo teste. O Efeito do
+resultado do teste de um auxiliar pode fornecer um bônus (MD +1 com um
+sucesso, MD + 2 com um Sucesso Crítico) ou uma penalidade (MD -1 com uma
+falha, MD -2 com uma Falha Crítica) no resultado do teste do líder. Em
+muitos casos, a ajuda externa não é benéfica, ou apenas um número
+limitado de ajudantes podem ajudar alguém de uma só vez. O Mestre limita
+o auxílio conforme apropriado para a tarefa e as condições.</p>
+<h2 id="tipos-de-teste"><a class="header" href="#tipos-de-teste">Tipos de Teste</a></h2>
+<p>Há dois tipos principais de teste: testes de perícias e testes de
+atributos.</p>
+<h3 id="testes-de-perícias"><a class="header" href="#testes-de-perícias">Testes de Perícias</a></h3>
+<p>Um teste de perícia determina o que você pode realizar com uma perícia
+em particular (às vezes independente de você ser treinado naquela
+perícia ou não). É uma rolagem de 2D6, modificada por seus níveis de
+perícia, o modificador do atributo chave da perícia, e a Dificuldade,
+contra um número alvo de 8 ou superior. Os testes de perícia às vezes
+têm gradações de sucesso e falhas com base no Efeito do resultado do
+teste (o quão mais alto ou mais baixo o resultado do teste é quando
+comparado ao número alvo de 8). Ao fazer um teste de perícia, se um
+personagem não tem nenhum nível na perícia requerida, ele sofre uma
+penalidade de -3 por não ser qualificado.</p>
+<h3 id="rolagens-de-ataque"><a class="header" href="#rolagens-de-ataque">Rolagens de Ataque</a></h3>
+<p>Uma rolagem de ataque determina se você acerta um oponente em combate.
+Uma rolagem de ataque é essencialmente um teste de perícia, usando seus
+níveis de perícia em perícias de combate como modificadores.</p>
+<h3 id="testes-de-atributos"><a class="header" href="#testes-de-atributos">Testes de Atributos</a></h3>
+<p>Um teste de atributo é como um teste de perícia, mas mede a capacidade
+bruta, como força, resistência ou inteligência. Esses testes são usados
+quando uma tarefa não é coberta por uma perícia óbvia, ou onde as
+habilidades inatas do personagem são a influência mais importante no
+resultado. Para fazer um teste de atributo, você deve rolar 2D6 e
+adicionar o modificador do atributo apropriado. Os testes de atributos
+tendem a ser tudo ou nada (você pode realizar a tarefa ou não pode),
+embora às vezes existam graus de sucesso ou falha.</p>
+<h2 id="a-rodada-de-combate"><a class="header" href="#a-rodada-de-combate">A Rodada de Combate</a></h2>
+<p>Quando as coisas realmente começam a acontecer em um jogo de Cepheus
+Engine, o tempo é dividido em segmentos de seis segundos chamados de
+rodadas, ou rodadas de combate, já que são mais usados em lutas. Uma
+rodada não é muito tempo, apenas o tempo suficiente para que um
+personagem faça algo. Os tipos de ações que seu personagem pode executar
+durante uma rodada são ações significativas, ações menores, ações
+estendidas, ações gratuitas e reações. Durante uma rodada, você pode
+fazer um dos seguintes procedimentos:</p>
+<ul>
+<li>Iniciar ou continuar uma ação estendida.</li>
+<li>Fazer uma ação significativa e uma ação menor.</li>
+<li>Executar três ações menores, e renunciar a realizar uma ação significativa neste turno.</li>
+</ul>
+<p>Você pode executar tantas ações gratuitas e reações em uma rodada como
+desejar, embora o Mestre possa optar por limitá-las a um número razoável
+para manter o jogo em movimento. Consulte o <strong>Capítulo 5: Combate
+Pessoal</strong> para obter mais informações.</p>
+<h2 id="notação-pseudo-hexadecimal"><a class="header" href="#notação-pseudo-hexadecimal">Notação Pseudo-hexadecimal</a></h2>
+<p>O Cepheus Engine usa uma forma de notação pseudo-hexadecimal que
+funciona como um tipo de estenografia para anotar valores específicos de
+atributo, estatísticas planetárias, designações de tipo de propulsor
+(<em>drive</em>) e elementos de esquema semelhantes. A notação
+pseudo-hexadecimal prossegue como normal para valores de 0 a 15, mas se
+estende para além de F para 15, com G para 16 etc. O Cepheus Engine
+ignora o uso das letras I e O, porque podem ser confundidas com os
+números 1 e 0. A tabela 0-4: Notação Pseudo-hexadecimal funciona como
+uma referência rápida para converter valores para uso no Cepheus Engine.</p>
+<h4 id="tabela-0-4-notação-pseudo-hexadecimal"><a class="header" href="#tabela-0-4-notação-pseudo-hexadecimal">Tabela 0-4: Notação Pseudo-hexadecimal</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">Valor Atual</th><th style="text-align: center">Pseudo Hex</th><th style="text-align: center">Valor Atual</th><th style="text-align: center">Pseudo Hex</th><th style="text-align: center">Valor Atual</th><th style="text-align: center">Pseudo Hex</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">12</td><td style="text-align: center">C</td><td style="text-align: center">24</td><td style="text-align: center">Q</td></tr>
+<tr><td style="text-align: center">1</td><td style="text-align: center">1</td><td style="text-align: center">13</td><td style="text-align: center">D</td><td style="text-align: center">25</td><td style="text-align: center">R</td></tr>
+<tr><td style="text-align: center">2</td><td style="text-align: center">2</td><td style="text-align: center">14</td><td style="text-align: center">E</td><td style="text-align: center">26</td><td style="text-align: center">S</td></tr>
+<tr><td style="text-align: center">3</td><td style="text-align: center">3</td><td style="text-align: center">15</td><td style="text-align: center">F</td><td style="text-align: center">27</td><td style="text-align: center">T</td></tr>
+<tr><td style="text-align: center">4</td><td style="text-align: center">4</td><td style="text-align: center">16</td><td style="text-align: center">G</td><td style="text-align: center">28</td><td style="text-align: center">U</td></tr>
+<tr><td style="text-align: center">5</td><td style="text-align: center">5</td><td style="text-align: center">17</td><td style="text-align: center">H</td><td style="text-align: center">29</td><td style="text-align: center">V</td></tr>
+<tr><td style="text-align: center">6</td><td style="text-align: center">6</td><td style="text-align: center">18</td><td style="text-align: center">J</td><td style="text-align: center">30</td><td style="text-align: center">W</td></tr>
+<tr><td style="text-align: center">7</td><td style="text-align: center">7</td><td style="text-align: center">19</td><td style="text-align: center">K</td><td style="text-align: center">31</td><td style="text-align: center">X</td></tr>
+<tr><td style="text-align: center">8</td><td style="text-align: center">8</td><td style="text-align: center">20</td><td style="text-align: center">L</td><td style="text-align: center">32</td><td style="text-align: center">Y</td></tr>
+<tr><td style="text-align: center">9</td><td style="text-align: center">9</td><td style="text-align: center">21</td><td style="text-align: center">M</td><td style="text-align: center">33</td><td style="text-align: center">Z</td></tr>
+<tr><td style="text-align: center">10</td><td style="text-align: center">A</td><td style="text-align: center">22</td><td style="text-align: center">N</td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+<tr><td style="text-align: center">11</td><td style="text-align: center">B</td><td style="text-align: center">23</td><td style="text-align: center">P</td><td style="text-align: center"></td><td style="text-align: center"></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="termos-importantes"><a class="header" href="#termos-importantes">Termos Importantes</a></h2>
+<p>O Cepheus Engine usa certas palavras e abreviaturas em todo o sistema de
+regras. Para entender corretamente as regras do Cepheus Engine, os
+jogadores e mestres devem se familiarizar com esses termos. As seguintes
+palavras, frases e abreviaturas são comumente usadas no Cepheus Engine:</p>
+<p><strong>2D6:</strong> Dois dados de seis lados, usados para resolver todas as ações
+no Cepheus Engine.</p>
+<p><strong>Ação estendida:</strong> Uma ação em combate que demora mais do que uma única
+rodada de combate para completar.</p>
+<p><strong>Ação livre:</strong> Uma atividade extremamente rápida, que exige muito pouco
+tempo e esforço.</p>
+<p><strong>Ação menor:</strong> Uma ação que se destina a percorrer uma distância ou a
+manipular ou mover um objeto. Você pode executar até três ações menores
+por rodada, com a perda de uma ação significativa.</p>
+<p><strong>Ação significativa:</strong> Uma ação destinada a fazer algo em cerca de 3
+segundos. Você pode executar uma única ação significativa por rodada, ou
+desistir dela para realizar um total de três ações menores.</p>
+<p><strong>Ação:</strong> Uma atividade do personagem. Existem ações significativas,
+ações menores, ações estendidas, ações gratuitas e reações.</p>
+<p><strong>Alvo (também objetivo):</strong> Destinatário pretendido de um ataque, ação
+ou efeito.</p>
+<p><strong>Ano padrão:</strong> Uma unidade de tempo com 365 dias de duração padrão.</p>
+<p><strong>Arma branca:</strong> Uma arma portátil projetada para o combate corpo a
+corpo.</p>
+<p><strong>Arma de distância:</strong> Um projétil ou arma arremessada projetada para
+atacar à distância.</p>
+<p><strong>Ataque à distância:</strong> Qualquer ataque feito à distância.</p>
+<p><strong>Ataque corpo a corpo:</strong> Um ataque físico em combate corpo a corpo.</p>
+<p><strong>Ataque desarmado:</strong> um ataque corpo a corpo feito sem arma.</p>
+<p><strong>Ataque:</strong> Qualquer uma das inúmeras ações destinadas a prejudicar,
+desativar ou neutralizar um oponente.</p>
+<p><strong>Aventura:</strong> Uma história criada pelo Mestre e jogadores, composta por
+uma série de cenas ou encontros relacionados.</p>
+<p><strong>Barco:</strong> Uma nave pequena, com menos de 100 toneladas, capaz de viagem
+interplanetária.</p>
+<p><strong>Bônus de ataque:</strong> Um modificador usado para medir a perícia de
+combate de um personagem.</p>
+<p><strong>Bônus de dano:</strong> Um modificador usado para determinar o dano de um
+ataque.</p>
+<p><strong>Bônus:</strong> Um modificador positivo em uma rolagem de dados.</p>
+<p><strong>Campanha:</strong> Uma série de aventuras interligadas.</p>
+<p><strong>Coreward:</strong> Um termo astrográfico que indica a direção de Sagitário
+A* (pronuncia-se “Sagitário A-estrela”, abreviatura padrão Sgr A*),
+uma fonte de rádio astronômica brilhante e muito compacta no centro da
+Via Láctea.</p>
+<p><strong>Crédito (Cr):</strong> A principal unidade monetária utilizada no Cepheus
+Engine. Para grandes quantias de dinheiro, o quilocrédito (KCr)
+representa mil créditos e o megacrédito (MCr) representa um milhão de
+créditos.</p>
+<p><strong>D66:</strong> Uma rolagem de dados especial obtida rolando dois dados de seis
+lados de cores diferentes (ou rolando um dado duas vezes, observando
+cada número rolado), multiplicando o primeiro dado por 10 e depois
+adicionando o segundo dado, para criar um número entre 11 e 66.</p>
+<p><strong>Dado (plural dados):</strong> Um pequeno poliedro, tipicamente um cubo, com
+cada lado tendo um número diferente, variando de um para o número de
+lados do poliedro, jogado e usado em jogos de azar e outros jogos
+envolvendo chance. O Cepheus Engine usa dados de seis lados
+exclusivamente para criar resultados aleatórios durante o jogo.</p>
+<p><strong>Dano letal:</strong> Dano que pode potencialmente desabilitar ou matar um
+alvo.</p>
+<p><strong>Dano não-letal:</strong> Danos que podem potencialmente atordoar ou nocautear
+um alvo, mas não incapacita permanentemente.</p>
+<p><strong>Dano:</strong> Danos causados a um personagem por lesão, doença ou alguma
+outra fonte.</p>
+<p><strong>Dia padrão:</strong> Uma unidade de tempo com 24 horas de duração.</p>
+<p><strong>Dificuldade:</strong> Um modificador aplicado a um teste atribuído pelo
+Mestre, refletindo a relativa facilidade ou dificuldade de uma
+determinada ação.</p>
+<p><strong>Efeito:</strong> A diferença entre o resultado de um teste e o número alvo 8
+(ou seja, quanto maior ou menor é o resultado).</p>
+<p><strong>Embarcação:</strong> Termo geral usado para naves (ou espaçonaves), barcos ou
+veículos. Usado como um grupo geral e mais abrangente. Mais comumente,
+refere-se a qualquer veículo ou nave capaz de viagens interplanetárias
+ou interestelares.</p>
+<p><strong>Encontro:</strong> Deparar-se de forma inesperada ou casual com alguém ou
+algo. Uma grande parte do trabalho do Mestre é a administração de
+encontros.</p>
+<p><strong>Espaço de salto:</strong> A dimensão alternativa através da qual as naves
+espaciais viajam quando transitam de um ponto no espaço normal para
+outro.</p>
+<p><strong>Falha crítica:</strong> Qualquer teste que falha por uma diferença de 6 ou
+mais (ou seja, tem um efeito de -6 ou pior).</p>
+<p><strong>Falha de salto:</strong> Um acidente causado por um salto impreciso, o que
+resulta em saltar para uma localização aleatória com danos a nave e
+potencialmente a tripulação. Causas comuns de erros de salto incluem
+planos de salto ruins, unidades de salto danificadas, desviar energia
+para a unidade de salto incorretamente, não respeitar o limite de salto
+de 100 diâmetros ou usar combustível não refinado.</p>
+<p><strong>Golpe crítico (crit):</strong> Um ataque que inflige dano extra. Os golpes
+críticos ocorrem apenas em combates veicular e espacial.</p>
+<p><strong>Gravemente ferido:</strong> Se você perdeu pelo menos um ponto de cada um de
+seus três atributos físicos, considera-se que você está gravemente
+ferido. Quando consciente, você não pode se mover, exceto para mancando
+ou rastejando ao longo de 1,5 metros por rodada de combate. Você também
+perde sua ação menor em combate. Você só pode recuperar pontos de
+atributo iguais ao seu MD da Resistência por dia de descanso através da
+cura natural. Será preciso cirurgia.</p>
+<p><strong>Mestre:</strong> O jogador que interpreta personagens não controlados pelos
+outros jogadores, arbitra as regras e compõe a história e a ambientação
+do jogo.</p>
+<p><strong>Modificador de Atributo:</strong> Um modificador determinado pelo valor do
+atributo, aplicado como bônus ou penalidade aos testes conforme
+necessário.</p>
+<p><strong>Modificador de Dados (MD):</strong> Um modificador aplicado a um teste.</p>
+<p><strong>Modificador:</strong> Qualquer bônus ou penalidade aplicada a um dado.</p>
+<p><strong>Morrendo:</strong> Perto da morte e inconsciente. Um personagem moribundo não
+pode realizar nenhuma ação.</p>
+<p><strong>Mundo natal:</strong> 1) O mundo que serve como lugar de origem de um
+personagem, geralmente o mundo em que o personagem foi criado e que teve
+o maior impacto em seu desenvolvimento durante sua vida pré-adulta. 2) O
+mundo de origem de uma espécie alienígena, ou seja, a Terra é o mundo
+natal das espécies humanas.</p>
+<p><strong>Mundo principal:</strong> O mundo primário de um sistema estelar; o mundo
+representado pelo Perfil Mundial Universal (PMU) em uma lista de mundos
+para uma determinada região do espaço.</p>
+<p><strong>Mundo:</strong> Um termo genérico no Cepheus Engine para qualquer corpo
+celestial habitável ou local semelhante representado por um Perfil
+Mundial Universal (PMU).</p>
+<p><strong>Não treinado:</strong> Não tem nenhum nível em uma perícia. Algumas perícias
+não podem ser usadas sem treinamento. Testes de perícias não treinadas
+sofrem uma penalidade de MD-3.</p>
+<p><strong>Natural:</strong> Um resultado natural em uma rolagem ou teste é o número
+real que aparece no dado, não o resultado modificado obtido pela adição
+de bônus ou subtração de penalidades.</p>
+<p><strong>Nave estelar:</strong> Uma nave espacial (ou espaçonave) com uma unidade de
+salto, capaz de viagens interestelares por conta própria.</p>
+<p><strong>Nave não-estelar:</strong> Uma nave espacial (ou espaçonave) sem uma unidade
+de salto e, portanto, incapaz de viagens interestelares por conta
+própria.</p>
+<p><strong>Patrono:</strong> Um personagem do mestre que dá suporte financeiro ou de
+outro tipo a uma pessoa, organização, causa ou atividade. Mestres
+costumam usar os patronos como uma ferramenta para tentar envolver os
+personagens dos jogadores em aventuras.</p>
+<p><strong>Penalidade:</strong> Um modificador negativo em uma rolagem de dados.</p>
+<p><strong>Perícia:</strong> Uma habilidade para executar uma ação específica, como
+navegar uma nave estelar, operar um rifle ou programar um computador. As
+perícias são obtidas em níveis (Navegação-1, Computação-2 etc); quanto
+maior o nível da perícia, mais conhecimentos um personagem tem nessa
+área. Muitas perícias individuais diferentes estão disponíveis aos
+personagens.</p>
+<p><strong>Personagem do Jogador (PdJ):</strong> Um personagem controlado por um
+jogador, um dos protagonistas de uma aventura ou campanha. Também é
+comum no Brasil usar a forma abreviada “PC”, por causa da influência da
+língua inglesa (“Player Character”).</p>
+<p><strong>Personagem do Mestre (PdM):</strong> Um personagem controlado pelo Mestre (em
+oposição a um personagem controlado por um jogador). Também é comum no
+Brasil usar a forma abreviada “NPC”, por causa da influência da língua
+inglesa (“Non Player Character”).</p>
+<p><strong>Personagem:</strong> Um indivíduo fictício no jogo. Os jogadores controlam
+personagens, enquanto o Mestre controla personagens do mestre.</p>
+<p><strong>Ponto de salto:</strong> Um ponto no espaço a mais de 100 diâmetros de
+distância de qualquer corpo celestial próximo, escolhido por um
+navegador como o ponto a partir do qual uma nave entrará no espaço de
+salto.</p>
+<p><strong>Porto estelar:</strong> Um porto onde as naves interestelares e
+interplanetárias carregam ou descarregam, especialmente um onde os
+funcionários da alfândega estão estacionados.</p>
+<p><strong>Psiônico:</strong> Um personagem com habilidades psíquicas.</p>
+<p><strong>Raça dominante:</strong> Uma espécie senciente capaz de realizar viagens
+interestelares através da tecnologia de salto, e que usou essa
+tecnologia para expandir sua presença em uma região significativa do
+espaço. As raças dominantes geralmente controlam um governo interestelar
+bastante expansivo e têm assentamentos e populações significativas a
+mais de dez parsecs de distância de seu planeta de origem.</p>
+<p><strong>Raça menor:</strong> Uma espécie senciente que não desenvolveu tecnologia de
+salto por conta própria. Enquanto os indivíduos das raças menores podem
+e costumam se envolver em viagens interestelares, as populações
+estabelecidas de qualquer Raça Menor são raramente encontradas além de
+dez parsecs de seu mundo natal.</p>
+<p><strong>Reação:</strong> Ação executada em resposta à ação de outra. Você pode
+executar tantas reações quanto quiser por rodada em Combate Pessoal, mas
+o número de Reações que uma embarcação pode realizar é baseado na
+Iniciativa no Combate Espacial.</p>
+<p><strong>Rimward:</strong> Um termo astrográfico que indica a direção oposta do
+Coreward, ou seja, diretamente oposta à fonte de rádio de Sagitário A*.</p>
+<p><strong>Rodada:</strong> Uma unidade de tempo de jogo de seis segundos usada para
+gerenciar ações, geralmente em combate.</p>
+<p><strong>Rolagem de ataque:</strong> Um teste de perícia usado para determinar se um
+ataque atinge o alvo.</p>
+<p><strong>Salto:</strong> Uma forma de movimento mais rápido que a luz usando unidades
+de salto, que sempre leva uma semana para percorrer uma série de parsecs
+igual à sua classificação de salto e consome uma grande quantidade de
+combustível.</p>
+<p><strong>Sociedade dos Exploradores:</strong> Um serviço privado de viagens
+interestelares que mantém resorts e instalações exclusivas em vários
+portos estelares. Várias organizações interestelares oferecem associação
+à Sociedade dos Exploradores como recompensa por um serviço excepcional.</p>
+<p><strong>Sofonte:</strong> Um ser consciente com uma base de capacidade de raciocínio
+aproximadamente igual ou superior ao de um ser humano médio.</p>
+<p><strong>Spinward:</strong> Um termo astrográfico que indica a direção da rotação da
+galáxia.</p>
+<p><strong>Sucesso crítico:</strong> Qualquer teste que seja bem-sucedido por uma
+diferença de 6 ou mais (ou seja, tem um efeito de +6 ou melhor).</p>
+<p><strong>Testar (Rolagem ou Jogada):</strong> Um método para decidir o resultado da
+ação de um personagem. Os testes são baseados em uma perícia, habilidade
+ou outra característica relevante. Para fazer um teste, role 2D6 e
+adicione quaisquer modificadores relevantes. Se o resultado do teste for
+igual ou superior a um número alvo de 8 ou ao resultado do teste de um
+oponente, ele terá sido bem-sucedido.</p>
+<p><strong>Trailing:</strong> Um termo astrográfico que indica a direção oposta à
+rotação da galáxia.</p>
+<p><strong>Treinado:</strong> Ter conhecimento em, e, portanto, níveis em uma perícia.</p>
+<p><strong>Universo:</strong> A ambientação ou cenário apresentado por um Mestre, na
+qual os personagens vivenciam aventuras e campanhas. Um Mestre pode usar
+uma ambientação publicada por uma editora para situar suas aventuras, ou
+então criar as suas próprias usando as regras do Cepheus Engine.</p>
+<p><strong>Valor de Atributo:</strong> Um dos seis atributos básicos do personagem:
+Força (For), Destreza (Des), Resistência (Res), Inteligência (Int),
+Educação (Edu) e Posição Social (Soc).</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="capítulo-1-criação-de-personagens"><a class="header" href="#capítulo-1-criação-de-personagens">CAPÍTULO 1: CRIAÇÃO DE PERSONAGENS</a></h1>
+<p>Os personagens do Cepheus Engine raramente são iniciantes recém-saídos
+da fazenda. Não há motivo para não jogar com um personagem jovem e
+inexperiente se você quiser, mas como uma ampla gama de habilidades é
+importante para o sucesso no jogo, a maioria dos jogadores vai querer
+que seu personagem seja um pouco mais experiente no mundo.</p>
+<p>Todos os personagens começam na idade da maioridade, normalmente 18
+anos. Depois de gerar pontuações de características e habilidades de
+histórico, o personagem deve começar a cumprir mandatos em sua carreira
+escolhida. Cada período de 4 anos passado em uma carreira dá ao
+personagem mais experiência no universo, geralmente na forma de
+habilidades. Gere os resultados de cada período antes de passar para o
+próximo. Ao final de um período de serviço, os personagens rolam para
+obter os benefícios obtidos ao “alistar-se” (ou seja, deixar o serviço).
+Eles podem então começar a se aventurar.</p>
+<p>Este capítulo fornece instruções completas para a geração de vinte e
+quatro trajetórias de carreira distintas.</p>
+<h2 id="lista-de-verificação-para-criação-de-personagens"><a class="header" href="#lista-de-verificação-para-criação-de-personagens">Lista de verificação para criação de personagens</a></h2>
+<p>1) Características</p>
+<blockquote>
+<p>a) Role suas seis características usando 2D6 e coloque-as em ordem em
+sua ficha de personagem.</p>
+<p>b) Determine os modificadores de características.</p>
+</blockquote>
+<p>2) Homeworld (opcional)</p>
+<blockquote>
+<p>a) Determinar o mundo natal.</p>
+<p>b) Ganhar habilidades de segundo plano. O personagem ganha um número
+de habilidades de segundo plano no Nível 0 igual a 3 + seu modificador
+de Educação. As duas primeiras devem ser obtidas em seu mundo natal
+(com base nos códigos comerciais ou no nível de lei do mundo); as
+demais são obtidas na lista de educação.</p>
+</blockquote>
+<p>3) Carreira</p>
+<blockquote>
+<p>a) Escolha uma carreira. Você não pode escolher uma carreira que já
+tenha abandonado, exceto Drifter.</p>
+<p>b) Role para se qualificar para essa carreira, conforme indicado na
+descrição da carreira. Se essa não for sua primeira carreira, você
+sofrerá um DM de -2 para cada carreira anterior em que serviu.</p>
+<p>c) Se você se qualificar para essa carreira, vá para a etapa 4.</p>
+<p>d) Se você não se qualificar para essa carreira, poderá entrar na
+carreira de Drifter ou se submeter à seleção. Você só pode participar
+da seleção uma vez.</p>
+</blockquote>
+<p>4) Treinamento básico</p>
+<blockquote>
+<p>No primeiro período da sua primeira carreira, você recebe todas as
+habilidades da tabela de habilidades de serviço no nível 0.</p>
+<p>No primeiro período das carreiras subsequentes, você pode escolher
+qualquer habilidade da tabela de habilidades de serviço no nível 0.</p>
+</blockquote>
+<p>5) Sobrevivência</p>
+<blockquote>
+<p>Role para sobreviver, conforme indicado na descrição da carreira.</p>
+<p>Se você tiver sucesso, vá para a etapa 8.</p>
+<p>Se você não foi bem-sucedido, você morreu. Como alternativa, os
+eventos o forçaram a deixar essa carreira. Faça a rolagem na tabela de
+acidentes e vá para a etapa 10 (você não recebe uma rolagem de
+benefício para esse termo).</p>
+</blockquote>
+<p>6) Comissão e promoção</p>
+<p>a) Você começa como um personagem de Rank 0.</p>
+<blockquote>
+<p>b) Se a sua carreira oferecer uma verificação de comissão e você
+estiver no Rank 0, poderá optar por rolar para a comissão. Se for
+bem-sucedido, você agora tem o Rank 1 na carreira escolhida. Escolha
+uma das tabelas de habilidades e treinamento e role nela para obter
+uma habilidade extra. Pegue qualquer habilidade de bônus da tabela de
+níveis para essa carreira.</p>
+<p>c) Se a sua carreira oferecer uma verificação de avanço e você tiver
+Rank 1 ou superior, poderá optar por rolar para o avanço. Se for
+bem-sucedido, seu Rank aumentará em um na carreira escolhida. Escolha
+uma das tabelas de habilidades e treinamento e role nela para obter
+uma habilidade extra. Pegue qualquer habilidade bônus da tabela de
+níveis para essa carreira. Você pode rolar para o Avanço no mesmo
+período em que for bem-sucedido em uma rolagem de Comissão.</p>
+</blockquote>
+<p>7) Habilidades e treinamento</p>
+<blockquote>
+<p>a) Escolha uma das tabelas de Habilidades e Treinamento para essa
+carreira e role sobre ela. Se você obtiver como resultado uma melhoria
+de característica, aplique a alteração em sua pontuação de
+característica imediatamente. Se você obtiver uma habilidade como
+resultado e ainda não tiver níveis nessa habilidade, adquira-a no
+nível 1. Se já tiver a habilidade, aumente sua habilidade em um nível.</p>
+<p>b) Se a sua carreira não tiver uma verificação de Comissão ou Avanço,
+você pode rolar uma segunda vez, escolher uma das tabelas de
+Habilidades e Treinamento para essa carreira (que pode ser a mesma ou
+diferente da primeira tabela escolhida para esse termo).</p>
+</blockquote>
+<p>8) Envelhecimento</p>
+<blockquote>
+<p>a) Aumente sua idade em 4 anos.</p>
+<p>b) Se seu personagem tiver 34 anos ou mais, role para o
+envelhecimento.</p>
+</blockquote>
+<p>9) Recadastramento</p>
+<blockquote>
+<p>a) Faça o rolamento para o realistamento. Se falhar, você deve deixar
+essa carreira. Se obtiver um 12 natural, você não poderá deixar essa
+carreira e deverá continuar por mais um período; vá para a etapa 5.</p>
+<p>b) Se você tiver cumprido um total de sete mandatos ou mais na
+criação do personagem, deverá se aposentar; vá para a etapa 10.</p>
+<p>c) Se você deseja continuar nessa carreira, vá para a etapa 5.</p>
+<p>d) Se você deseja deixar essa carreira, vá para a etapa 10.</p>
+</blockquote>
+<p>10) Benefícios</p>
+<blockquote>
+<p>Se estiver deixando a carreira, role para obter benefícios. Um
+personagem recebe uma rolagem de benefício para cada período completo
+de serviço nessa carreira. Você também recebe rolagens de benefícios
+extras se tiver alcançado uma classificação mais alta.</p>
+</blockquote>
+<p>11) Próxima carreira</p>
+<blockquote>
+<p>Se estiver deixando sua carreira atual e o número total de termos na
+criação do personagem for inferior a sete, você poderá ir para a etapa
+3 para escolher uma nova carreira ou para a etapa 12 se quiser
+terminar seu personagem.</p>
+</blockquote>
+<p>12) Comprar equipamento inicial</p>
+<blockquote>
+<p>Compre seu equipamento inicial e, se puder pagar, possivelmente uma
+nave espacial.</p>
+</blockquote>
+<h2 id="características"><a class="header" href="#características">Características</a></h2>
+<p>As características medem as habilidades mais básicas de um personagem: o
+quanto ele é forte, hábil, educado ou inteligente. As pontuações das
+características influenciam quase tudo que seu personagem faz.
+Personagens mais fortes podem levantar pesos maiores, personagens mais
+hábeis têm melhor equilíbrio e assim por diante.</p>
+<p>Os personagens têm seis habilidades: Força (Str), Destreza (Dex),
+Resistência (End), Inteligência (Int), Educação (Edu) e Posição Social
+(Soc). Força, Destreza e Resistência são chamadas de habilidades
+físicas, enquanto Inteligência, Educação e Posição Social são vagamente
+chamadas de habilidades mentais. Cada pontuação de habilidade acima da
+média concede um bônus em determinados lançamentos de dados, enquanto as
+habilidades abaixo da média aplicam uma penalidade em alguns lançamentos
+de dados.</p>
+<p>As seis características de seu personagem são descritas resumidamente a
+seguir:</p>
+<ul>
+<li>
+<p><strong>Força</strong> (Str): A força física, o condicionamento físico e a força de
+vontade de um personagem.</p>
+</li>
+<li>
+<p><strong>Destreza</strong> (Dex): Coordenação física e agilidade, reflexos.</p>
+</li>
+<li>
+<p><strong>Resistência</strong> (End): A capacidade do personagem de suportar danos,
+resistência e determinação.</p>
+</li>
+<li>
+<p><strong>Inteligência</strong> (Int): O intelecto e a rapidez de raciocínio de um
+personagem.</p>
+</li>
+<li>
+<p><strong>Educação</strong> (Edu): Uma medida do aprendizado e da experiência de um
+personagem.</p>
+</li>
+<li>
+<p><strong>Posição social</strong> (Soc): A posição de um personagem na sociedade.</p>
+</li>
+</ul>
+<h3 id="posição-social-e-títulos-nobres"><a class="header" href="#posição-social-e-títulos-nobres">Posição social e títulos nobres</a></h3>
+<p>Em um universo do Cepheus Engine em que personagens com pontuações de
+características de Posição social suficientemente altas são considerados
+nobres, valores específicos de Posição social são frequentemente
+associados a títulos específicos de nobreza. A tabela Títulos de nobreza
+por posição social apresenta alguns exemplos, mas os valores reais podem
+variar de universo para universo. As versões desses títulos
+tradicionalmente concedidos ao gênero feminino são fornecidas entre
+parênteses.</p>
+<h4 id="tabela-títulos-de-nobreza-por-posição-social"><a class="header" href="#tabela-títulos-de-nobreza-por-posição-social">Tabela: Títulos de nobreza por posição social</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Posição social</th><th>Título de nobreza</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>10 (A)</strong></td><td>Senhor (Senhora)</td></tr>
+<tr><td><strong>11 (B)</strong></td><td>Cavaleiro (Knightess, Dame)</td></tr>
+<tr><td><strong>12 (C)</strong></td><td>Barão (Baronesa), Baronete</td></tr>
+<tr><td><strong>13 (D)</strong></td><td>Marquês (Marquesa, Marchioness)</td></tr>
+<tr><td><strong>14 (E)</strong></td><td>Conde (Condessa)</td></tr>
+<tr><td><strong>15 (F)</strong></td><td>Duque (Duquesa)</td></tr>
+<tr><td><strong>16 (G)</strong></td><td>Arquiduque (Arquiduquesa)</td></tr>
+<tr><td><strong>17 (H)</strong></td><td>Príncipe Herdeiro (Princesa Herdeira)</td></tr>
+<tr><td><strong>18 (J)</strong></td><td>Imperador (Imperatriz)</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="força-psiônica-a-sétima-característica"><a class="header" href="#força-psiônica-a-sétima-característica">Força Psiônica, a Sétima Característica</a></h3>
+<p>No Cepheus Engine, os personagens podem, às vezes, ter uma sétima
+pontuação de característica. Quando um personagem aprende psiônica, ele
+gera uma característica de Força Psiônica (abreviação Psi), que
+potencializa seus talentos psiônicos. Essa característica não pode ser
+rolada ou comprada durante a criação do personagem sem a permissão do
+Árbitro. Para obter mais informações sobre esse tópico, consulte o
+<strong>Capítulo 3: Psiônica</strong>.</p>
+<h3 id="geração-de-escores-de-características"><a class="header" href="#geração-de-escores-de-características">Geração de escores de características</a></h3>
+<p>A geração de pontuações de características é bastante simples. Role suas
+seis características usando 2D6 e registre-as na ordem padrão: Força
+(Str), Destreza (Dex), Resistência (End), Inteligência (Int), Educação
+(Edu) e Posição Social (Soc).</p>
+<p><strong>Regra opcional</strong>: Com a aprovação do árbitro, role 2D6 seis vezes e
+atribua os resultados às seis pontuações de características diferentes
+com base em um conceito de personagem específico. Por exemplo, se você
+imaginar seu personagem como um pesquisador altamente instruído, poderá
+atribuir o resultado mais alto a Educação e o segundo mais alto a
+Inteligência.</p>
+<p><strong>Limites de pontuação de característica</strong>: Para personagens jogadores,
+uma pontuação de característica não pode exceder o máximo de 15, nem
+pode cair permanentemente abaixo de 1, exceto em determinadas
+circunstâncias.</p>
+<h3 id="modificadores-de-características"><a class="header" href="#modificadores-de-características">Modificadores de características</a></h3>
+<p>Depois de atribuir suas pontuações de características, você pode
+determinar os modificadores de características. Esses modificadores são
+aplicados a qualquer verificação quando você faz algo relacionado a essa
+característica. Um modificador de pontuação de habilidade é calculado
+dividindo-se a pontuação de habilidade por três, eliminando-se todas as
+frações e subtraindo-se um, de modo que a pontuação de característica
+média de 7 tenha um DM+0. Assim, um valor de característica igual ou
+inferior a 2 tem um modificador de DM-2, valores de característica de 3
+a 5 têm um modificador de DM-1 e assim por diante. A tabela Modificador
+de característica por faixa de pontuação fornece uma sinopse desses
+modificadores, já calculados para você.</p>
+<h4 id=""><a class="header" href="#"></a></h4>
+<h4 id="tabela-modificador-de-característica-por-faixa-de-pontuação"><a class="header" href="#tabela-modificador-de-característica-por-faixa-de-pontuação">Tabela: Modificador de característica por faixa de pontuação</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Faixa de pontuação</th><th>PseudoHex</th><th>Modificador de característica</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>0 a 2</strong></td><td>0-2</td><td>-2</td></tr>
+<tr><td><strong>3 a 5</strong></td><td>3-5</td><td>-1</td></tr>
+<tr><td><strong>6 a 8</strong></td><td>6-8</td><td>+0</td></tr>
+<tr><td><strong>9 a 11</strong></td><td>9-B</td><td>+1</td></tr>
+<tr><td><strong>12 a 14</strong></td><td>C-E</td><td>+2</td></tr>
+<tr><td><strong>15 a 17</strong></td><td>F-H</td><td>+3</td></tr>
+<tr><td><strong>18 a 20</strong></td><td>J-L</td><td>+4</td></tr>
+<tr><td><strong>21 a 23</strong></td><td>M-P</td><td>+5</td></tr>
+<tr><td><strong>24 a 26</strong></td><td>Q-S</td><td>+6</td></tr>
+<tr><td><strong>27 a 29</strong></td><td>T-V</td><td>+7</td></tr>
+<tr><td><strong>30 a 32</strong></td><td>W-Y</td><td>+8</td></tr>
+<tr><td><strong>33 ou superior</strong></td><td>Z</td><td>+9</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="alteração-das-pontuações-de-características"><a class="header" href="#alteração-das-pontuações-de-características">Alteração das pontuações de características</a></h3>
+<p>No decorrer do jogo, as pontuações das características de seu personagem
+podem mudar pelos seguintes motivos:</p>
+<ul>
+<li>
+<p>O envelhecimento pode reduzir permanentemente os escores das
+características físicas.</p>
+</li>
+<li>
+<p>Os danos físicos, como os causados por combate, queda, doença ou
+veneno, reduzem temporariamente as pontuações das características
+físicas.</p>
+</li>
+<li>
+<p>Traumas mentais, como ferimentos na cabeça e ataques psiônicos,
+reduzem temporariamente as pontuações das características mentais.</p>
+</li>
+<li>
+<p>Certos medicamentos, aprimoramentos psiônicos e outros cenários podem
+aumentar, temporária ou permanentemente, pontuações de características
+específicas.</p>
+</li>
+</ul>
+<p>Sempre que uma pontuação de característica for alterada, você precisará
+determinar o novo modificador de característica.</p>
+<h3 id="sobre-gênero-e-raça"><a class="header" href="#sobre-gênero-e-raça">Sobre gênero e raça</a></h3>
+<p>As regras básicas do Cepheus Engine não fazem distinção entre diferentes
+membros da mesma espécie, independentemente de gênero ou raça. No reino
+da literatura clássica de ficção científica, os heróis tinham muitos
+tipos e capacidades diferentes e, em geral, não eram limitados pelo
+gênero ou pela cor da pele.</p>
+<p>As espécies alienígenas podem ter opções adicionais de gênero que podem
+afetar as pontuações de características de um personagem e conceder
+habilidades ou traços específicos com base na seleção do gênero. Por
+exemplo, se uma espécie de insetoide tiver quatro gêneros (rainha,
+soldado, trabalhador e zangão), cada um pode conceder bônus ou
+penalidades de características diferentes que afetam a criação do
+personagem. A definição de espécies alienígenas está no domínio dos
+poderes de criatividade do árbitro, conforme a natureza de sua campanha
+e universo.</p>
+<h3 id="sobre-espécies-exóticas-e-posição-social"><a class="header" href="#sobre-espécies-exóticas-e-posição-social">Sobre espécies exóticas e posição social</a></h3>
+<p>As espécies alienígenas podem ter critérios diferentes para a posição
+social: Casta ou Carisma. Ao lidar com uma raça que tenha um conceito
+diferente de posição social, todos os DMs de posição social ou seu
+equivalente alienígena - sejam positivos ou negativos - são reduzidos à
+metade.</p>
+<h2 id="o-perfil-de-persona-universal-upp"><a class="header" href="#o-perfil-de-persona-universal-upp">O Perfil de Persona Universal (UPP)</a></h2>
+<p>O Cepheus Engine utiliza um formato conciso para encapsular dados sobre
+as pontuações de características de um personagem individual de uma
+maneira que, com um pouco de prática, pode ser lida de forma rápida e
+fácil. Os detalhes do Universal Persona Profile podem ser encontrados
+abaixo:</p>
+<p>123456, ou 123456-7 para caracteres psiônicos</p>
+<h3 id="a-explicação"><a class="header" href="#a-explicação">A explicação</a></h3>
+<p>Os números representam a posição de uma notação pseudo-hexadecimal dos
+escores característicos de um indivíduo. Essas pontuações são, em ordem:</p>
+<ol>
+<li>
+<p><strong>Força</strong> (Str)</p>
+</li>
+<li>
+<p><strong>Destreza</strong> (Dex)</p>
+</li>
+<li>
+<p><strong>Resistência</strong> (End)</p>
+</li>
+<li>
+<p><strong>Inteligência</strong> (Int)</p>
+</li>
+<li>
+<p><strong>Educação</strong> (Edu)</p>
+</li>
+<li>
+<p><strong>Posição social</strong> (Soc)</p>
+</li>
+<li>
+<p><strong>Força</strong> Psiônica (Psi)</p>
+</li>
+</ol>
+<p>Por exemplo, se um personagem tiver as seguintes pontuações de
+características:</p>
+<p>Força 6, Destreza 8, Resistência 7, Inteligência 11, Educação 9, Posição
+social 12</p>
+<p>Então, a UPP do personagem seria 687B9C. Se o personagem posteriormente
+fizesse o teste de Psiônica e terminasse com uma Força Psiônica de 4, a
+UPP se tornaria 687B9C-4.</p>
+<h2 id="formato-de-caractere-universal"><a class="header" href="#formato-de-caractere-universal">Formato de caractere universal</a></h2>
+<p>O formato a seguir é usado para representar as estatísticas básicas de
+jogo de um personagem nas regras do Cepheus Engine.</p>
+<p>[Nome do personagem, com posto e/ou título de nobreza, se for o caso].
+[Personagem UPP] Idade [Idade do personagem]</p>
+<p>[Carreiras de personagens, com termos listados entre parênteses]
+Cr[Fundos de personagens]</p>
+<p>[Lista de habilidades do personagem, em ordem alfabética, com os níveis
+de habilidade listados após os nomes das habilidades]</p>
+<p>[Traços de espécie, se não for humano; opcional].</p>
+<p>[Caracterize o equipamento, se disponível; liste apenas as propriedades
+significativas].</p>
+<p>Aqui está um exemplo de uma celebridade humana de todo o sistema que tem
+entretido seus fãs de holovídeos por quase duas décadas com seus filmes
+de ação heroicos:</p>
+<p>Bruce Ayala 786A9A Idade 38 anos</p>
+<p>Animador (5 períodos) Cr70.000</p>
+<p>Atletismo-1, Administração-1, Advogado-1, Suborno-1, Carruagem-3,
+Computador-2, Jogos de azar-0, Veículo de Gravidade-0, Ligação-2,
+Linguística-0, Ambulante-0</p>
+<p>Passagem alta (x2)</p>
+<h2 id="habilidades-em-segundo-plano"><a class="header" href="#habilidades-em-segundo-plano">Habilidades em segundo plano</a></h2>
+<p>Antes de embarcar em suas carreiras, você recebe um número de
+habilidades de fundo igual a 3 + seu DM de educação (1 a 5, dependendo
+da sua pontuação de educação).</p>
+<h3 id="habilidades-do-mundo-doméstico"><a class="header" href="#habilidades-do-mundo-doméstico">Habilidades do mundo doméstico</a></h3>
+<p>Crescer em seu planeta natal lhe deu habilidades que dependem da
+natureza do planeta. Você pode selecionar qualquer habilidade que
+corresponda à descrição planetária e aos códigos de comércio do seu
+planeta natal. Se você veio de um planeta já estabelecido no universo do
+Árbitro, consulte essas fontes para obter a descrição do planeta.</p>
+<h4 id="-1"><a class="header" href="#-1"></a></h4>
+<h4 id="tabela-habilidades-do-planeta-natal-por-descrição-planetária"><a class="header" href="#tabela-habilidades-do-planeta-natal-por-descrição-planetária">Tabela: Habilidades do planeta natal por descrição planetária</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Descritor</th><th>Habilidade</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Nenhuma lei</strong></td><td>Combate com armas-0</td></tr>
+<tr><td><strong>Lei de Baixo</strong></td><td>Combate com armas-0</td></tr>
+<tr><td><strong>Direito Médio</strong></td><td>Combate com armas-0</td></tr>
+<tr><td><strong>Direito Superior</strong></td><td>Combate corpo a corpo - 0</td></tr>
+</tbody>
+</table>
+</div>
+<h4 id="tabela-habilidades-do-mundo-doméstico-por-código-de-profissão"><a class="header" href="#tabela-habilidades-do-mundo-doméstico-por-código-de-profissão">Tabela: Habilidades do mundo doméstico por código de profissão</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Código comercial</th><th>Habilidade</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Agrícola</strong></td><td>Animais-0</td></tr>
+<tr><td><strong>Asteroide</strong></td><td>Zero-G-0</td></tr>
+<tr><td><strong>Deserto</strong></td><td>Sobrevivência-0</td></tr>
+<tr><td><strong>Oceanos fluidos</strong></td><td>Embarcação-0</td></tr>
+<tr><td><strong>Jardim</strong></td><td>Animais-0</td></tr>
+<tr><td><strong>Alta tecnologia</strong></td><td>Computador-0</td></tr>
+<tr><td><strong>População alta</strong></td><td>Streetwise-0</td></tr>
+<tr><td><strong>Coberto de gelo</strong></td><td>Zero-G-0</td></tr>
+<tr><td><strong>Industrial</strong></td><td>Corretor-0</td></tr>
+<tr><td><strong>Baixa tecnologia</strong></td><td>Sobrevivência-0</td></tr>
+<tr><td><strong>Ruim</strong></td><td>Animais-0</td></tr>
+<tr><td><strong>Rico</strong></td><td>Carruagem-0</td></tr>
+<tr><td><strong>Mundo aquático</strong></td><td>Embarcação-0</td></tr>
+<tr><td><strong>Vácuo</strong></td><td>Zero-G-0</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="habilidades-no-ensino-fundamental"><a class="header" href="#habilidades-no-ensino-fundamental">Habilidades no ensino fundamental</a></h3>
+<p>Uma educação formal lhe dá um nível básico de competência em várias
+ciências e disciplinas acadêmicas. Qualquer personagem pode escolher um
+dos itens da lista a seguir:</p>
+<blockquote>
+<p>Admin-0, Advocate-0, Animals-0, Carousing-0, Comms-0, Computer-0,
+Electronics-0, Engineering-0, Life Sciences-0, Linguistics-0,
+Mechanics-0, Medicine-0, Physical Sciences-0, Social Sciences-0, Space
+Sciences-0.</p>
+</blockquote>
+<h2 id="carreiras-1"><a class="header" href="#carreiras-1">Carreiras</a></h2>
+<p>Os personagens do Cepheus Engine não começam com a maioridade e entram
+imediatamente em jogo apenas com suas habilidades de fundo. Em vez
+disso, os personagens ganham experiência seguindo uma das vinte e quatro
+carreiras diferentes. A natureza aleatória das carreiras (também
+conhecida como história prévia ou carreiras anteriores) leva a
+personagens de todos os níveis de experiência e de todos os tipos de
+vida. Um personagem ganha mais habilidades quanto mais tempo permanecer
+na criação de personagem, mas não sem o risco de envelhecer. As escolhas
+do jogador terão grande impacto sobre a disposição final de um
+personagem.</p>
+<p>Em muitos momentos da carreira, o personagem terá de fazer algum tipo de
+lançamento. A maioria desses lançamentos são lançamentos
+característicos - role 2D6, adicione o DM da característica listada e
+tente obter um total maior que o valor listado. Um lançamento de Int 8+
+significa “role 2D6, adicione seu DM de Inteligência e você será
+bem-sucedido se rolar um 8 ou mais”. Alguns lançamentos são verificações
+de habilidade, em que você adiciona quaisquer níveis nessa habilidade e
+o DM de uma característica apropriada, se especificado. Por exemplo, um
+lançamento de Jogo 8+ significaria “role 2D6, adicione sua habilidade de
+Jogo e o DM de uma característica apropriada, como Destreza, se
+especificado, e obtenha mais de 8”.</p>
+<h3 id="descrições-de-carreira"><a class="header" href="#descrições-de-carreira">Descrições de carreira</a></h3>
+<p>Os vinte e quatro caminhos de carreira a seguir estão detalhados no
+final deste capítulo:</p>
+<ul>
+<li>
+<p><strong>Defesa do sistema aeroespacial</strong>: Membro de uma força militar armada
+planetária que opera dentro da atmosfera e da órbita próxima de um
+mundo. Também conhecido como “força aérea planetária”.</p>
+</li>
+<li>
+<p><strong>Agente</strong>: Indivíduo que coleta e relata secretamente informações
+sobre as atividades, os movimentos e os planos de um inimigo ou
+concorrente político ou corporativo. Também conhecido como espião ou
+agente de inteligência.</p>
+</li>
+<li>
+<p><strong>Atleta</strong>: Indivíduo que alcançou status de celebridade por sua
+proficiência em esportes e outras formas de exercício físico.</p>
+</li>
+<li>
+<p><strong>Bárbaro</strong>: indivíduo de um mundo primitivo (TL4 ou menos) capaz de
+sobreviver em seu mundo sem o apoio de uma civilização
+tecnologicamente avançada.</p>
+</li>
+<li>
+<p><strong>Belter</strong>: Indivíduo que explora cinturões de asteroides em busca de
+depósitos minerais e material recuperável para obter lucro.</p>
+</li>
+<li>
+<p><strong>Burocrata</strong>: Funcionário em um departamento do governo, encarregado
+de acompanhar os detalhes do processo administrativo.</p>
+</li>
+<li>
+<p><strong>Colonista</strong>: indivíduo que se muda para um novo mundo ou se
+estabelece em uma nova colônia planetária.</p>
+</li>
+<li>
+<p><strong>Diplomata</strong>: Indivíduo nomeado por um governo planetário ou
+interestelar para conduzir negociações oficiais e manter relações
+políticas, econômicas e sociais com outra(s) comunidade(s).</p>
+</li>
+<li>
+<p><strong>Andarilho</strong>: Indivíduo que se desloca continuamente de um lugar para
+outro, sem residência ou emprego fixos.</p>
+</li>
+<li>
+<p><strong>Animador</strong>: Indivíduo que alcançou o status de celebridade por sua
+proficiência em entreter outras pessoas em público.</p>
+</li>
+<li>
+<p><strong>Caçador</strong>: Indivíduo que mata ou aprisiona animais de grande porte,
+quase sempre grandes mamíferos terrestres, para obter carne, outros
+subprodutos animais (como chifre ou osso), troféu ou esporte.</p>
+</li>
+<li>
+<p><strong>Fuzileiro naval</strong>: Membro de uma força militar armada interestelar
+treinada para servir em uma variedade de ambientes, geralmente
+transportada a bordo de naves estelares como complemento de uma
+marinha interestelar. Também conhecido como “fuzileiros navais
+espaciais”.</p>
+</li>
+<li>
+<p><strong>Defesa do Sistema Marítimo</strong>: Membro de uma força militar armada
+planetária que opera dentro e na superfície dos oceanos de um mundo.
+Também conhecida como “marinha planetária úmida”.</p>
+</li>
+<li>
+<p><strong>Mercenário</strong>: Soldado profissional contratado para servir em uma
+força militar estrangeira ou realizar uma ação militar específica.</p>
+</li>
+<li>
+<p><strong>Comerciante</strong>: Indivíduo envolvido no comércio interestelar por
+atacado, particularmente entre mundos individuais ou cidades.</p>
+</li>
+<li>
+<p><strong>Marinha</strong>: Membro de uma força militar armada interestelar que
+realiza operações militares no espaço interplanetário ou interestelar.
+Também conhecida como “marinha espacial”.</p>
+</li>
+<li>
+<p><strong>Nobre</strong>: Membro de uma classe superior de elite, com status social
+ou político elevado.</p>
+</li>
+<li>
+<p><strong>Médico</strong>: Indivíduo que domina a ciência da medicina e é treinado e
+licenciado para tratar pessoas doentes e feridas.</p>
+</li>
+<li>
+<p><strong>Pirata</strong>: Indivíduo que ataca e rouba naves interplanetárias e
+interestelares no espaço.</p>
+</li>
+<li>
+<p><strong>Trapaceiro</strong>: Indivíduo que ganha a vida por meios ilícitos.</p>
+</li>
+<li>
+<p><strong>Cientista</strong>: Indivíduo que se dedica e tem conhecimento
+especializado de uma ciência, especialmente uma ciência biológica ou
+física.</p>
+</li>
+<li>
+<p><strong>Escoteiro</strong>: Membro de um serviço de exploração interplanetária,
+pesquisando um território desconhecido no espaço.</p>
+</li>
+<li>
+<p><strong>Defesa do sistema de superfície</strong>: Membro de uma força militar
+armada planetária que opera na superfície não hidrográfica de um
+mundo. Também conhecido como “exército planetário”.</p>
+</li>
+<li>
+<p><strong>Técnico</strong>: Indivíduo que tem habilidade em técnicas mecânicas ou
+industriais ou em um campo técnico específico.</p>
+</li>
+</ul>
+<h3 id="qualificação-e-o-draft"><a class="header" href="#qualificação-e-o-draft">Qualificação e o Draft</a></h3>
+<p>A verificação de qualificação determina se você pode entrar com sucesso
+na carreira escolhida. As carreiras militares usam Alistamento como
+descrição para essa rolagem em vez de qualificação. Se você falhar nessa
+verificação, não poderá entrar na carreira escolhida nesse período. Você
+deve se submeter ao recrutamento ou seguir a carreira de Drifter nesse
+período. Você sofre um DM-2 nas rolagens de qualificação para cada
+carreira anterior em que tenha entrado. Ao deixar uma carreira, você não
+poderá retornar a ela. O Rascunho e a carreira de Motorista são exceções
+a essa regra - você pode ser Rascunhado para uma carreira em que estava
+anteriormente, mas da qual foi expulso, e a carreira de Motorista está
+sempre aberta.</p>
+<h4 id="tabela-o-rascunho"><a class="header" href="#tabela-o-rascunho">Tabela: O rascunho</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Rolo</th><th>Carreira no Draft</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>1</strong></td><td>Defesa do sistema aeroespacial (Força Aérea Planetária)</td></tr>
+<tr><td><strong>2</strong></td><td>Marinha</td></tr>
+<tr><td><strong>3</strong></td><td>Defesa do Sistema Marítimo (Marinha Planetária)</td></tr>
+<tr><td><strong>4</strong></td><td>Marinha</td></tr>
+<tr><td><strong>5</strong></td><td>Escoteiro</td></tr>
+<tr><td><strong>6</strong></td><td>Defesa do sistema de superfície (Exército Planetário)</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="termos-de-serviço"><a class="header" href="#termos-de-serviço">Termos de Serviço</a></h2>
+<p>A cada etapa do ciclo de resolução de sua carreira, você passará por um
+período de serviço que dura aproximadamente quatro anos. Isso acrescenta
+quatro anos à idade do personagem. Cada vez que o personagem se alista
+novamente ou entra em uma nova carreira, é para outro período ou quatro
+anos adicionais de serviço.</p>
+<h2 id="treinamento-básico"><a class="header" href="#treinamento-básico">Treinamento básico</a></h2>
+<p>No primeiro período de uma nova carreira, você recebe Treinamento Básico
+à medida que aprende os fundamentos da carreira escolhida. Apenas na
+primeira carreira, você recebe todas as habilidades listadas na tabela
+de Habilidades de Serviço no Nível 0 como treinamento básico. Em todas
+as carreiras subsequentes, você pode escolher qualquer habilidade
+listada na tabela de Habilidades de Serviço no Nível 0 como seu
+treinamento básico.</p>
+<h2 id="sobrevivência"><a class="header" href="#sobrevivência">Sobrevivência</a></h2>
+<p>Cada carreira tem uma rolagem de sobrevivência. Se você falhar nessa
+rolagem, seu personagem estará morto e você deverá criar um novo. Um 2
+natural é sempre um fracasso.</p>
+<p><strong>Regra opcional</strong>: Com a aprovação do árbitro, você pode manter o
+personagem que falhou em uma rolagem de sobrevivência e, em vez disso,
+rolar na tabela Survival Mishaps (contratempos de sobrevivência). Esse
+contratempo é sempre suficiente para forçá-lo a deixar o serviço depois
+de meio período ou dois anos de serviço. Você perde a rolagem de
+benefício apenas para o período atual.</p>
+<h4 id="tabela-acidentes-de-sobrevivência"><a class="header" href="#tabela-acidentes-de-sobrevivência">Tabela: Acidentes de sobrevivência</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>1D6</th><th>Acidente</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>1</strong></td><td>Ferido em ação. (Isso é o mesmo que um resultado de 2 na tabela de ferimentos.) Como alternativa, role duas vezes na tabela de ferimentos e pegue o resultado mais baixo.</td></tr>
+<tr><td><strong>2</strong></td><td>Foi dispensado do serviço com honra.</td></tr>
+<tr><td><strong>3</strong></td><td>Foi dispensado do serviço com honra após uma longa batalha judicial. Os problemas legais geram uma dívida de Cr10.000.</td></tr>
+<tr><td><strong>4</strong></td><td>Dispensado do serviço por desonra. Perderá todos os benefícios.</td></tr>
+<tr><td><strong>5</strong></td><td>Dispensado do serviço com desonra após cumprir mais 4 anos de prisão por um crime. Perde todos os benefícios.</td></tr>
+<tr><td><strong>6</strong></td><td>Dispensado do serviço por motivos médicos. Faça o rolamento na tabela Injury (Ferimento).</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="comissão-e-promoção"><a class="header" href="#comissão-e-promoção">Comissão e promoção</a></h2>
+<p>Nas carreiras militares, um cheque de comissão representa uma
+oportunidade de ingressar nas fileiras dos oficiais comissionados. Em
+carreiras não militares, o cheque de comissão representa uma
+oportunidade de obter uma posição dentro da hierarquia comum à carreira
+escolhida. Algumas carreiras não têm uma hierarquia estabelecida e,
+portanto, não oferecem verificações de comissão. Um personagem que for
+bem-sucedido em uma rolagem de comissão se torna um oficial de nível 1
+nessa carreira e usa a tabela de nível de oficial a partir de então.
+Além disso, você ganha uma rolagem extra em qualquer uma das Tabelas de
+Habilidades e Treinamento para essa carreira. Um personagem pode tentar
+uma rolagem de comissão uma vez por período, e a tentativa de comissão é
+opcional. Um recruta não pode tentar uma verificação de comissão no
+primeiro período de serviço.</p>
+<p>Cada carreira que tem uma verificação de comissão também tem uma rolagem
+de avanço, que representa a capacidade do seu personagem de avançar nos
+níveis da hierarquia da carreira escolhida. Se você tiver o Rank 1 ou
+superior, poderá tentar uma rolagem de avanço a cada período. Se for
+bem-sucedido, você passa para o próximo nível e ganha uma rolagem extra
+em qualquer uma das Tabelas de Habilidades e Treinamento para essa
+carreira. Você também recebe todos os benefícios listados para seu novo
+nível. Você só pode tentar avançar uma vez por período e pode tentar
+avançar no mesmo período em que foi comissionado.</p>
+<p>As comissões e os avanços não estão disponíveis nas carreiras de Atleta,
+Bárbaro, Belter, Drifter, Animador, Caçador e Escoteiro.</p>
+<h2 id="habilidades-e-treinamento"><a class="header" href="#habilidades-e-treinamento">Habilidades e treinamento</a></h2>
+<p>Cada carreira tem tabelas de habilidades associadas a ela -
+Desenvolvimento pessoal, Habilidades de serviço, Habilidades
+especializadas e Educação avançada. Em cada período que você passa em
+uma carreira, escolha uma dessas tabelas e role 1D6 para ver qual
+habilidade você aumenta. Você só pode rolar na tabela de Educação
+Avançada se o seu personagem tiver Educação 8+.</p>
+<p>Como as carreiras de Atleta, Bárbaro, Belter, Drifter, Animador, Caçador
+e Escoteiro não têm verificações de comissão ou de avanço, os
+personagens podem fazer duas rolagens de habilidades em vez de uma a
+cada período.</p>
+<h3 id="habilidades-em-cascata"><a class="header" href="#habilidades-em-cascata">Habilidades em cascata</a></h3>
+<p>Algumas habilidades são “habilidades em cascata”, o que significa que
+elas têm especializações - formas especializadas dessa habilidade.
+Quando uma habilidade em cascata é selecionada, o personagem deve
+decidir imediatamente sobre uma especialização. Cada habilidade em
+cascata listará uma ou mais especializações que podem ser escolhidas. Ao
+subir de nível em uma especialização de habilidade em cascata, todas as
+outras especializações dessa habilidade sem níveis de habilidade são
+tratadas como habilidades de nível zero. Um personagem pode ter várias
+especializações em uma habilidade, como Natural Weapons-2 e Slashing
+Weapons-1, em Melee Combat (Combate corpo a corpo).</p>
+<h2 id="lesões"><a class="header" href="#lesões">Lesões</a></h2>
+<p>Os personagens que forem feridos em combate ou em acidentes durante a
+criação do personagem devem rolar na tabela Injury (Ferimento).</p>
+<h4 id="tabela-tabela-de-lesões"><a class="header" href="#tabela-tabela-de-lesões">Tabela: Tabela de lesões</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>1D6</th><th>Lesões</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>1</strong></td><td>Quase morto. Reduzir uma característica física em 1D6, reduzir ambas as outras características físicas em 2 (ou uma delas em 4).</td></tr>
+<tr><td><strong>2</strong></td><td>Gravemente ferido. Reduzir uma característica física em 1D6.</td></tr>
+<tr><td><strong>3</strong></td><td>Falta de um olho ou membro. Reduzir a força ou a destreza em 2.</td></tr>
+<tr><td><strong>4</strong></td><td>Cicatrizado. Você tem cicatrizes e está ferido. Reduzir qualquer característica física em 2.</td></tr>
+<tr><td><strong>5</strong></td><td>Ferido. Reduzir qualquer característica física em 1.</td></tr>
+<tr><td><strong>6</strong></td><td>Levemente ferido. Nenhum efeito permanente.</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="crise-de-lesões"><a class="header" href="#crise-de-lesões">Crise de lesões</a></h3>
+<p>Se alguma característica for reduzida a 0, o personagem sofrerá uma
+crise de lesão. O personagem morre, a menos que possa pagar 1D6x10.000
+Créditos por cuidados médicos, o que fará com que qualquer
+característica volte a ser 1. O personagem falha automaticamente em
+qualquer verificação de Qualificação a partir de agora - ele deve
+continuar na carreira em que está ou se tornar um Vagabundo se quiser
+aceitar mais termos.</p>
+<h3 id="cuidados-médicos"><a class="header" href="#cuidados-médicos">Cuidados médicos</a></h3>
+<p>Se o seu personagem tiver sido ferido, os cuidados médicos poderão
+desfazer os efeitos do dano. A restauração de uma característica perdida
+custa Cr5.000 por ponto.</p>
+<p>Se o seu personagem foi ferido a serviço de um patrono ou organização,
+uma parte de seu tratamento médico pode ser paga por esse patrono. Role
+2D6 na tabela abaixo, adicionando sua classificação como DM. O resultado
+é quanto de seu tratamento médico é pago por seu empregador.</p>
+<h4 id="tabela-contas-médicas"><a class="header" href="#tabela-contas-médicas">Tabela: Contas médicas</a></h4>
+<table>
+<colgroup>
+<col style="width: 66%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 11%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Carreira</strong></td>
+<td><strong>Rolagem de 4+</strong></td>
+<td><strong>Rolagem de 8+</strong></td>
+<td><strong>Rolagem de 12+</strong></td>
+</tr>
+
+<tr class="even">
+<td>
+<p><strong>Defesa do sistema aeroespacial, Marinha, Defesa do
+sistema marítimo, Marinha,</strong></p>
+
+<p><strong>Scout, Defesa do Sistema de Superfície</strong></p>
+</td>
+<td>75%</td>
+<td>100%</td>
+<td>100%</td>
+</tr>
+
+<tr class="odd">
+<td>
+<p><strong>Agente, Atleta, Burocrata, Diplomata, Animador, Caçador,
+Mercenário,</strong></p>
+
+<p><strong>Comerciante, Nobre, Médico, Pirata, Cientista,
+Técnico</strong></p>
+</td>
+<td>50%</td>
+<td>75%</td>
+<td>100%</td>
+</tr>
+
+<tr class="even">
+<td><strong>Bárbaro, Belter, Colonista, Andarilho, Ladino</strong></td>
+<td>0%</td>
+<td>50%</td>
+<td>75%</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<h3 id="dívida-médica"><a class="header" href="#dívida-médica">Dívida médica</a></h3>
+<p>Durante os retoques finais, você deve pagar quaisquer custos pendentes
+de cuidados médicos ou medicamentos anagráficos com seus Benefícios
+antes de qualquer outra coisa.</p>
+<h2 id="envelhecimento"><a class="header" href="#envelhecimento">Envelhecimento</a></h2>
+<p>Os efeitos do envelhecimento começam quando o personagem atinge 34 anos
+de idade. No final do quarto período, e no final de cada período
+subsequente, o personagem deve rolar 2D6 na Tabela de Envelhecimento.
+Aplique o número total de termos do personagem como um modificador de
+dados negativo nessa tabela.</p>
+<h4 id="tabela-tabela-de-envelhecimento"><a class="header" href="#tabela-tabela-de-envelhecimento">Tabela: Tabela de envelhecimento</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>2D6</strong></td><td><strong>Efeitos do envelhecimento</strong></td></tr>
+<tr><td><strong>-6</strong></td><td>Reduzir três características físicas em 2, reduzir uma característica mental em 1</td></tr>
+<tr><td><strong>-5</strong></td><td>Reduzir três características físicas em 2.</td></tr>
+<tr><td><strong>-4</strong></td><td>Reduzir duas características físicas em 2, reduzir uma característica física em 1</td></tr>
+<tr><td><strong>-3</strong></td><td>Reduzir uma característica física em 2, reduzir duas características físicas em 1</td></tr>
+<tr><td><strong>-2</strong></td><td>Reduzir três características físicas em 1</td></tr>
+<tr><td><strong>-1</strong></td><td>Reduzir duas características físicas em 1</td></tr>
+<tr><td><strong>0</strong></td><td>Reduzir uma característica física em 1</td></tr>
+<tr><td><strong>1+</strong></td><td>Sem efeito</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="crise-do-envelhecimento"><a class="header" href="#crise-do-envelhecimento">Crise do envelhecimento</a></h3>
+<p>Se alguma característica for reduzida a 0 devido ao envelhecimento, o
+personagem sofrerá uma crise de envelhecimento. O personagem morre, a
+menos que possa pagar 1D6x10.000 Créditos por cuidados médicos, o que
+fará com que qualquer característica volte a ser 1. O personagem falha
+automaticamente em qualquer verificação de Qualificação a partir de
+agora - ele deve continuar na carreira em que está ou se tornar um
+Vagabundo se quiser aceitar mais termos.</p>
+<h3 id="anagráficos"><a class="header" href="#anagráficos">Anagráficos</a></h3>
+<p>Enquanto estiver usando drogas anagásicas, o personagem efetivamente não
+envelhece - adicione o número de termos desde que o personagem começou a
+tomar anagásicos como um modificador de dados positivo para os
+lançamentos na tabela de envelhecimento. Se um personagem parar de tomar
+anagáricos, ele deverá rolar imediatamente na tabela de envelhecimento
+para simular o choque resultante do fato de seu sistema começar a
+envelhecer novamente.</p>
+<p>O risco de tentar obter um suprimento confiável e a interrupção da
+bioquímica do personagem significam que o personagem deve fazer uma
+segunda verificação de Sobrevivência se passar na primeira verificação
+de Sobrevivência em um período. Se qualquer um dos testes falhar, o
+personagem sofrerá um acidente e será ejetado da carreira.</p>
+<p>Os medicamentos custam 1D6x2.500 créditos para cada período em que o
+personagem usa os medicamentos. Esses custos são pagos com os eventuais
+benefícios em dinheiro do personagem. Se o personagem não puder pagar
+essas contas, ele se endividará.</p>
+<h2 id="alistamento-e-aposentadoria"><a class="header" href="#alistamento-e-aposentadoria">Alistamento e aposentadoria</a></h2>
+<p>Ao final de cada período, o personagem deve decidir se deseja continuar
+em sua carreira ou se deseja se alistar. Se desejar continuar, o
+personagem deve fazer uma verificação de alistamento bem-sucedida,
+conforme listado para sua profissão ou serviço atual. Se o personagem
+obtiver um 12 natural, não poderá deixar sua carreira atual e deverá
+continuar por mais um período. Se a verificação não for bem-sucedida, o
+personagem não poderá se alistar novamente e deverá deixar sua carreira
+atual.</p>
+<p>Um personagem que tenha cumprido 7 ou mais mandatos na criação do
+personagem deve se aposentar e não pode realizar mais nenhuma
+experiência anterior, a menos que role um 12 natural durante o
+Reenlistment e tenha que cumprir outro mandato de serviço.</p>
+<p><strong>Regra opcional</strong>: O árbitro pode querer alterar o número máximo de
+termos gastos na criação do personagem de 7 para outra coisa. Por
+exemplo, o árbitro pode achar que os personagens criados até um máximo
+de 3 ou até 4 termos estão no auge de suas vidas, mas não tão
+experientes a ponto de não aproveitarem as oportunidades de aventura que
+se apresentarem.</p>
+<p><strong>Regra opcional</strong>: em alguns universos, o árbitro pode optar por
+remover totalmente o número máximo de termos gastos na criação do
+personagem.</p>
+<p>Um personagem que tenha cumprido 5 ou mais mandatos em um único serviço
+recebe uma pensão de aposentadoria anual, mesmo que mais tarde se torne
+um aventureiro.</p>
+<h4 id="tabela-pagamento-de-aposentadoria-por-tempo-de-serviço"><a class="header" href="#tabela-pagamento-de-aposentadoria-por-tempo-de-serviço">Tabela: Pagamento de aposentadoria por tempo de serviço</a></h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Termos</strong></td><td><strong>Pagamento anual de aposentadoria</strong></td></tr>
+<tr><td><strong>5</strong></td><td>Cr10.000</td></tr>
+<tr><td><strong>6</strong></td><td>Cr12.000</td></tr>
+<tr><td><strong>7</strong></td><td>Cr14.000</td></tr>
+<tr><td><strong>8</strong></td><td>Cr16.000</td></tr>
+<tr><td><strong>9+</strong></td><td>+Cr2.000 por período além de 8</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="benefícios-do-mustering-out"><a class="header" href="#benefícios-do-mustering-out">Benefícios do Mustering Out</a></h2>
+<p>Os personagens que encerram suas carreiras recebem um benefício por
+período servido no qual não perderam benefícios. Um benefício adicional
+é obtido se o personagem tiver o posto O4 e dois para o posto O5. Um
+personagem com classificação O6 recebe três benefícios adicionais.</p>
+<h3 id="benefícios-em-dinheiro"><a class="header" href="#benefícios-em-dinheiro">Benefícios em dinheiro</a></h3>
+<p>Até 3 rolagens de benefícios podem ser feitas na tabela de dinheiro.
+Todos os outros devem ser obtidos em benefícios materiais. Personagens
+com habilidade de Jogo ou que tenham se aposentado ganham +1 nas
+rolagens de Benefício em Dinheiro.</p>
+<h3 id="benefícios-materiais"><a class="header" href="#benefícios-materiais">Benefícios materiais</a></h3>
+<p>Os benefícios materiais podem ser alterações de características,
+passagens ou compartilhamento de navios. A associação à Sociedade de
+Exploradores é possível e os recebimentos subsequentes de benefícios de
+armas podem ser considerados como níveis de habilidade. Observe que os
+personagens de nível O5 ou O6 ganham +1 nas rolagens de Benefício
+Material.</p>
+<ul>
+<li>
+<p><strong>Nave Courier</strong>: O personagem é considerado em serviço destacado com
+o serviço de exploração de batedores e recebeu o uso de uma nave
+estelar Courier TL9 excedente de 100 toneladas em uma base de reserva.
+O serviço de exploração de batedores também fornece manutenção e
+combustível gratuitos em qualquer base de batedores. Todas as outras
+despesas da nave são de responsabilidade do personagem. Embora o
+personagem tenha liberdade para usar a nave como achar melhor, a nave
+ainda pertence ao serviço de exploração de batedores e, portanto, não
+pode ser abandonada ou vendida sem consequências. Em troca do uso da
+embarcação, o personagem e a embarcação são considerados disponíveis
+para retornar ao serviço ativo a qualquer momento, caso o serviço de
+exploração de escoteiros precise.</p>
+</li>
+<li>
+<p><strong>Sociedade dos Exploradores</strong>: O personagem é membro da prestigiosa
+Sociedade de Exploradores. A Sociedade de Exploradores fornecerá aos
+membros um bilhete de passagem alta gratuito a cada dois meses, além
+de acesso à rede de informações da Sociedade e aos resorts
+administrados pela Sociedade. Esse benefício só pode ser recebido uma
+vez; qualquer outro recebimento não traz nenhum benefício adicional.
+Após a criação do personagem, os personagens podem adquirir a filiação
+à Sociedade de Exploradores. Uma solicitação bem-sucedida de
+associação vitalícia requer um teste de administração de rotina (-2)
+modificado pela posição social do personagem e, se aceito, um
+pagamento de Cr1.000.000. A falha no processo de inscrição indica que
+o personagem foi incluído em uma lista negra. Se um personagem tiver
+sido incluído em uma lista negra, a Sociedade de Exploradores não
+aceitará mais solicitações de associação dele. A associação não é
+reembolsável e não é transferível.</p>
+</li>
+<li>
+<p><strong>Passagem</strong>: O personagem tem uma única passagem do tipo nomeado
+(baixa, média, alta) para viajar em uma nave estelar. Ela é válida
+para um salto para qualquer destino.</p>
+</li>
+<li>
+<p><strong>Navio de pesquisa</strong>: Uma fundação científica, uma corporação
+interestelar ou algum outro patrono igualmente abastado concedeu ao
+personagem o uso de um Navio de Pesquisa TL9 de 200 toneladas. Todas
+as despesas da nave, com exceção da manutenção anual, são de
+responsabilidade do personagem. Essa nave ainda pertence ao patrono e,
+portanto, não pode ser vendida ou abandonada sem consequências.</p>
+</li>
+<li>
+<p><strong>Ações de navios</strong>: As ações de navios podem ser recebidas como
+benefícios. Cada ação de nave vale aproximadamente Cr2.000.000 para a
+compra de uma nave. Uma nave estelar pode ser comprada por um quinto
+de seu valor base com um empréstimo de 40 anos. Para cada um quinto de
+seu valor base pago ao banco em ações da nave ou em dinheiro, o
+período do empréstimo é reduzido em dez anos. As ações do navio não
+podem ser resgatadas em dinheiro.</p>
+</li>
+<li>
+<p><strong>Arma</strong>: o personagem deixa o serviço com uma arma apropriada
+(pistola ou lâmina). Quando uma arma é adquirida como benefício,
+recibos adicionais da arma podem ser adquiridos como perícia nessa
+arma. O indivíduo é sempre livre para obter exemplos físicos
+adicionais das armas em vez de níveis de habilidade, se assim desejar.</p>
+</li>
+</ul>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Carreira</strong></td><td><strong>Atleta</strong></td><td><strong>Defesa aeroespacial</strong></td><td><strong>Agente</strong></td><td><strong>Bárbaro</strong></td><td><strong>Belter</strong></td><td><strong>Burocrata</strong></td></tr>
+<tr><td><strong>Qualificações</strong></td><td>Fim 8+</td><td>Fim 5+</td><td>Soc 6+</td><td>Fim 5+</td><td>Int 4+</td><td>Soc 6+</td></tr>
+<tr><td><strong>Sobrevivência</strong></td><td>Dex 5+</td><td>Dex 5+</td><td>Int 6+</td><td>Força 6+</td><td>Dex 7+</td><td>Edu 4+</td></tr>
+<tr><td><strong>Comissão</strong></td><td>–</td><td>Edu 6+</td><td>Edu 7+</td><td>–</td><td>–</td><td>Soc 5+</td></tr>
+<tr><td><strong>Avanço</strong></td><td>–</td><td>Edu 7+</td><td>Edu 6+</td><td>–</td><td>–</td><td>Int 8+</td></tr>
+<tr><td><strong>Recadastramento</strong></td><td>6+</td><td>5+</td><td>6+</td><td>5+</td><td>5+</td><td>5+</td></tr>
+<tr><td><strong>Classificações e habilidades</strong></td><td>Atleta</td><td>Aeroespacial</td><td>Agente</td><td>Bárbaro</td><td>Belter</td><td>Burocrata</td></tr>
+<tr><td><strong>0</strong></td><td>[Atletismo-1]</td><td>Aviador [Aeronave-1]</td><td>Agente [Streetwise-1]</td><td>[Combate corpo a corpo-1]</td><td>[Zero-G-1]</td><td>Assistente [Admin-1]</td></tr>
+<tr><td><strong>1</strong></td><td>–</td><td>Oficial de Voo</td><td>Agente Especial</td><td>–</td><td>–</td><td>Escriturário</td></tr>
+<tr><td><strong>2</strong></td><td>–</td><td>Tenente de Voo</td><td>Agente responsável pela Sp</td><td>–</td><td>–</td><td>Supervisor</td></tr>
+<tr><td><strong>3</strong></td><td>–</td><td>Líder de esquadrão [Liderança-1]</td><td>Chefe de unidade</td><td>–</td><td>–</td><td>Gerente</td></tr>
+<tr><td><strong>4</strong></td><td>–</td><td>Comandante de asa</td><td>Chefe de Seção [Admin-1]</td><td>–</td><td>–</td><td>Chefe [Advogado-1]</td></tr>
+<tr><td><strong>5</strong></td><td>–</td><td>Capitão de Grupo</td><td>Diretório de assistentes</td><td>–</td><td>–</td><td>Diretor</td></tr>
+<tr><td><strong>6</strong></td><td>–</td><td>Comodoro do Ar</td><td>Diretor</td><td>–</td><td>–</td><td>Ministro</td></tr>
+<tr><td><strong>Benefícios materiais</strong></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><strong>1</strong></td><td>Passagem baixa</td><td>Passagem baixa</td><td>Passagem baixa</td><td>Passagem baixa</td><td>Passagem baixa</td><td>Passagem baixa</td></tr>
+<tr><td><strong>2</strong></td><td>+1 Int</td><td>+1 Edu</td><td>+1 Int</td><td>+1 Int</td><td>+1 Int</td><td>+1 Edu</td></tr>
+<tr><td><strong>3</strong></td><td>Arma</td><td>Arma</td><td>Arma</td><td>Arma</td><td>Arma</td><td>+1 Int</td></tr>
+<tr><td><strong>4</strong></td><td>Alta Passagem</td><td>Passagem intermediária</td><td>Passagem intermediária</td><td>Arma</td><td>Passagem intermediária</td><td>Passagem intermediária</td></tr>
+<tr><td><strong>5</strong></td><td>Sociedade de Exploradores</td><td>Arma</td><td>+1 Soc</td><td>+1 Fim</td><td>Ações de navios 1D6</td><td>Passagem intermediária</td></tr>
+<tr><td><strong>6</strong></td><td>Alta Passagem</td><td>Alta Passagem</td><td>Alta Passagem</td><td>Passagem intermediária</td><td>Alta Passagem</td><td>Alta Passagem</td></tr>
+<tr><td><strong>7</strong></td><td>–</td><td>+1 Soc</td><td>Sociedade de Exploradores</td><td>–</td><td>–</td><td>+1 Soc</td></tr>
+<tr><td><strong>Benefícios em dinheiro</strong></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><strong>1</strong></td><td>2000</td><td>1000</td><td>1000</td><td>0</td><td>1000</td><td>1000</td></tr>
+<tr><td><strong>2</strong></td><td>10000</td><td>5000</td><td>5000</td><td>1000</td><td>5000</td><td>5000</td></tr>
+<tr><td><strong>3</strong></td><td>20000</td><td>10000</td><td>10000</td><td>2000</td><td>5000</td><td>10000</td></tr>
+<tr><td><strong>4</strong></td><td>20000</td><td>10000</td><td>10000</td><td>5000</td><td>5000</td><td>10000</td></tr>
+<tr><td><strong>5</strong></td><td>50000</td><td>20000</td><td>20000</td><td>5000</td><td>10000</td><td>20000</td></tr>
+<tr><td><strong>6</strong></td><td>100000</td><td>50000</td><td>50000</td><td>10000</td><td>20000</td><td>50000</td></tr>
+<tr><td><strong>7</strong></td><td>100000</td><td>50000</td><td>50000</td><td>10000</td><td>50000</td><td>50000</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Carreira</strong></td><td><strong>Atleta</strong></td><td><strong>Defesa aeroespacial</strong></td><td><strong>Agente</strong></td><td><strong>Bárbaro</strong></td><td><strong>Belter</strong></td><td><strong>Burocrata</strong></td></tr>
+<tr><td><strong>Habilidades e treinamento</strong></td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td></tr>
+<tr><td><strong>1</strong></td><td>+1 Dex</td><td>+1 Str</td><td>+1 Dex</td><td>+1 Str</td><td>+1 Str</td><td>+1 Dex</td></tr>
+<tr><td><strong>2</strong></td><td>+1 Int</td><td>+1 Dex</td><td>+1 Fim</td><td>+1 Dex</td><td>+1 Dex</td><td>+1 Fim</td></tr>
+<tr><td><strong>3</strong></td><td>+1 Edu</td><td>+1 Fim</td><td>+1 Int</td><td>+1 Fim</td><td>+1 Fim</td><td>+1 Int</td></tr>
+<tr><td><strong>4</strong></td><td>+1 Soc</td><td>Atletismo</td><td>+1 Edu</td><td>+1 Int</td><td>Zero-G</td><td>+1 Edu</td></tr>
+<tr><td><strong>5</strong></td><td>Carousing</td><td>Combate corpo a corpo</td><td>Atletismo</td><td>Atletismo</td><td>Combate corpo a corpo</td><td>Atletismo</td></tr>
+<tr><td><strong>6</strong></td><td>Combate corpo a corpo</td><td>Veículo</td><td>Carousing</td><td>Combate com armas</td><td>Jogos de azar</td><td>Carousing</td></tr>
+<tr><td></td><td>Habilidades de serviço</td><td>Habilidades de serviço</td><td>Habilidades de serviço</td><td>Habilidades de serviço</td><td>Habilidades de serviço</td><td>Habilidades de serviço</td></tr>
+<tr><td><strong>1</strong></td><td>Atletismo</td><td>Eletrônicos</td><td>Administrador</td><td>Mecânica</td><td>Comunicações</td><td>Administrador</td></tr>
+<tr><td><strong>2</strong></td><td>Administrador</td><td>Combate com armas</td><td>Computador</td><td>Combate com armas</td><td>Demolições</td><td>Computador</td></tr>
+<tr><td><strong>3</strong></td><td>Carousing</td><td>Artilharia</td><td>Streetwise</td><td>Combate corpo a corpo</td><td>Combate com armas</td><td>Carousing</td></tr>
+<tr><td><strong>4</strong></td><td>Computador</td><td>Combate corpo a corpo</td><td>Suborno</td><td>Reconhecimento</td><td>Artilharia</td><td>Suborno</td></tr>
+<tr><td><strong>5</strong></td><td>Jogos de azar</td><td>Sobrevivência</td><td>Liderança</td><td>Sobrevivência</td><td>Prospecção</td><td>Liderança</td></tr>
+<tr><td><strong>6</strong></td><td>Veículo</td><td>Aeronaves</td><td>Veículo</td><td>Animais</td><td>Pilotagem</td><td>Veículo</td></tr>
+<tr><td></td><td>Especialista</td><td>Especialista</td><td>Especialista</td><td>Especialista</td><td>Especialista</td><td>Especialista</td></tr>
+<tr><td><strong>1</strong></td><td>Zero-G</td><td>Comunicações</td><td>Combate com armas</td><td>Combate com armas</td><td>Zero-G</td><td>Administrador</td></tr>
+<tr><td><strong>2</strong></td><td>Atletismo</td><td>Graviética</td><td>Combate corpo a corpo</td><td>Jack o’ Trades</td><td>Computador</td><td>Computador</td></tr>
+<tr><td><strong>3</strong></td><td>Atletismo</td><td>Combate com armas</td><td>Suborno</td><td>Combate corpo a corpo</td><td>Eletrônicos</td><td>Percepção</td></tr>
+<tr><td><strong>4</strong></td><td>Computador</td><td>Artilharia</td><td>Liderança</td><td>Reconhecimento</td><td>Prospecção</td><td>Liderança</td></tr>
+<tr><td><strong>5</strong></td><td>Liderança</td><td>Reconhecimento</td><td>Reconhecimento</td><td>Animais</td><td>Ciências</td><td>Administrador</td></tr>
+<tr><td><strong>6</strong></td><td>Jogos de azar</td><td>Pilotagem</td><td>Sobrevivência</td><td>Táticas</td><td>Veículo</td><td>Veículo</td></tr>
+<tr><td></td><td>Educação Avançada</td><td>Educação Avançada</td><td>Educação Avançada</td><td>Educação Avançada</td><td>Educação Avançada</td><td>Educação Avançada</td></tr>
+<tr><td><strong>1</strong></td><td>Advogado</td><td>Advogado</td><td>Advogado</td><td>Advogado</td><td>Advogado</td><td>Advogado</td></tr>
+<tr><td><strong>2</strong></td><td>Computador</td><td>Computador</td><td>Computador</td><td>Linguística</td><td>Engenharia</td><td>Computador</td></tr>
+<tr><td><strong>3</strong></td><td>Contato</td><td>Jack o’ Trades</td><td>Contato</td><td>Medicina</td><td>Medicina</td><td>Contato</td></tr>
+<tr><td><strong>4</strong></td><td>Linguística</td><td>Medicina</td><td>Linguística</td><td>Liderança</td><td>Navegação</td><td>Linguística</td></tr>
+<tr><td><strong>5</strong></td><td>Medicina</td><td>Liderança</td><td>Medicina</td><td>Táticas</td><td>Comunicações</td><td>Medicina</td></tr>
+<tr><td><strong>6</strong></td><td>Ciências</td><td>Táticas</td><td>Liderança</td><td>Corretor</td><td>Táticas</td><td>Administrador</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Carreira</strong></td><td><strong>Colonista</strong></td><td><strong>Diplomata</strong></td><td><strong>Motorista</strong></td><td><strong>Animador</strong></td><td><strong>Caçador</strong></td><td><strong>Marinha</strong></td></tr>
+<tr><td><strong>Qualificações</strong></td><td>Fim 5+</td><td>Soc 6+</td><td>Dex 5+</td><td>Soc 8+</td><td>Fim 5+</td><td>Int 6+</td></tr>
+<tr><td><strong>Sobrevivência</strong></td><td>Fim 6+</td><td>Edu 5+</td><td>Fim 5+</td><td>Int 4+</td><td>Força 8+</td><td>Fim 6+</td></tr>
+<tr><td><strong>Comissão</strong></td><td>Int 7+</td><td>Int 7+</td><td>–</td><td>–</td><td>–</td><td>Edu 6+</td></tr>
+<tr><td><strong>Avanço</strong></td><td>Edu 6+</td><td>Soc 7+</td><td>–</td><td>–</td><td>–</td><td>Soc 7+</td></tr>
+<tr><td><strong>Recadastramento</strong></td><td>5+</td><td>5+</td><td>5+</td><td>6+</td><td>6+</td><td>6+</td></tr>
+<tr><td><strong>Classificações e habilidades</strong></td><td>Colonista</td><td>Diplomata</td><td>Motorista</td><td>Animador</td><td>Caçador</td><td>Marinha</td></tr>
+<tr><td><strong>0</strong></td><td>Cidadão [Survival-1]</td><td>Adido [Liaison-1]</td><td>–</td><td>[Carousing-1]</td><td>[Sobrevivência-1]</td><td>Soldado [Zero-G-1]</td></tr>
+<tr><td><strong>1</strong></td><td>Líder de distrito</td><td>Terceiro Secretário</td><td>–</td><td>–</td><td>–</td><td>Tenente</td></tr>
+<tr><td><strong>2</strong></td><td>Delegado distrital</td><td>Segundo Secretário</td><td>–</td><td>–</td><td>–</td><td>Capitão</td></tr>
+<tr><td><strong>3</strong></td><td>Conselheiro do Conselho [Liaision-1]</td><td>Primeiro Secretário [Admin-1]</td><td>–</td><td>–</td><td>–</td><td>Major [Tática-1]</td></tr>
+<tr><td><strong>4</strong></td><td>Conselheiro</td><td>Conselheiro</td><td>–</td><td>–</td><td>–</td><td>Tenente-coronel</td></tr>
+<tr><td><strong>5</strong></td><td>Tenente Governador</td><td>Ministro</td><td>–</td><td>–</td><td>–</td><td>Coronel</td></tr>
+<tr><td><strong>6</strong></td><td>Governador</td><td>Embaixador</td><td>–</td><td>–</td><td>–</td><td>Brigadeiro</td></tr>
+<tr><td><strong>Benefícios materiais</strong></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><strong>1</strong></td><td>Passagem baixa</td><td>Passagem baixa</td><td>Passagem baixa</td><td>Passagem baixa</td><td>Passagem baixa</td><td>Passagem baixa</td></tr>
+<tr><td><strong>2</strong></td><td>+1 Int</td><td>+1 Edu</td><td>+1 Int</td><td>+1 Edu</td><td>+1 Int</td><td>+1 Edu</td></tr>
+<tr><td><strong>3</strong></td><td>Arma</td><td>Passagem intermediária</td><td>Arma</td><td>+1 Soc</td><td>Arma</td><td>Arma</td></tr>
+<tr><td><strong>4</strong></td><td>Passagem intermediária</td><td>Alta Passagem</td><td>Arma</td><td>Alta Passagem</td><td>Alta Passagem</td><td>Passagem intermediária</td></tr>
+<tr><td><strong>5</strong></td><td>Passagem intermediária</td><td>+1 Soc</td><td>Passagem intermediária</td><td>Sociedade de Exploradores</td><td>Ações de navios 1D6</td><td>+1 Soc</td></tr>
+<tr><td><strong>6</strong></td><td>Alta Passagem</td><td>Alta Passagem</td><td>Passagem intermediária</td><td>Alta Passagem</td><td>Alta Passagem</td><td>Alta Passagem</td></tr>
+<tr><td><strong>7</strong></td><td>+1 Soc</td><td>Sociedade de Exploradores</td><td>–</td><td>–</td><td>–</td><td>Sociedade de Exploradores</td></tr>
+<tr><td><strong>Benefícios em dinheiro</strong></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><strong>1</strong></td><td>1000</td><td>1000</td><td>0</td><td>2000</td><td>1000</td><td>1000</td></tr>
+<tr><td><strong>2</strong></td><td>5000</td><td>5000</td><td>1000</td><td>10000</td><td>5000</td><td>5000</td></tr>
+<tr><td><strong>3</strong></td><td>5000</td><td>10000</td><td>2000</td><td>20000</td><td>10000</td><td>10000</td></tr>
+<tr><td><strong>4</strong></td><td>5000</td><td>20000</td><td>5000</td><td>20000</td><td>20000</td><td>10000</td></tr>
+<tr><td><strong>5</strong></td><td>10000</td><td>20000</td><td>5000</td><td>50000</td><td>20000</td><td>20000</td></tr>
+<tr><td><strong>6</strong></td><td>20000</td><td>50000</td><td>10000</td><td>100000</td><td>50000</td><td>50000</td></tr>
+<tr><td><strong>7</strong></td><td>50000</td><td>100000</td><td>10000</td><td>100000</td><td>100000</td><td>50000</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Carreira</strong></td><td><strong>Colonista</strong></td><td><strong>Diplomata</strong></td><td><strong>Motorista</strong></td><td><strong>Animador</strong></td><td><strong>Caçador</strong></td><td><strong>Marinha</strong></td></tr>
+<tr><td><strong>Habilidades e treinamento</strong></td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td></tr>
+<tr><td><strong>1</strong></td><td>+1 Str</td><td>+1 Dex</td><td>+1 Str</td><td>+1 Dex</td><td>+1 Str</td><td>+1 Str</td></tr>
+<tr><td><strong>2</strong></td><td>+1 Dex</td><td>+1 Fim</td><td>+1 Dex</td><td>+1 Int</td><td>+1 Dex</td><td>+1 Dex</td></tr>
+<tr><td><strong>3</strong></td><td>+1 Fim</td><td>+1 Int</td><td>+1 Fim</td><td>+1 Edu</td><td>+1 Fim</td><td>+1 Fim</td></tr>
+<tr><td><strong>4</strong></td><td>+1 Int</td><td>+1 Edu</td><td>Combate corpo a corpo</td><td>+1 Soc</td><td>+1 Int</td><td>+1 Int</td></tr>
+<tr><td><strong>5</strong></td><td>Atletismo</td><td>Atletismo</td><td>Suborno</td><td>Carousing</td><td>Atletismo</td><td>+1 Edu</td></tr>
+<tr><td><strong>6</strong></td><td>Combate com armas</td><td>Carousing</td><td>Jogos de azar</td><td>Combate corpo a corpo</td><td>Combate com armas</td><td>Combate corpo a corpo</td></tr>
+<tr><td></td><td>Habilidades de serviço</td><td>Habilidades de serviço</td><td>Habilidades de serviço</td><td>Habilidades de serviço</td><td>Habilidades de serviço</td><td>Habilidades de serviço</td></tr>
+<tr><td><strong>1</strong></td><td>Mecânica</td><td>Administrador</td><td>De olho nas ruas</td><td>Atletismo</td><td>Mecânica</td><td>Comunicações</td></tr>
+<tr><td><strong>2</strong></td><td>Combate com armas</td><td>Computador</td><td>Mecânica</td><td>Administrador</td><td>Combate com armas</td><td>Demolições</td></tr>
+<tr><td><strong>3</strong></td><td>Animais</td><td>Carousing</td><td>Combate com armas</td><td>Carousing</td><td>Combate corpo a corpo</td><td>Combate com armas</td></tr>
+<tr><td><strong>4</strong></td><td>Eletrônicos</td><td>Suborno</td><td>Combate corpo a corpo</td><td>Suborno</td><td>Reconhecimento</td><td>Artilharia</td></tr>
+<tr><td><strong>5</strong></td><td>Sobrevivência</td><td>Ligação</td><td>Reconhecimento</td><td>Jogos de azar</td><td>Sobrevivência</td><td>Combate corpo a corpo</td></tr>
+<tr><td><strong>6</strong></td><td>Veículo</td><td>Veículo</td><td>Veículo</td><td>Veículo</td><td>Veículo</td><td>Vestido de batalha</td></tr>
+<tr><td></td><td>Especialista</td><td>Especialista</td><td>Especialista</td><td>Especialista</td><td>Especialista</td><td>Especialista</td></tr>
+<tr><td><strong>1</strong></td><td>Atletismo</td><td>Carousing</td><td>Eletrônicos</td><td>Computador</td><td>Administrador</td><td>Eletrônicos</td></tr>
+<tr><td><strong>2</strong></td><td>Carousing</td><td>Linguística</td><td>Combate corpo a corpo</td><td>Carousing</td><td>Comunicações</td><td>Combate com armas</td></tr>
+<tr><td><strong>3</strong></td><td>Jack o’ Trades</td><td>Suborno</td><td>Suborno</td><td>Suborno</td><td>Eletrônicos</td><td>Combate corpo a corpo</td></tr>
+<tr><td><strong>4</strong></td><td>Engenharia</td><td>Contato</td><td>Streetwise</td><td>Contato</td><td>Reconhecimento</td><td>Sobrevivência</td></tr>
+<tr><td><strong>5</strong></td><td>Animais</td><td>Administrador</td><td>Jogos de azar</td><td>Jogos de azar</td><td>Animais</td><td>Reconhecimento</td></tr>
+<tr><td><strong>6</strong></td><td>Veículo</td><td>Veículo</td><td>Reconhecimento</td><td>Reconhecimento</td><td>Veículo</td><td>Veículo</td></tr>
+<tr><td></td><td>Educação Avançada</td><td>Educação Avançada</td><td>Educação Avançada</td><td>Educação Avançada</td><td>Educação Avançada</td><td>Educação Avançada</td></tr>
+<tr><td><strong>1</strong></td><td>Advogado</td><td>Advogado</td><td>Computador</td><td>Advogado</td><td>Advogado</td><td>Advogado</td></tr>
+<tr><td><strong>2</strong></td><td>Linguística</td><td>Computador</td><td>Engenharia</td><td>Computador</td><td>Linguística</td><td>Computador</td></tr>
+<tr><td><strong>3</strong></td><td>Medicina</td><td>Contato</td><td>Jack o’ Trades</td><td>Carousing</td><td>Medicina</td><td>Graviética</td></tr>
+<tr><td><strong>4</strong></td><td>Contato</td><td>Linguística</td><td>Medicina</td><td>Linguística</td><td>Contato</td><td>Medicina</td></tr>
+<tr><td><strong>5</strong></td><td>Administrador</td><td>Medicina</td><td>Contato</td><td>Medicina</td><td>Táticas</td><td>Navegação</td></tr>
+<tr><td><strong>6</strong></td><td>Animais</td><td>Liderança</td><td>Táticas</td><td>Ciências</td><td>Animais</td><td>Táticas</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Carreira</strong></td><td><strong>Defesa marítima</strong></td><td><strong>Mercenário</strong></td><td><strong>Comerciante</strong></td><td><strong>Marinha</strong></td><td><strong>Nobre</strong></td><td><strong>Médico</strong></td></tr>
+<tr><td><strong>Qualificações</strong></td><td>Fim 5+</td><td>Int 4+</td><td>Int 4+</td><td>Int 6+</td><td>Soc 8+</td><td>Edu 6+</td></tr>
+<tr><td><strong>Sobrevivência</strong></td><td>Fim 5+</td><td>Final 6+</td><td>Int 5+</td><td>Int 5+</td><td>Soc 4+</td><td>Int 4+</td></tr>
+<tr><td><strong>Comissão</strong></td><td>Int 6+</td><td>Int 7+</td><td>Int 5+</td><td>Soc 7+</td><td>Edu 5+</td><td>Int 5+</td></tr>
+<tr><td><strong>Avanço</strong></td><td>Edu 7+</td><td>Int 6+</td><td>Edu 8+</td><td>Edu 6+</td><td>Int 8+</td><td>Edu 8+</td></tr>
+<tr><td><strong>Recadastramento</strong></td><td>5+</td><td>5+</td><td>4+</td><td>5+</td><td>6+</td><td>5+</td></tr>
+<tr><td><strong>Classificações e habilidades</strong></td><td>Marítimo</td><td>Mercenário</td><td>Comerciante</td><td>Marinha</td><td>Nobre</td><td>Médico</td></tr>
+<tr><td><strong>0</strong></td><td>Marinheiro [Watercraft-1]</td><td>Soldado [Gun Combat-1]</td><td>Tripulante [Steward-1]</td><td>Starman [Zero-G-1]</td><td>Cortesão [Carousing-1]</td><td>Interno [Medicina-1]</td></tr>
+<tr><td><strong>1</strong></td><td>Alferes</td><td>Tenente</td><td>Deck Cadet</td><td>Marinheiro</td><td>Cavaleiro</td><td>Residente</td></tr>
+<tr><td><strong>2</strong></td><td>Tenente</td><td>Capitão</td><td>Quarto Oficial</td><td>Tenente</td><td>Barão</td><td>Residente sênior</td></tr>
+<tr><td><strong>3</strong></td><td>Comandante-tenente [Liderança-1]</td><td>Major [Tática-1]</td><td>Terceiro Oficial [Piloto-1]</td><td>Comandante-tenente [Tática-1]</td><td>Marquês</td><td>Residente-chefe</td></tr>
+<tr><td><strong>4</strong></td><td>Comandante</td><td>Tenente-coronel</td><td>Segundo Oficial</td><td>Comandante</td><td>Contagem [Advocate-1]</td><td>Médico assistente [Admin-1]</td></tr>
+<tr><td><strong>5</strong></td><td>Capitão</td><td>Coronel</td><td>Primeiro Oficial</td><td>Capitão</td><td>Duque</td><td>Chefe de serviço</td></tr>
+<tr><td><strong>6</strong></td><td>Almirante</td><td>Brigadeiro</td><td>Capitão</td><td>Comodoro</td><td>Arquiduque</td><td>Administrador do hospital.</td></tr>
+<tr><td><strong>Benefícios materiais</strong></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><strong>1</strong></td><td>Passagem baixa</td><td>Passagem baixa</td><td>Passagem baixa</td><td>Passagem baixa</td><td>Alta Passagem</td><td>Passagem baixa</td></tr>
+<tr><td><strong>2</strong></td><td>+1 Edu</td><td>+1 Int</td><td>+1 Edu</td><td>+1 Edu</td><td>+1 Edu</td><td>+1 Edu</td></tr>
+<tr><td><strong>3</strong></td><td>Arma</td><td>Arma</td><td>Arma</td><td>Arma</td><td>+1 Int</td><td>+1 Int</td></tr>
+<tr><td><strong>4</strong></td><td>Passagem intermediária</td><td>Alta Passagem</td><td>Alta Passagem</td><td>Passagem intermediária</td><td>Alta Passagem</td><td>Alta Passagem</td></tr>
+<tr><td><strong>5</strong></td><td>Arma</td><td>+1 Soc</td><td>Ações de navios 1D6</td><td>+1 Soc</td><td>Sociedade de Exploradores</td><td>Sociedade de Exploradores</td></tr>
+<tr><td><strong>6</strong></td><td>Alta Passagem</td><td>Alta Passagem</td><td>Alta Passagem</td><td>Alta Passagem</td><td>Alta Passagem</td><td>Alta Passagem</td></tr>
+<tr><td><strong>7</strong></td><td>+1 Soc</td><td>Ações de navios 1D6</td><td>Sociedade de Exploradores</td><td>Sociedade de Exploradores</td><td>Ações de navios 1D6</td><td>+1 Soc</td></tr>
+<tr><td><strong>Benefícios em dinheiro</strong></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><strong>1</strong></td><td>1000</td><td>1000</td><td>1000</td><td>1000</td><td>2000</td><td>2000</td></tr>
+<tr><td><strong>2</strong></td><td>5000</td><td>5000</td><td>5000</td><td>5000</td><td>10000</td><td>10000</td></tr>
+<tr><td><strong>3</strong></td><td>10000</td><td>10000</td><td>10000</td><td>10000</td><td>20000</td><td>20000</td></tr>
+<tr><td><strong>4</strong></td><td>10000</td><td>20000</td><td>20000</td><td>10000</td><td>20000</td><td>20000</td></tr>
+<tr><td><strong>5</strong></td><td>20000</td><td>20000</td><td>20000</td><td>20000</td><td>50000</td><td>50000</td></tr>
+<tr><td><strong>6</strong></td><td>50000</td><td>50000</td><td>50000</td><td>50000</td><td>100000</td><td>100000</td></tr>
+<tr><td><strong>7</strong></td><td>50000</td><td>100000</td><td>100000</td><td>50000</td><td>100000</td><td>100000</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Carreira</strong></td><td><strong>Defesa marítima</strong></td><td><strong>Mercenário</strong></td><td><strong>Comerciante</strong></td><td><strong>Marinha</strong></td><td><strong>Nobre</strong></td><td><strong>Médico</strong></td></tr>
+<tr><td><strong>Habilidades e treinamento</strong></td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td></tr>
+<tr><td><strong>1</strong></td><td>+1 Str</td><td>+1 Str</td><td>+1 Str</td><td>+1 Str</td><td>+1 Dex</td><td>+1 Str</td></tr>
+<tr><td><strong>2</strong></td><td>+1 Dex</td><td>+1 Dex</td><td>+1 Dex</td><td>+1 Dex</td><td>+1 Int</td><td>+1 Dex</td></tr>
+<tr><td><strong>3</strong></td><td>+1 Fim</td><td>+1 Fim</td><td>+1 Fim</td><td>+1 Fim</td><td>+1 Edu</td><td>+1 Fim</td></tr>
+<tr><td><strong>4</strong></td><td>Atletismo</td><td>Zero-G</td><td>Zero-G</td><td>+1 Int</td><td>+1 Soc</td><td>+1 Int</td></tr>
+<tr><td><strong>5</strong></td><td>Combate corpo a corpo</td><td>Combate corpo a corpo</td><td>Combate corpo a corpo</td><td>+1 Edu</td><td>Carousing</td><td>+1 Edu</td></tr>
+<tr><td><strong>6</strong></td><td>Veículo</td><td>Jogos de azar</td><td>Administrador</td><td>Combate corpo a corpo</td><td>Combate corpo a corpo</td><td>Combate com armas</td></tr>
+<tr><td></td><td>Habilidades de serviço</td><td>Habilidades de serviço</td><td>Habilidades de serviço</td><td>Habilidades de serviço</td><td>Habilidades de serviço</td><td>Habilidades de serviço</td></tr>
+<tr><td><strong>1</strong></td><td>Mecânica</td><td>Comunicações</td><td>Comunicações</td><td>Comunicações</td><td>Atletismo</td><td>Administrador</td></tr>
+<tr><td><strong>2</strong></td><td>Combate com armas</td><td>Mecânica</td><td>Engenharia</td><td>Engenharia</td><td>Administrador</td><td>Computador</td></tr>
+<tr><td><strong>3</strong></td><td>Artilharia</td><td>Combate com armas</td><td>Combate com armas</td><td>Combate com armas</td><td>Carousing</td><td>Mecânica</td></tr>
+<tr><td><strong>4</strong></td><td>Combate corpo a corpo</td><td>Combate corpo a corpo</td><td>Combate corpo a corpo</td><td>Artilharia</td><td>Liderança</td><td>Medicina</td></tr>
+<tr><td><strong>5</strong></td><td>Sobrevivência</td><td>Jogos de azar</td><td>Corretor</td><td>Combate corpo a corpo</td><td>Jogos de azar</td><td>Liderança</td></tr>
+<tr><td><strong>6</strong></td><td>Embarcações</td><td>Vestido de batalha</td><td>Veículo</td><td>Veículo</td><td>Veículo</td><td>Ciências</td></tr>
+<tr><td></td><td>Especialista</td><td>Especialista</td><td>Especialista</td><td>Especialista</td><td>Especialista</td><td>Especialista</td></tr>
+<tr><td><strong>1</strong></td><td>Comunicações</td><td>Graviética</td><td>Carousing</td><td>Graviética</td><td>Computador</td><td>Computador</td></tr>
+<tr><td><strong>2</strong></td><td>Eletrônicos</td><td>Combate com armas</td><td>Artilharia</td><td>Jack o’ Trades</td><td>Carousing</td><td>Carousing</td></tr>
+<tr><td><strong>3</strong></td><td>Combate com armas</td><td>Artilharia</td><td>Jack o’ Trades</td><td>Combate corpo a corpo</td><td>Combate com armas</td><td>Eletrônicos</td></tr>
+<tr><td><strong>4</strong></td><td>Demolições</td><td>Combate corpo a corpo</td><td>Medicina</td><td>Navegação</td><td>Combate corpo a corpo</td><td>Medicina</td></tr>
+<tr><td><strong>5</strong></td><td>Reconhecimento</td><td>Reconhecimento</td><td>Navegação</td><td>Liderança</td><td>Ligação</td><td>Medicina</td></tr>
+<tr><td><strong>6</strong></td><td>Embarcações</td><td>Veículo</td><td>Pilotagem</td><td>Pilotagem</td><td>Animais</td><td>Ciências</td></tr>
+<tr><td></td><td>Educação Avançada</td><td>Educação Avançada</td><td>Educação Avançada</td><td>Educação Avançada</td><td>Educação Avançada</td><td>Educação Avançada</td></tr>
+<tr><td><strong>1</strong></td><td>Advogado</td><td>Advogado</td><td>Advogado</td><td>Advogado</td><td>Advogado</td><td>Advogado</td></tr>
+<tr><td><strong>2</strong></td><td>Computador</td><td>Engenharia</td><td>Engenharia</td><td>Computador</td><td>Computador</td><td>Computador</td></tr>
+<tr><td><strong>3</strong></td><td>Jack o’ Trades</td><td>Medicina</td><td>Medicina</td><td>Engenharia</td><td>Contato</td><td>Jack o’ Trades</td></tr>
+<tr><td><strong>4</strong></td><td>Medicina</td><td>Navegação</td><td>Navegação</td><td>Medicina</td><td>Linguística</td><td>Linguística</td></tr>
+<tr><td><strong>5</strong></td><td>Liderança</td><td>Ciências</td><td>Ciências</td><td>Navegação</td><td>Medicina</td><td>Medicina</td></tr>
+<tr><td><strong>6</strong></td><td>Táticas</td><td>Táticas</td><td>Táticas</td><td>Táticas</td><td>Ciências</td><td>Ciências</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Carreira</strong></td><td><strong>Pirata</strong></td><td><strong>Rogue</strong></td><td><strong>Cientista</strong></td><td><strong>Escoteiro</strong></td><td><strong>Defesa de superfície</strong></td><td><strong>Técnico</strong></td></tr>
+<tr><td><strong>Qualificações</strong></td><td>Dex 5+</td><td>Dex 5+</td><td>Edu 6+</td><td>Int 6+</td><td>Fim 5+</td><td>Edu 6+</td></tr>
+<tr><td><strong>Sobrevivência</strong></td><td>Dex 6+</td><td>Dex 4+</td><td>Edu 5+</td><td>Fim 7+</td><td>Edu 5+</td><td>Dex 4+</td></tr>
+<tr><td><strong>Comissão</strong></td><td>Força 7+</td><td>Força 6+</td><td>Int 7+</td><td>–</td><td>Fim 6+</td><td>Edu 5+</td></tr>
+<tr><td><strong>Avanço</strong></td><td>Int 6+</td><td>Int 7+</td><td>Int 6+</td><td>–</td><td>Edu 7+</td><td>Int 8+</td></tr>
+<tr><td><strong>Recadastramento</strong></td><td>5+</td><td>4+</td><td>5+</td><td>6+</td><td>5+</td><td>5+</td></tr>
+<tr><td><strong>Classificações e habilidades</strong></td><td>Pirata</td><td>Rogue</td><td>Cientista</td><td>Escoteiro</td><td>Superfície</td><td>Técnico</td></tr>
+<tr><td><strong>0</strong></td><td>Tripulante [Gunnery-1]</td><td>Independente [Streetwise-1]</td><td>Instrutor [Ciências-1]</td><td>[Piloto-1]</td><td>Soldado [Gun Combat-1]</td><td>Técnico [Computador-1]</td></tr>
+<tr><td><strong>1</strong></td><td>Cabo</td><td>Associado</td><td>Professor Adjunto</td><td>–</td><td>Tenente</td><td>Líder de equipe</td></tr>
+<tr><td><strong>2</strong></td><td>Tenente [Piloto-1]</td><td>Soldado [Gun Combat-1]</td><td>Professor pesquisador</td><td>–</td><td>Capitão</td><td>Supervisor</td></tr>
+<tr><td><strong>3</strong></td><td>Tenente-comandante</td><td>Tenente</td><td>Professor Assistente [Computador-1]</td><td>–</td><td>Major [Liderança-1]</td><td>Gerente</td></tr>
+<tr><td><strong>4</strong></td><td>Comandante</td><td>Underboss</td><td>Professor Associado</td><td>–</td><td>Tenente-coronel</td><td>Diretor [Admin-1]</td></tr>
+<tr><td><strong>5</strong></td><td>Capitão</td><td>Consigliere</td><td>Professor</td><td>–</td><td>Coronel</td><td>Vice-Presidente</td></tr>
+<tr><td><strong>6</strong></td><td>Comodoro</td><td>Chefe</td><td>Professor Distinguido</td><td>–</td><td>Geral</td><td>Diretor Executivo</td></tr>
+<tr><td><strong>Benefícios materiais</strong></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><strong>1</strong></td><td>Passagem baixa</td><td>Passagem baixa</td><td>Passagem baixa</td><td>Passagem baixa</td><td>Passagem baixa</td><td>Passagem baixa</td></tr>
+<tr><td><strong>2</strong></td><td>+1 Int</td><td>+1 Int</td><td>+1 Edu</td><td>+1 Edu</td><td>+1 Int</td><td>+1 Edu</td></tr>
+<tr><td><strong>3</strong></td><td>Arma</td><td>Arma</td><td>+1 Int</td><td>Arma</td><td>Arma</td><td>+1 Int</td></tr>
+<tr><td><strong>4</strong></td><td>Alta Passagem</td><td>Passagem intermediária</td><td>Passagem intermediária</td><td>Passagem intermediária</td><td>Passagem intermediária</td><td>Passagem intermediária</td></tr>
+<tr><td><strong>5</strong></td><td>+1 Soc</td><td>Arma</td><td>+1 Soc</td><td>Sociedade de Exploradores</td><td>Arma</td><td>Passagem intermediária</td></tr>
+<tr><td><strong>6</strong></td><td>Alta Passagem</td><td>Alta Passagem</td><td>Alta Passagem</td><td>Embarcação de correio</td><td>Alta Passagem</td><td>Alta Passagem</td></tr>
+<tr><td><strong>7</strong></td><td>Ações de navios 1D6</td><td>+1 Soc</td><td>Navio de pesquisa</td><td>–</td><td>+1 Soc</td><td>+1 Soc</td></tr>
+<tr><td><strong>Benefícios em dinheiro</strong></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><strong>1</strong></td><td>1000</td><td>1000</td><td>1000</td><td>1000</td><td>1000</td><td>1000</td></tr>
+<tr><td><strong>2</strong></td><td>5000</td><td>5000</td><td>5000</td><td>5000</td><td>5000</td><td>5000</td></tr>
+<tr><td><strong>3</strong></td><td>10000</td><td>5000</td><td>10000</td><td>10000</td><td>10000</td><td>10000</td></tr>
+<tr><td><strong>4</strong></td><td>20000</td><td>5000</td><td>10000</td><td>10000</td><td>10000</td><td>10000</td></tr>
+<tr><td><strong>5</strong></td><td>20000</td><td>10000</td><td>20000</td><td>20000</td><td>20000</td><td>20000</td></tr>
+<tr><td><strong>6</strong></td><td>50000</td><td>20000</td><td>50000</td><td>50000</td><td>50000</td><td>50000</td></tr>
+<tr><td><strong>7</strong></td><td>100000</td><td>50000</td><td>50000</td><td>50000</td><td>50000</td><td>50000</td></tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Carreira</strong></td><td><strong>Pirata</strong></td><td><strong>Rogue</strong></td><td><strong>Cientista</strong></td><td><strong>Escoteiro</strong></td><td><strong>Defesa de superfície</strong></td><td><strong>Técnico</strong></td></tr>
+<tr><td><strong>Habilidades e treinamento</strong></td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td><td>Desenvolvimento pessoal</td></tr>
+<tr><td><strong>1</strong></td><td>+1 Str</td><td>+1 Str</td><td>+1 Str</td><td>+1 Str</td><td>+1 Str</td><td>+1 Str</td></tr>
+<tr><td><strong>2</strong></td><td>+1 Dex</td><td>+1 Dex</td><td>+1 Dex</td><td>+1 Dex</td><td>+1 Dex</td><td>+1 Dex</td></tr>
+<tr><td><strong>3</strong></td><td>+1 Fim</td><td>+1 Fim</td><td>+1 Fim</td><td>+1 Fim</td><td>+1 Fim</td><td>+1 Fim</td></tr>
+<tr><td><strong>4</strong></td><td>Combate corpo a corpo</td><td>Combate corpo a corpo</td><td>+1 Int</td><td>Jack o’ Trades</td><td>Atletismo</td><td>+1 Int</td></tr>
+<tr><td><strong>5</strong></td><td>Suborno</td><td>Suborno</td><td>+1 Edu</td><td>+1 Edu</td><td>Combate corpo a corpo</td><td>+1 Edu</td></tr>
+<tr><td><strong>6</strong></td><td>Jogos de azar</td><td>Jogos de azar</td><td>Combate com armas</td><td>Combate corpo a corpo</td><td>Veículo</td><td>Combate com armas</td></tr>
+<tr><td></td><td>Habilidades de serviço</td><td>Habilidades de serviço</td><td>Habilidades de serviço</td><td>Habilidades de serviço</td><td>Habilidades de serviço</td><td>Habilidades de serviço</td></tr>
+<tr><td><strong>1</strong></td><td>Streetwise</td><td>Streetwise</td><td>Administrador</td><td>Comunicações</td><td>Mecânica</td><td>Administrador</td></tr>
+<tr><td><strong>2</strong></td><td>Eletrônicos</td><td>Mecânica</td><td>Computador</td><td>Eletrônicos</td><td>Combate com armas</td><td>Computador</td></tr>
+<tr><td><strong>3</strong></td><td>Combate com armas</td><td>Combate com armas</td><td>Eletrônicos</td><td>Combate com armas</td><td>Artilharia</td><td>Mecânica</td></tr>
+<tr><td><strong>4</strong></td><td>Combate corpo a corpo</td><td>Combate corpo a corpo</td><td>Medicina</td><td>Artilharia</td><td>Combate corpo a corpo</td><td>Medicina</td></tr>
+<tr><td><strong>5</strong></td><td>Reconhecimento</td><td>Reconhecimento</td><td>Suborno</td><td>Reconhecimento</td><td>Reconhecimento</td><td>Eletrônicos</td></tr>
+<tr><td><strong>6</strong></td><td>Veículo</td><td>Veículo</td><td>Ciências</td><td>Pilotagem</td><td>Vestido de batalha</td><td>Ciências</td></tr>
+<tr><td></td><td>Especialista</td><td>Especialista</td><td>Especialista</td><td>Especialista</td><td>Especialista</td><td>Especialista</td></tr>
+<tr><td><strong>1</strong></td><td>Zero-G</td><td>Computador</td><td>Navegação</td><td>Engenharia</td><td>Comunicações</td><td>Computador</td></tr>
+<tr><td><strong>2</strong></td><td>Comunicações</td><td>Eletrônicos</td><td>Administrador</td><td>Artilharia</td><td>Demolições</td><td>Eletrônicos</td></tr>
+<tr><td><strong>3</strong></td><td>Engenharia</td><td>Suborno</td><td>Ciências</td><td>Demolições</td><td>Combate com armas</td><td>Graviética</td></tr>
+<tr><td><strong>4</strong></td><td>Artilharia</td><td>Corretor</td><td>Ciências</td><td>Navegação</td><td>Combate corpo a corpo</td><td>Linguística</td></tr>
+<tr><td><strong>5</strong></td><td>Navegação</td><td>Reconhecimento</td><td>Animais</td><td>Medicina</td><td>Sobrevivência</td><td>Engenharia</td></tr>
+<tr><td><strong>6</strong></td><td>Pilotagem</td><td>Veículo</td><td>Veículo</td><td>Veículo</td><td>Veículo</td><td>Animais</td></tr>
+<tr><td></td><td>Educação Avançada</td><td>Educação Avançada</td><td>Educação Avançada</td><td>Educação Avançada</td><td>Educação Avançada</td><td>Educação Avançada</td></tr>
+<tr><td><strong>1</strong></td><td>Computador</td><td>Computador</td><td>Advogado</td><td>Advogado</td><td>Advogado</td><td>Advogado</td></tr>
+<tr><td><strong>2</strong></td><td>Graviética</td><td>Graviética</td><td>Computador</td><td>Computador</td><td>Computador</td><td>Computador</td></tr>
+<tr><td><strong>3</strong></td><td>Jack o’ Trades</td><td>Jack o’ Trades</td><td>Jack o’ Trades</td><td>Linguística</td><td>Jack o’ Trades</td><td>Jack o’ Trades</td></tr>
+<tr><td><strong>4</strong></td><td>Medicina</td><td>Medicina</td><td>Linguística</td><td>Medicina</td><td>Medicina</td><td>Linguística</td></tr>
+<tr><td><strong>5</strong></td><td>Advogado</td><td>Advogado</td><td>Medicina</td><td>Navegação</td><td>Liderança</td><td>Medicina</td></tr>
+<tr><td><strong>6</strong></td><td>Táticas</td><td>Táticas</td><td>Ciências</td><td>Táticas</td><td>Táticas</td><td>Ciências</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="detalhes-finais"><a class="header" href="#detalhes-finais">Detalhes finais</a></h2>
+<p>É preciso mais do que um conjunto de pontuações de características e
+níveis de habilidade para criar um personagem divertido. Ao adicionar
+alguns detalhes finais no final da criação do personagem, você poderá
+achar a experiência de interpretá-lo muito mais gratificante.</p>
+<h3 id="nome"><a class="header" href="#nome">Nome</a></h3>
+<p>No mínimo, cada personagem precisa de um nome, de preferência um que se
+encaixe no estilo de seu grupo de jogo e no universo do Árbitro.
+Considere a possibilidade de escolher um nome baseado em nomes reais do
+“mundo real”, em personagens fictícios ou em um nome totalmente
+inventado por você. Se não conseguir encontrar um nome, tente escolher
+dois de seus personagens favoritos de ficção científica e usar partes de
+cada um dos nomes para criar um nome exclusivo para o seu personagem.</p>
+<h3 id="gênero"><a class="header" href="#gênero">Gênero</a></h3>
+<p>Na maioria dos jogos, isso significa escolher entre homem ou mulher, mas
+alguns árbitros ou universos podem oferecer outras opções. Não há nada
+que diga que você precisa interpretar um personagem do seu próprio
+gênero. Muitos consideram um desafio de interpretação tentar retratar um
+gênero diferente de forma realista.</p>
+<h3 id="aparência"><a class="header" href="#aparência">Aparência</a></h3>
+<p>A escolha de detalhes como a altura, o peso, a cor do cabelo, as
+preferências de vestuário e assim por diante facilita a descrição do
+personagem, o que ajuda todos a visualizá-lo em suas mentes enquanto
+jogam. Características distintas geralmente dão ao seu personagem uma
+maneira de se destacar.</p>
+<h3 id="metas-pessoais"><a class="header" href="#metas-pessoais">Metas pessoais</a></h3>
+<p>O tempo e a experiência demonstraram que personagens com objetivos
+pessoais são muito mais gratificantes de se jogar a longo prazo. Um
+objetivo pessoal deve ser algo que leve mais do que uma única aventura
+para ser resolvido. Bons exemplos podem incluir aprender os segredos de
+civilizações antigas, dominar as artes psiônicas ou garantir o poder
+político. Os objetivos pessoais geralmente oferecem ao Árbitro uma
+oportunidade de desenvolver arcos de história com base nesse personagem,
+pois os objetivos informam ao Árbitro sobre o que o personagem (e,
+presumivelmente, o jogador) está interessado em buscar. Não há problema
+se os objetivos do personagem mudarem com o tempo. De fato, isso é um
+ótimo sinal de crescimento e desenvolvimento do personagem.</p>
+<h2 id="sobre-espécies-alienígenas"><a class="header" href="#sobre-espécies-alienígenas">Sobre espécies alienígenas</a></h2>
+<p>Presume-se que os humanos sejam a espécie padrão definida nessas regras
+e, portanto, não têm habilidades ou desvantagens especiais que os
+diferenciem como espécie das suposições das regras básicas para
+personagens.</p>
+<p>A definição de espécies alienígenas está no domínio dos poderes de
+criatividade do Árbitro, como convém à natureza de sua campanha e
+universo. Este Documento de Referência do Sistema oferece os seguintes
+exemplos de espécies alienígenas em um esforço para demonstrar
+arquétipos comuns encontrados em muitas formas de ficção científica
+clássica. Alguns universos têm apenas humanos, enquanto outros têm
+centenas de espécies alienígenas que os personagens podem encontrar. Seu
+Árbitro é o árbitro final para decidir se essas ou outras espécies
+alienígenas estão presentes em sua campanha.</p>
+<p>Informações mais específicas sobre a criação de espécies alienígenas
+podem ser encontradas no <em><strong>Flynn’s Guide to Alien Creation</strong></em>, um
+suplemento publicado pela Samardan Press.</p>
+<h3 id="aviões"><a class="header" href="#aviões">Aviões</a></h3>
+<p>Descendentes dos voadores onívoros/caçadores, os avianos são uma pequena
+raça senciente alada capaz de voar em mundos menores. Os Avians são uma
+espécie homeotérmica e bi-gênero, com uma média de 1,2 metro de altura e
+uma envergadura de mais de 2,5 metros de comprimento, da ponta da asa à
+ponta da asa, e têm uma massa típica de cerca de 35 quilos. A aptidão
+natural da raça aviária para uma consciência espacial excepcional, tanto
+conceitual quanto fisicamente, presta-se imediatamente à pilotagem e à
+navegação.</p>
+<h4 id="mecânica-do-jogo"><a class="header" href="#mecânica-do-jogo">Mecânica do jogo</a></h4>
+<p>Os avianos têm força fraca (1D6), destreza notável (3D6) e resistência
+fraca (1D6). Os Avians também têm as características Flyer (9 m), Low
+Gravity Adaptation, Natural Pilot, Slow Speed (4,5 m) e Small. Essa raça
+alada atinge a maturidade aos 22 anos, começa a envelhecer aos 46, tem
+105+(2D6x2) centímetros de altura e uma massa de 20+(2D6x2) quilogramas.</p>
+<h3 id="espers"><a class="header" href="#espers">Espers</a></h3>
+<p>Os Espers são humanos ou humanoides quase humanos que adotaram o uso
+comum da psiônica. Os Espers tendem a ser altos e esguios, e sua
+natureza distante e desprendida os torna inescrutáveis para outros
+humanos que não sejam de sua cultura. Como raça, eles tendem a ser mais
+místicos ou filosóficos do que outras espécies.</p>
+<h4 id="mecânica-do-jogo-1"><a class="header" href="#mecânica-do-jogo-1">Mecânica do jogo</a></h4>
+<p>Os Espers seguem as regras padrão para personagens humanos. Além disso,
+os Espers possuem a característica Psiônica.</p>
+<h3 id="insetos"><a class="header" href="#insetos">Insetos</a></h3>
+<p>Descendentes da linhagem Carnívora/Chaser, os Insectans são uma raça
+insetoide difícil de ser compreendida pela maioria das outras raças. Com
+uma média de 1,8 metro de altura e cerca de 90 quilos, os Insectans
+poiquilotérmicos são muito conscientes da comunidade, colocando as
+necessidades da “colônia” acima das necessidades do indivíduo. Eles têm
+uma capacidade muito limitada de identidade individual e, na maioria das
+vezes, se consideram uma extensão da “rainha”. Com o aprimoramento da
+nutrição que afeta a inteligência, bem como a exposição a outras
+culturas, uma minoria crescente de insetos começou a estabelecer um
+senso mais forte de identidade pessoal, mas continua fortemente
+influenciada por seus instintos comunitários. Os insetanos costumam
+servir ao conjunto maior da sociedade interestelar em funções orientadas
+para o serviço, dependendo de seu gênero específico, como “trabalhador”
+(fêmea estéril), “soldado” (fêmea estéril), “zangão” (macho fértil) ou
+“rainha” (fêmea fértil). Embora existam poucas diferenças anatômicas
+grosseiras entre os gêneros, a coloração da carapaça e o porte ajudam os
+não insetos a distinguir um do outro.</p>
+<h4 id="mecânica-do-jogo-2"><a class="header" href="#mecânica-do-jogo-2">Mecânica do jogo</a></h4>
+<p>Os insetos têm Destreza Notável (2D6+2). Os insetos também têm as
+características Armored (blindado), Bad First Impression (má primeira
+impressão), Caste (casta), Cold-blooded (sangue frio), Fast Speed (9m)
+(velocidade rápida), Great Leaper (grande saltador) e Hive Mentality
+(mentalidade de colmeia). Os insetos atingem a maturidade aos 18 anos e
+começam a envelhecer aos 34 anos (como os humanos), têm 160+(2D6x5)
+centímetros de altura e uma massa de 60+(2D6x5) quilogramas.</p>
+<p>OBSERVAÇÃO: Os insetos têm uma pontuação de característica diferente
+chamada Casta, que substitui a Posição social. A Casta é gerada da mesma
+forma que a Posição Social. Todas as modificações na posição social
+mencionadas no processo de criação do personagem afetam igualmente a
+casta.</p>
+<h3 id="tritões"><a class="header" href="#tritões">Tritões</a></h3>
+<p>Geneticamente manipulados a partir da linhagem humana pura para a vida
+em um mundo aquático, os Merfolk têm cada vez menos semelhança com seus
+ancestrais genéticos a cada geração que passa. As mudanças na coloração
+da pele para verdes e azuis pálidos, combinadas com a presença de suas
+guelras, apêndices com membranas e uma fina camada de gordura protetora,
+dão aos Merfolk uma aparência um tanto anfíbia.</p>
+<h4 id="mecânica-do-jogo-3"><a class="header" href="#mecânica-do-jogo-3">Mecânica do jogo</a></h4>
+<p>Os tritões possuem as características alienígenas Anfíbio, Aquático,
+Nadador Natural e Dependente de Água.</p>
+<h3 id="reptilianos"><a class="header" href="#reptilianos">Reptilianos</a></h3>
+<p>Com uma forte aparência sauriana, os reptilianos descendem de uma
+linhagem de caçadores carnívoros homeotérmicos. Suas escamas tendem a
+ser brilhantemente padronizadas, especialmente entre os machos da
+espécie. Com aproximadamente 1,9 metro de altura e 85 quilos de peso, os
+reptilianos ainda têm muitas das características de seus ancestrais
+saurianos. Os reptilianos são movidos por um forte senso de
+territorialidade e uma necessidade primordial de caçar. Depois de
+descobrir o Jump Drive, os reptilianos se viram com novos mundos
+inteiros para conquistar.</p>
+<h4 id="mecânica-do-jogo-4"><a class="header" href="#mecânica-do-jogo-4">Mecânica do jogo</a></h4>
+<p>Os reptilianos têm Força Notável (2D6+1), Destreza Notável (2d+1) e
+Resistência Fraca (2D6-2). Os reptilianos também possuem os traços
+Antipsiônico, Velocidade rápida (9 m), Resistência ao calor, Visão de
+baixa luminosidade, Arma natural (dentes) e Adaptação à baixa gravidade.
+Os reptilianos atingem a maturidade aos 22 anos, começam a envelhecer
+aos 42, têm 155+(2D6x5) centímetros de altura e uma massa de 50+(2D6x5)
+quilogramas.</p>
+<h3 id="descrições-de-características-de-espécies-alienígenas"><a class="header" href="#descrições-de-características-de-espécies-alienígenas">Descrições de características de espécies alienígenas</a></h3>
+<p>Muitas das raças desta seção possuem traços raciais incomuns, que são
+descritos abaixo.</p>
+<ul>
+<li>
+<p><strong>Anfíbio</strong>: um membro dessa espécie está adaptado à vida embaixo
+d’água e também em terra. Ele pode respirar debaixo d’água ou prender
+a respiração por um longo período (Endurancex10 minutos em média). Sua
+destreza é reduzida à metade em terra.</p>
+</li>
+<li>
+<p><strong>Antipsiônico</strong>: Os membros dessa espécie são inatamente
+antipsiônicos. A classificação de Força Psiônica do personagem é
+sempre igual a zero e ele não pode ser treinado em psiônica. Além
+disso, o personagem não pode sofrer os efeitos mentais da psiônica,
+inclusive telepatia e ataque psiônico. Uma espécie não pode ter essa
+característica alienígena se já tiver a característica alienígena
+Psiônica.</p>
+</li>
+<li>
+<p><strong>Aquático</strong>: O alienígena está adaptado à vida embaixo d’água. Ele
+pode respirar debaixo d’água ou prender a respiração por um longo
+período (Endurancex10 minutos em média). Se for anfíbio, sua Destreza
+é reduzida à metade em terra. Se a espécie não for anfíbia, ela não
+poderá operar fora d’água sem ajuda mecânica ou telepresença.</p>
+</li>
+<li>
+<p><strong>Blindado</strong>: O alienígena possui pelo grosso, escamas, um
+exoesqueleto ósseo ou outra proteção natural que lhe confere um ponto
+de armadura natural.</p>
+</li>
+<li>
+<p><strong>Requisitos atmosféricos</strong>: A espécie requer uma combinação incomum
+de gases para respirar e não consegue sobreviver na maioria das
+atmosferas sem ajuda artificial.</p>
+</li>
+<li>
+<p><strong>Primeira impressão ruim</strong>: Os membros dessa espécie possuem uma
+aparência ou um traço físico quase universalmente desagradável que
+provoca uma reação instintiva em raças diferentes da sua. A maioria
+das raças terá automaticamente uma atitude hostil em relação a esses
+personagens, embora isso seja superado depois que o indivíduo
+interagir com o personagem por alguns minutos, com base na
+personalidade do personagem e nas circunstâncias da interação.</p>
+</li>
+<li>
+<p><strong>Casta</strong>: Os membros dessa espécie têm uma estrutura genética para
+hierarquia social. Ao lidar com raças que usam Posição Social ou
+Carisma, todos os DMs de atributos sociais, sejam eles positivos ou
+negativos, são reduzidos à metade.</p>
+</li>
+<li>
+<p><strong>De sangue frio</strong>: Os membros dessa espécie são sensíveis a climas
+frios. Se exposto ao frio extremo sem equipamento de proteção, o
+personagem sofre um DM-2 na iniciativa. O personagem sofre 1D6 de dano
+para cada dez minutos de exposição.</p>
+</li>
+<li>
+<p><strong>Projetado</strong>: A espécie foi alterada por algum fator externo para se
+adaptar a circunstâncias modificadas ou a um ambiente diferente. O
+tratamento médico de espécies projetadas por uma instalação de nível
+de tecnologia inferior àquele em que a espécie foi criada recebe um DM
+negativo igual à diferença.</p>
+</li>
+<li>
+<p><strong>Metabolismo rápido</strong>: As criaturas com metabolismo rápido requerem
+mais alimentos do que a maioria das espécies e seus custos de suporte
+de vida são dobrados. Em combate, as criaturas de metabolismo rápido
+recebem um bônus de iniciativa de +2. As criaturas de metabolismo
+rápido reduzem à metade sua resistência para fins de determinação da
+fadiga.</p>
+</li>
+<li>
+<p><strong>Feral</strong>: As espécies ferozes não são civilizadas, independentemente
+de seu conhecimento tecnológico. As espécies ferozes rolam Educação
+apenas em 1d6.</p>
+</li>
+<li>
+<p><strong>Voador</strong>: Essa espécie pode voar usando asas. Os personagens dessa
+espécie ganham a habilidade de Atletismo no Nível 0 e podem viajar na
+velocidade indicada em sua descrição. As criaturas voadoras que estão
+no ar devem gastar uma ação secundária a cada rodada para se
+movimentar ou estagnar e cair no ar. O voo com asas é cansativo e só
+pode ser mantido por um número de horas igual à Resistência da
+criatura antes de precisar de uma quantidade semelhante de descanso.</p>
+</li>
+<li>
+<p><strong>Grande saltador</strong>: Os membros dessa espécie podem saltar grandes
+distâncias. Como uma ação significativa, um membro dessa espécie pode
+fazer um teste de habilidade de Atletismo. Se for bem-sucedido, ele
+salta quatro quadrados, mais um número de quadrados igual ao efeito da
+verificação de habilidade. Além disso, os membros dessa espécie são
+tratados como se tivessem a habilidade Atletismo no nível 0.</p>
+</li>
+<li>
+<p><strong>Resistência ao calor</strong>: Os membros dessa espécie não sofrem danos
+por hora com os efeitos do clima quente e da exposição.</p>
+</li>
+<li>
+<p><strong>Adaptação à gravidade pesada</strong>: Os membros dessa espécie evoluíram
+em um mundo com uma gravidade maior e não precisam se aclimatar a
+ambientes de alta gravidade.</p>
+</li>
+<li>
+<p><strong>Mentalidade de colmeia</strong>: Os membros dessa espécie são movidos por
+uma mentalidade de colmeia e, com frequência, buscam ações que apoiam
+o bem maior de seu grupo familiar atualmente identificado, mesmo
+correndo o risco de sua própria segurança pessoal. Os personagens
+devem fazer um teste de Inteligência para evitar arriscar sua própria
+segurança quando isso ajudar seu grupo familiar. A dificuldade do
+teste de Inteligência varia de acordo com o grau de benefício
+percebido para o grupo familiar (geralmente é uma tarefa Média (DM+0),
+embora possam surgir circunstâncias em que a dificuldade varia de
+Rotineira (DM+2) a Difícil (DM-2)).</p>
+</li>
+<li>
+<p><strong>Grande</strong>: A espécie é consideravelmente maior do que a média dos
+sophonts. As criaturas grandes geralmente têm Força e Resistência de
+3d6 ou até 4d6 e Destreza de 1d6. Os requisitos de suporte de vida
+para criaturas grandes são dobrados. Algumas criaturas grandes são
+descritas como enormes. Os ataques contra criaturas enormes recebem um
+DM de +1 para acertar.</p>
+</li>
+<li>
+<p><strong>Adaptação à baixa gravidade</strong>: Os membros dessa espécie evoluíram em
+um mundo com uma gravidade mais baixa e não precisam se aclimatar a
+ambientes de baixa gravidade.</p>
+</li>
+<li>
+<p><strong>Visão com pouca luz</strong>: Os membros dessa espécie podem enxergar duas
+vezes mais longe do que um humano à luz das estrelas, da lua, de
+tochas e em condições semelhantes de pouca iluminação. Eles mantêm a
+capacidade de distinguir cores e detalhes nessas condições.</p>
+</li>
+<li>
+<p><strong>Piloto natural</strong>: Os membros dessa espécie têm uma compreensão inata
+do espaço multidimensional e, portanto, recebem um DM+2 em seus
+controles de pilotagem e navegação.</p>
+</li>
+<li>
+<p><strong>Nadador natural</strong>: Os membros dessa espécie são nadadores naturais e
+ganham um DM de +2 em todos os controles de habilidade relacionados à
+natação.</p>
+</li>
+<li>
+<p><strong>Arma natural</strong>: a espécie tem uma arma natural, como garras, uma
+mordida forte ou um ferrão venenoso. Essas armas podem ser usadas à
+distância pessoal e causam +1 de dano. A criatura ganha Natural
+Weapons (Armas naturais) no nível 0.</p>
+</li>
+<li>
+<p><strong>Naturalmente curiosos</strong>: os membros dessa espécie são movidos por um
+senso natural de curiosidade e são facilmente arrastados para qualquer
+aventura. Eles precisam checar tudo e sempre querem saber o que está
+por trás de um possível mistério. Os personagens devem fazer um teste
+de Inteligência para evitar agir de acordo com seus impulsos curiosos.
+A dificuldade do teste de Inteligência varia de acordo com o grau de
+mistério percebido (geralmente é uma tarefa Média (DM+0), embora
+possam surgir circunstâncias em que a dificuldade varia de Rotineira
+(DM+2) a Difícil (DM-2)).</p>
+</li>
+<li>
+<p><strong>Não há manipuladores finos</strong>: A espécie não tem dedos ou outros
+apêndices preênseis, o que a impede de pegar coisas com facilidade,
+apertar botões pequenos, alcançar espaços apertados e assim por
+diante.</p>
+</li>
+<li>
+<p><strong>Notável (característica)</strong>: Algumas espécies são notavelmente
+hábeis, inteligentes, resistentes ou fortes. Os personagens dessas
+raças têm um modificador de dados positivo ao rolar para essa
+característica (+2, a menos que especificado de outra forma), e seu
+máximo racial para essa característica é aumentado no mesmo valor.</p>
+</li>
+<li>
+<p><strong>Psiônico</strong>: Todos os membros da espécie são psiônicos e podem
+determinar sua força e seus talentos psiônicos no início da geração do
+personagem.</p>
+</li>
+<li>
+<p><strong>Pequeno</strong>: as espécies pequenas geralmente têm Força e Resistência
+de apenas 1D6 e Destreza de 3D6. O tamanho mínimo para um sophont é
+cerca de metade do tamanho de um humano.</p>
+</li>
+<li>
+<p><strong>Metabolismo lento</strong>: As criaturas com metabolismo lento requerem
+menos alimento do que a maioria das espécies e seus custos de suporte
+de vida são reduzidos à metade. Em combate, as criaturas de
+metabolismo lento sofrem uma penalidade de iniciativa de -2.</p>
+</li>
+<li>
+<p><strong>Elevado</strong>: Essa espécie era originalmente não senciente, mas foi
+elevada a uma inteligência superior por outra espécie. As raças
+elevadas geralmente se tornam espécies clientes de seu patrono. Dois
+animais elevados comuns são os macacos e os golfinhos:</p>
+<ul>
+<li>
+<p><em><strong>Os macacos elevados</strong></em> têm força e resistência notáveis (+2), mas
+todas as outras características são fracas (-2). Eles têm o traço
+Uplifted (Elevado).</p>
+</li>
+<li>
+<p><em><strong>Os golfinhos sobredotados</strong></em> têm força notável (+4) e resistência
+notável (+2), mas inteligência, educação e posição social fracas
+(-2). Eles têm as características Uplifted, Aquatic (totalmente
+aquático, respirador de ar) e No Fine Manipulators.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Dependente da água</strong>: Embora os membros dessa espécie sejam
+anfíbios, eles só podem sobreviver fora da água por 1 hora a cada 2
+pontos de resistência (depois disso, consulte as regras de
+afogamento).</p>
+</li>
+<li>
+<p><strong>Fraco (característica)</strong>: O oposto de Notável (Característica),
+algumas espécies são mais fracas, menos resistentes ou menos educadas
+do que outras. Os personagens dessas raças têm um modificador de dados
+negativo ao rolar para essa característica (-2, a menos que
+especificado de outra forma), e seu máximo racial para essa
+característica é reduzido na mesma proporção.</p>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="a-traduzir"><a href="#a-traduzir" class="header">a traduzir</a></h1>
+<p><em>Tradução pendente.</em></p>
+<p>Você pode ajudar traduzindo e submetendo como um <strong>Pull Request</strong> em:</p>
+<p><a href="https://github.com/nerun/cepheus">https://github.com/nerun/cepheus</a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="a-traduzir-1"><a href="#a-traduzir-1" class="header">a traduzir</a></h1>
+<p><em>Tradução pendente.</em></p>
+<p>Você pode ajudar traduzindo e submetendo como um <strong>Pull Request</strong> em:</p>
+<p><a href="https://github.com/nerun/cepheus">https://github.com/nerun/cepheus</a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="licenciamento"><a class="header" href="#licenciamento">Licenciamento</a></h1>
+<p><em><strong>O seguinte é um aviso importante:</strong></em></p>
+<p>Este Produto é derivado do <em>Traveller System Reference Document</em> e de outros <em>Open Game Content</em> (Conteúdos de Jogo Aberto) disponibilizados pela <a href="#open-game-license-version-10a">Open Game License</a>, e não contém conteúdo fechado de produtos publicados pela <strong>Mongoose Publishing</strong> ou pela <strong>Far Future Enterprises</strong>. Este Produto não é afiliado à Mongoose Publishing ou à Far Future Enterprises, e não faz qualquer reivindicação ou desafio a marcas registradas de propriedade de qualquer uma dessas entidades. O uso do <em>Traveller System Reference Document</em> não implica o endosso deste Produto pela Mongoose Publishing ou pela Far Future Enterprises como parte de suas linhas de produtos.</p>
+<h2 id="publicando-seus-próprios-materiais"><a class="header" href="#publicando-seus-próprios-materiais">Publicando Seus Próprios Materiais</a></h2>
+<p>Como você pode ver no início deste Documento de Referência do Sistema, todo o texto deste documento é designado como Conteúdo de Jogo Aberto, exceto pelos títulos de produtos publicados pela Samardan Press e as marcas registradas “Cepheus Engine” e “Samardan Press”.</p>
+<p>Isso significa que você pode copiar quaisquer partes do Cepheus Engine que desejar, adicionar seu próprio conteúdo, alterar o conteúdo e publicar o resultado. Observe que você deverá cumprir a <em>Open Game License</em> (OGL), conforme reproduzida no final deste documento. Se você não mencionar nenhum dos elementos de marca registrada, não precisará fazer mais nada.</p>
+<p>No entanto, você pode usar a marca registrada “Cepheus Engine”, sob certas circunstâncias, para indicar compatibilidade com este sistema de regras. Você deve seguir os requisitos da <em>Cepheus Engine Compatibility-Statement License</em> (CSL) — Licença de Declaração de Compatibilidade do Cepheus Engine —, mas, se o fizer, poderá declarar que seu material publicado “é compatível com as regras do Cepheus Engine” ou “com o sistema Cepheus Engine” ou ainda “com o jogo Cepheus Engine”. Aqui estão esses requisitos:</p>
+<ol>
+<li>
+<p>Você deve declarar, na primeira página onde mencionar o Cepheus Engine, que “Cepheus Engine e Samardan Press são marcas registradas de Jason ‘Flynn’ Kemp” e que você não é afiliado a Jason “Flynn” Kemp ou à Samardan Press™.</p>
+</li>
+<li>
+<p>Se você usar a licença para cometer fraude, perderá o direito de continuar usando a licença. Especificamente, se estiver alegando compatibilidade com as regras do Cepheus Engine, essa alegação não deve constituir fraude, ou indução fraudulenta, sob as leis do Estado do Texas. Observe que é quase impossível violar esse requisito de forma não intencional — ele serve principalmente para me manter fora de problemas, não para restringir declarações legítimas de compatibilidade.</p>
+</li>
+<li>
+<p>Você deve cumprir os termos da OGL caso eles se apliquem.</p>
+</li>
+<li>
+<p>A capa do documento deve incluir as palavras “Regras Domésticas”, “Regras Variantes” ou “Universo Alternativo do Cepheus Engine” próximo ao título, caso o documento seja um jogo completo, autônomo, que inclua modificações. Sinta-se à vontade para entrar em contato com o autor se desejar usar uma forma diferente de aviso.</p>
+</li>
+<li>
+<p>Vender uma versão completa deste jogo com suas regras domésticas incorporadas é perfeitamente permitido, mas você não pode vender uma cópia praticamente inalterada das regras por dinheiro.</p>
+</li>
+<li>
+<p>Se o seu documento for um documento privado de regras domésticas, não sendo vendido para lucro ou uso geral, você pode digitalizar e usar a arte (incluindo a capa) da versão impressa, publicada sob o título de <em><strong>Cepheus Engine Core Rules</strong></em>, desde que a capa contenha as palavras “Regras Domésticas” perto do título e que os artistas sejam devidamente creditados.</p>
+</li>
+<li>
+<p>Seus direitos sob esta CSL não podem ser revogados e são perpétuos, a menos que você viole os termos da licença, caso em que seus direitos serão encerrados.</p>
+</li>
+<li>
+<p>Se você cumprir os itens acima, poderá declarar que seu recurso é “para uso com as Regras Básicas do Cepheus Engine”, “compatível com as Regras Básicas do Cepheus Engine” ou “com o Sistema Cepheus Engine”.</p>
+</li>
+</ol>
+<p>Caso tenha dúvidas sobre a licença, sinta-se à vontade para entrar em contato com o autor.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="open-game-license-version-10a"><a class="header" href="#open-game-license-version-10a">OPEN GAME LICENSE Version 1.0a</a></h1>
+<p>The following text is the property of Wizards of the Coast, Inc. and is
+Copyright 2000 Wizards of the Coast, Inc (“Wizards”). All Rights
+Reserved.</p>
+<p><strong>1. Definitions</strong>: <strong>(a) “Contributors”</strong> means the copyright and/or
+trademark owners who have contributed Open Game Content; <strong>(b)
+“Derivative Material”</strong> means copyrighted material including derivative
+works and translations (including into other computer languages),
+potation, modification, correction, addition, extension, upgrade,
+improvement, compilation, abridgment or other form in which an existing
+work may be recast, transformed or adapted; <strong>(c) “Distribute”</strong> means
+to reproduce, license, rent, lease, sell, broadcast, publicly display,
+transmit or otherwise distribute; <strong>(d) “Open Game Content”</strong> means the
+game mechanic and includes the methods, procedures, processes and
+routines to the extent such content does not embody the Product Identity
+and is an enhancement over the prior art and any additional content
+clearly identified as Open Game Content by the Contributor, and means
+any work covered by this License, including translations and derivative
+works under copyright law, but specifically excludes Product Identity;
+<strong>(e) “Product Identity”</strong> means product and product line names, logos
+and identifying marks including trade dress; artifacts; creatures
+characters; stories, storylines, plots, thematic elements, dialogue,
+incidents, language, artwork, symbols, designs, depictions, likenesses,
+formats, poses, concepts, themes and graphic, photographic and other
+visual or audio representations; names and descriptions of characters,
+spells, enchantments, personalities, teams, personas, likenesses and
+special abilities; places, locations, environments, creatures,
+equipment, magical or supernatural abilities or effects, logos, symbols,
+or graphic designs; and any other trademark or registered trademark
+clearly identified as Product identity by the owner of the Product
+Identity, and which specifically excludes the Open Game Content; <strong>(f)
+“Trademark”</strong> means the logos, names, mark, sign, motto, designs that
+are used by a Contributor to identify itself or its products or the
+associated products contributed to the Open Game License by the
+Contributor <strong>(g) “Use”, “Used” or “Using”</strong> means to use, Distribute,
+copy, edit, format, modify, translate and otherwise create Derivative
+Material of Open Game Content; <strong>(h) “You” or “Your”</strong> means the
+licensee in terms of this agreement.</p>
+<p><strong>2. The License</strong>: This License applies to any Open Game Content that
+contains a notice indicating that the Open Game Content may only be Used
+under and in terms of this License. You must affix such a notice to any
+Open Game Content that you Use. No terms may be added to or subtracted
+from this License except as described by the License itself. No other
+terms or conditions may be applied to any Open Game Content distributed
+using this License.</p>
+<p><strong>3. Offer and Acceptance</strong>: By Using the Open Game Content You indicate
+Your acceptance of the terms of this License.</p>
+<p><strong>4. Grant and Consideration</strong>: In consideration for agreeing to use
+this License, the Contributors grant You a perpetual, worldwide,
+royalty-free, non-exclusive license with the exact terms of this License
+to Use, the Open Game Content.</p>
+<p><strong>5. Representation of Authority to Contribute</strong>: If You are
+contributing original material as Open Game Content, You represent that
+Your Contributions are Your original creation and/or You have sufficient
+rights to grant the rights conveyed by this License.</p>
+<p><strong>6. Notice of License Copyright</strong>: You must update the COPYRIGHT NOTICE
+portion of this License to include the exact text of the COPYRIGHT
+NOTICE of any Open Game Content You are copying, modifying or
+distributing, and You must add the title, the copyright date, and the
+copyright holder's name to the COPYRIGHT NOTICE of any original Open
+Game Content you Distribute.</p>
+<p><strong>7. Use of Product Identity</strong>: You agree not to Use any Product
+Identity, including as an indication as to compatibility, except as
+expressly licensed in another, independent Agreement with the owner of
+each element of that Product Identity. You agree not to indicate
+compatibility or co-adaptability with any Trademark or Registered
+Trademark in conjunction with a work containing Open Game Content except
+as expressly licensed in another, independent Agreement with the owner
+of such Trademark or Registered Trademark. The use of any Product
+Identity in Open Game Content does not constitute a challenge to the
+ownership of that Product Identity. The owner of any Product Identity
+used in Open Game Content shall retain all rights, title and interest in
+and to that Product Identity.</p>
+<p><strong>8. Identification</strong>: If you distribute Open Game Content You must
+clearly indicate which portions of the work that you are distributing
+are Open Game Content.</p>
+<p><strong>9. Updating the License</strong>: Wizards or its designated Agents may
+publish updated versions of this License. You may use any authorized
+version of this License to copy, modify and distribute any Open Game
+Content originally distributed under any version of this License.</p>
+<p><strong>10. Copy of this License</strong>: You MUST include a copy of this License
+with every copy of the Open Game Content You Distribute.</p>
+<p><strong>11. Use of Contributor Credits</strong>: You may not market or advertise the
+Open Game Content using the name of any Contributor unless You have
+written permission from the Contributor to do so.</p>
+<p><strong>12. Inability to Comply</strong>: If it is impossible for You to comply with
+any of the terms of this License with respect to some or all of the Open
+Game Content due to statute, judicial order, or governmental regulation
+then You may not Use any Open Game Material so affected.</p>
+<p><strong>13. Termination</strong>: This License will terminate automatically if You
+fail to comply with all terms herein and fail to cure such breach within
+30 days of becoming aware of the breach. All sublicenses shall survive
+the termination of this License.</p>
+<p><strong>14. Reformation</strong>: If any provision of this License is held to be
+unenforceable, such provision shall be reformed only to the extent
+necessary to make it enforceable.</p>
+<p><strong>15. COPYRIGHT NOTICE</strong></p>
+<p><em><strong>Open Game License v1.0a</strong></em> Copyright 2000, Wizards of the Coast, Inc.</p>
+<p><em><strong>High Guard System Reference Document</strong></em> Copyright © 2008, Mongoose Publishing.</p>
+<p><em><strong>Mercenary System Reference Document</strong></em> Copyright © 2008, Mongoose Publishing.</p>
+<p><em><strong>Modern System Reference Document</strong></em> Copyright 2002-2004, Wizards of the Coast, Inc.; Authors Bill Slavicsek, Jeff Grubb, Rich Redman, Charles Ryan, Eric Cagle, David Noonan, Stan!, Christopher Perkins, Rodney Thompson, and JD Wiker, based on material by Jonathan Tweet, Monte Cook, Skip Williams, Richard Baker, Peter Adkison, Bruce R. Cordell, John Tynes, Andy Collins, and JD Wiker.</p>
+<p><em><strong>Swords &amp; Wizardry Core Rules</strong></em>, Copyright 2008, Matthew J. Finch.</p>
+<p><em><strong>System Reference Document</strong></em>, Copyright 2000, Wizards of the Coast, Inc.; Authors Jonathan Tweet, Monte Cook, Skip Williams, based on original material by E. Gary Gygax and Dave Arneson.</p>
+<p><em><strong>T20 - The Traveller’s Handbook</strong></em> Copyright 2002, Quiklink Interactive, Inc. Traveller is a trademark of Far Future Enterprises and is used under license.</p>
+<p><em><strong>Traveller System Reference Document</strong></em> Copyright © 2008, Mongoose Publishing. Traveller is © 2008 Mongoose Publishing. Traveller and related logos, character, names, and distinctive likenesses thereof are trademarks of Far Future Enterprises unless otherwise noted. All Rights Reserved. Mongoose Publishing Ltd Authorized User.</p>
+<p><em><strong>Cepheus Engine System Reference Document</strong></em>, Copyright © 2016 Samardan Press; Author Jason “Flynn” Kemp.</p>
+<p><em><strong>Cepheus Engine Documento de Referência do Sistema</strong></em>, Copyright © 2024 Daniel Dias Rodrigues; Traduzido do Cepheus SRD da Samardan Press.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<blockquote class="blockquote-tag blockquote-tag-warning">
+<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Warning</p>
+<p><em>Esta é uma tradução não-oficial da OGL. Foi disponibilizada apenas para facilitar o entendimento da licença. Sempre que houver dúvidas quanto ao sentido e abrangência da OGL entre esta tradução e o texto em inglês, prevalece o entendimento do original em inglês.</em></p>
+</blockquote>
+<hr>
+<h1 id="licença-de-jogo-aberto-versão-10a"><a class="header" href="#licença-de-jogo-aberto-versão-10a">LICENÇA DE JOGO ABERTO Versão 1.0a</a></h1>
+<p>O texto a seguir é de propriedade da Wizards of the Coast, Inc. e foi
+registrado como Copyright da Wizards of the Coast, Inc (“Wizards”) no
+ano de 2000. Todos os direitos reservados.</p>
+<p><strong>1. Definições</strong>: <strong>(a) “Contribuidor(es)”</strong> significa o(s)
+proprietário(s) dos direitos autorais e/ou marcas comerciais que tenham
+contribuído para o Conteúdo de Jogo Aberto; <strong>(b) “Material Derivado”</strong>
+significa material protegido por direitos autorais, incluindo obras
+derivadas e traduções (inclusive em outras linguagens de computador),
+combinação, modificação, correção, adição, extensão, atualização,
+aperfeiçoamento, compilação, resumo ou outra forma em que uma obra já
+existente pode ser refeita, transformada ou adaptada; <strong>(c)
+“Distribuir”</strong> significa reproduzir, licenciar, alugar, arrendar,
+vender, difundir, exibir publicamente, transmitir ou distribuir; <strong>(d)
+“Conteúdo de Jogo Aberto”</strong> significa a mecânica de jogo, e inclui os
+métodos, procedimentos, processos e rotinas na medida em que esse
+conteúdo não incorpora a Identidade do Produto e é um aperfeiçoamento
+sobre a arte prévia e conteúdos adicionais claramente identificados como
+Conteúdo de Jogo Aberto pelo Contribuidor, e significa qualquer obra
+coberta por esta Licença, incluindo traduções e obras derivadas sob a
+legislação de direitos autorais, mas exclui especificamente a Identidade
+do Produto; <strong>(e) “Identidade do Produto”</strong> significa os nomes de
+produtos e linhas de produtos, logotipos e marcas de identificação,
+incluindo o conjunto-imagem (identificação visual); artefatos;
+criaturas; personagens; histórias, enredos, tramas, elementos temáticos,
+diálogos, incidentes, linguagem, arte, símbolos, desenhos, pinturas,
+semelhanças, formatos, poses, conceitos, temas e gráficos, fotográficos
+e outras representações visuais ou de áudio; nomes e descrições de
+personagens, magias, encantamentos, personalidades, times, personas,
+semelhanças e habilidades especiais; lugares, localizações, ambientes,
+criaturas, equipamentos, habilidades ou efeitos mágicos ou
+sobrenaturais, logotipos, símbolos ou desenhos gráficos; ou qualquer
+outra marca comercial ou marca registrada claramente identificada como
+Identidade do Produto pelo proprietário da Identidade do Produto, e que
+não se inclui no Conteúdo de Jogo Aberto; <strong>(f) “Marca Comercial”</strong>
+significa os logotipos, nomes, marcas, sinais, o lema, os desenhos que
+são usados por um Contribuidor para identificar a si mesmo, os seus
+produtos ou os produtos associados que contribuíram com o Conteúdo de
+Jogo Aberto pelo Contribuidor; <strong>(g) “Usar”, “Usado(s)” ou “Usando”</strong>
+significa usar, Distribuir, copiar, editar, formatar, modificar,
+traduzir e de qualquer forma criar Material Derivado do Conteúdo de Jogo
+Aberto; <strong>(h)</strong> <strong>“Você” ou “Seu(ua)(s)”</strong> significa o licenciado nos
+termos deste acordo.</p>
+<p><strong>2. A Licença</strong>: Esta licença se aplica a qualquer Conteúdo de Jogo
+Aberto que contenha um aviso indicando que o Conteúdo de Jogo Aberto só
+pode ser usado sob abrigo e nos termos desta Licença. Você deve apor um
+aviso em qualquer Conteúdo de Jogo Aberto que você usar. Nenhum termo
+pode ser adicionado ou subtraído desta Licença, exceto conforme descrito
+pela própria licença. Não podem ser aplicados quaisquer outros termos ou
+condições a qualquer Conteúdo de Jogo Aberto distribuído sob esta
+licença.</p>
+<p><strong>3. Oferta e Aceitação</strong>: Usando o Conteúdo de Jogo Aberto você indica
+sua aceitação dos termos desta Licença.</p>
+<p><strong>4. Consideração e Concessão</strong>: Em consideração por concordar com a
+utilização desta Licença, os Contribuidores concedem-lhe de forma
+perpétua, mundial, e isenta de royalties, uma licença não exclusiva, nos
+exatos termos desta Licença, para Usar o Conteúdo de Jogo Aberto.</p>
+<p><strong>5. Declaração de Autoridade para Contribuir</strong>: Se você está
+contribuindo com material original como Conteúdo de Jogo Aberto, você
+declara que suas contribuições são sua criação original e/ou você possui
+direitos suficientes para conceder os direitos transmitidos por esta
+Licença.</p>
+<p><strong>6. Aviso de Licença de Direitos Autorais</strong>: Você deve atualizar a
+parte AVISO DE DIREITOS AUTORAIS desta Licença para incluir o texto
+exato do AVISO DE DIREITOS AUTORAIS de qualquer Conteúdo de Jogo Aberto
+que você está copiando, modificando ou distribuindo, e você deve
+adicionar o título, a data de copyright, e nome do detentor dos direitos
+ao AVISO DE DIREITOS AUTORAIS de qualquer Conteúdo de Jogo Aberto
+original que você Distribuir.</p>
+<p><strong>7. Uso de Identidade do Produto</strong>: Você concorda em não usar qualquer
+Identidade do Produto, inclusive como uma indicação quanto à
+compatibilidade, exceto quando expressamente autorizado em outro Acordo
+independente com o proprietário de cada elemento daquela Identidade do
+Produto. Você concorda em não indicar a compatibilidade ou
+co-adaptabilidade com qualquer Marca Comercial ou Marca Registrada, em
+conjugação com uma obra que contenha Conteúdo de Jogo Aberto, exceto
+quando expressamente autorizado em outro Acordo independente com o
+titular da Marca Comercial ou Marca Registrada. O uso de qualquer
+Identidade do Produto no Conteúdo de Jogo Aberto não constitui uma
+violação da propriedade da Identidade do Produto. O proprietário de
+qualquer Identidade do Produto utilizado no Conteúdo de Jogo Aberto
+manterá todos os direitos, títulos e interesses na e da Identidade do
+Produto.</p>
+<p><strong>8. Identificação</strong>: Se você Distribuir Conteúdo de Jogo Aberto Você
+deve indicar claramente quais partes da obra que você está distribuindo
+são Conteúdo de Jogo Aberto.</p>
+<p><strong>9. Atualização da Licença</strong>: Wizards ou seus agentes designados podem
+publicar versões atualizadas desta Licença. Você pode usar qualquer
+versão autorizada desta Licença para copiar, modificar e distribuir
+qualquer Conteúdo de Jogo Aberto originalmente distribuído sob qualquer
+versão desta Licença.</p>
+<p><strong>10. Cópia desta Licença</strong>: Você DEVE incluir uma cópia desta Licença
+com cada cópia do Conteúdo de Jogo Aberto que Você Distribuir.</p>
+<p><strong>11. Uso dos Créditos do Contribuidor</strong>: Você não pode comercializar ou
+fazer publicidade do Conteúdo de Jogo Aberto usando o nome de qualquer
+Contribuidor a menos que você tenha a permissão escrita do Contribuidor
+para fazê-lo.</p>
+<p><strong>12. Incapacidade de Cumprir</strong>: Se for impossível para Você cumprir
+qualquer dos termos desta Licença com relação a alguma parte ou a todo o
+Conteúdo de Jogo Aberto, devido à lei, ordem judicial ou regulamentação
+governamental, então você não poderá usar qualquer Conteúdo de Jogo
+Aberto afetado.</p>
+<p><strong>13. Encerramento</strong>: Esta Licença terminará automaticamente se você
+falhar em cumprir com todas as condições aqui apresentadas e não reparar
+tal violação no prazo de 30 dias contados do conhecimento da violação.
+Todas as sublicenças devem sobreviver ao término desta Licença.</p>
+<p><strong>14. Reforma:</strong> Se qualquer disposição desta Licença for considerada
+inexequível, tal disposição será reformada apenas na medida necessária
+para torná-la exequível.</p>
+<p><strong>15. AVISO DE DIREITOS AUTORAIS</strong></p>
+<p>Licença de Jogo Aberto v1.0a Copyright 2000, Wizards of the Coast, Inc.</p>
+<hr>
+<blockquote class="blockquote-tag blockquote-tag-note">
+<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<p><strong>Tradução:</strong> Daniel Dias Rodrigues &lt;<a href="mailto:danieldiasr@gmail.com">danieldiasr@gmail.com</a>&gt;.</p>
+<p><strong>Última atualização:</strong> 18 de maio de 2023.</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>

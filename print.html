@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "rust";
             const default_dark_theme = "rust";
-            window.path_to_searchindex_js = "searchindex-ee3da493.js";
+            window.path_to_searchindex_js = "searchindex-d68c0bf6.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-8fbdb078.js"></script>
+        <script src="toc-94e63f92.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -2627,6 +2627,39 @@ para torná-la exequível.</p>
 <p><strong>Tradução:</strong> Daniel Dias Rodrigues &lt;<a href="mailto:danieldiasr@gmail.com">danieldiasr@gmail.com</a>&gt;.</p>
 <p><strong>Última atualização:</strong> 18 de maio de 2023.</p>
 </blockquote>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="manifesto-apologético-do-formato-universal"><a class="header" href="#manifesto-apologético-do-formato-universal">Manifesto Apologético do Formato Universal</a></h1>
+<h2 id="um-formato-para-durar-no-tempo"><a class="header" href="#um-formato-para-durar-no-tempo">Um Formato para Durar no Tempo</a></h2>
+<p>O <a href="https://en.wikipedia.org/wiki/Unicode">Unicode Standard</a> foi uma revolução ao transcender as limitações das codificações de caracteres tradicionais como o ASCII, pois o Unicode suporta caracteres além dos 128 disponíveis no inglês, o que o torna universal. O formato <a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a> tornou-se uma implementação magistral do padrão Unicode, mantendo compatibilidade retroativa com o ASCII. Na verdade, o ASCII agora é um subconjunto do UTF-8.</p>
+<p>Isso é relevante porque o formato ASCII resistiu ao teste do tempo e é considerado um dos melhores formatos para armazenar textos eletrônicos (etexts) com a intenção de durabilidade. A maioria dos romances, livros, contos e histórias em domínio público disponíveis no <a href="https://www.gutenberg.org">Projeto Gutenberg</a> está em formato UTF-8.</p>
+<p>Nas palavras do Projeto Gutenberg:<sup class="footnote-reference" id="fr-1-1"><a href="#footnote-1">1</a></sup></p>
+<blockquote>
+<p>O ponto principal de tudo isso é que, anos à frente, os textos eletrônicos do Projeto Gutenberg ainda serão viáveis, mas programa após programa, sistema operacional após sistema operacional vão acabar como os dinossauros — assim como todo o hardware que os roda. Claro que isso vale para todos os etexts em ASCII simples… não apenas aqueles que você conseguiu acessar do Projeto Gutenberg. A questão é que daqui a uma década provavelmente não teremos os mesmos sistemas operacionais, nem os mesmos programas, e portanto todos os vários tipos de etexts que não forem ASCII simples estarão obsoletos. Precisamos ter etexts em arquivos que um programa leitor/pesquisador de ASCII simples consiga lidar; isso não quer dizer que nunca deve haver marcação… apenas que as formas de marcação devem ser facilmente conversíveis em arquivos ASCII simples, para que sua utilidade não expire quando os programas deixarem de existir. Lembra de toda a dor de cabeça com programas CONVERT para transformar arquivos de processadores de texto antigos em ASCII simples?</p>
+</blockquote>
+<h2 id="markdown"><a class="header" href="#markdown">Markdown</a></h2>
+<p>É claro que o Projeto Gutenberg só aceita <a href="https://en.wikipedia.org/wiki/Plain_text">texto simples</a> (arquivos .txt em UTF-8), mas o <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> é uma linguagem de marcação que é essencialmente texto simples — ou seja, continua legível em qualquer editor de texto puro.</p>
+<p>Markdown é uma linguagem de marcação leve, com sintaxe simples, discreta e legível por humanos. Foi criada para ser fácil de escrever em qualquer editor de texto genérico e fácil de ler em sua forma bruta. Na verdade, é tão simples e não intrusiva que alguém pode abrir um arquivo Markdown (com extensão “.md”) e lê-lo quase como se fosse um “arquivo ASCII simples”. Você pode até renomear a extensão para “.txt” se preferir. No Windows, basta usar o Bloco de Notas. No Linux, editores de texto puro não faltam: gedit (e variantes), Kate, Emacs, Vim, Nano, etc.</p>
+<p>Nesse sentido, o Markdown se alinha perfeitamente com o princípio do Projeto Gutenberg: a marcação deve ser facilmente conversível e não deve comprometer a legibilidade ou a durabilidade do texto. O Markdown consegue isso precisamente por ser texto simples e uma marcação não intrusiva.</p>
+<h2 id="uma-linguagem-intercambiável"><a class="header" href="#uma-linguagem-intercambiável">Uma Linguagem Intercambiável</a></h2>
+<p>Arquivos escritos em UTF-8 usando a linguagem Markdown não são apenas fáceis de ler e abrir em qualquer sistema operacional ou editor de texto puro, mas também fáceis de converter para formatos profissionais ou mais complexos.</p>
+<p>A maneira mais fácil de fazer isso é importar seu conteúdo diretamente em um processador de texto como o <strong>LibreOffice</strong> ou <strong>Microsoft Office</strong>, ou em editores de editoração como <strong>Scribus</strong> ou <strong>Adobe InDesign</strong>.</p>
+<p>No entanto, o programa <a href="https://pandoc.org/">Pandoc</a> está disponível para vários sistemas operacionais — Windows, Linux, BSD, macOS etc. Ele permite converter de e para muitos formatos diferentes. E é gratuito e de código aberto.</p>
+<p>Claro, o Pandoc é uma ferramenta de linha de comando, feita para ser usada no Prompt de Comando, PowerShell, terminal do Linux etc. Mas é tão simples quanto digitar:</p>
+<pre><code class="language-console">$ pandoc teste.md -f markdown -t docx -s -o teste.docx
+</code></pre>
+<p>O nome do arquivo <code>teste.md</code> diz ao Pandoc qual arquivo converter. A opção <code>-s</code> o instrui a criar um arquivo “autônomo”, com cabeçalho e rodapé, em vez de apenas um fragmento. O parâmetro <code>-o teste.docx</code> especifica que a saída deve ir para <code>teste.docx</code>. Note que poderíamos ter omitido <code>-f markdown -t docx</code>, já que o Pandoc é esperto o suficiente para inferir os formatos a partir dos nomes dos arquivos — mas não custa incluí-los.<sup class="footnote-reference" id="fr-2-1"><a href="#footnote-2">2</a></sup></p>
+<p>A aparência geral do arquivo convertido é excelente — não há realmente nada do que reclamar.</p>
+<p>27 de julho de 2023 (<em>revisado em 17 de julho de 2025</em>)</p>
+<p>Daniel Dias Rodrigues</p>
+<hr>
+<ol class="footnote-definition">
+<li id="footnote-1">
+<p>Michael Hart, “The History and Philosophy of Project Gutenberg”, <em>Project Gutenberg</em>, Agosto de 1992, <a href="https://www.gutenberg.org/about/background/history_and_philosophy.html#the-project-gutenberg-philosophy-continued-2">https://www.gutenberg.org/about/<wbr>background/history_and_<wbr>philosophy.html</a>. <a href="#fr-1-1">↩</a></p>
+</li>
+<li id="footnote-2">
+<p>“Getting started with pandoc. Step 6: Converting a File”, <em>Pandoc</em>, acessado em 27 de Julho de 2023, https://pandoc.org/getting-started.html#step-6-converting-a-file. <a href="#fr-2-1">↩</a></p>
+</li>
+</ol>
 
                     </main>
 
@@ -2651,6 +2684,22 @@ para torná-la exequível.</p>
         <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
         <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
         <script>

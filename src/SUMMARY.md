@@ -23,3 +23,7 @@
 [Regras Gerais de Licenciamento](legal/LICENSE_importante.md)
 [Open Game License](legal/LICENSE.md)
 [Open Game License (traduzida)](legal/LICENSE_pt-BR.md)
+
+---
+
+[Manifesto Apologético do Formato Universal](outros/manifesto.md)

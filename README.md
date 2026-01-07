@@ -2,9 +2,9 @@
 
 **Conversão para markdown:** Daniel Dias Rodrigues.
 
-**Webdesign:** [mdbook](https://rust-lang.github.io/mdBook) para Linux, publicado via branch github-pages.
+**Webdesign:** [mdbook](https://rust-lang.github.io/mdBook) para Linux, publicado via [branch github-pages](https://github.com/nerun/cepheus/tree/github-pages).
 
-Este site disponibiliza no [formato markdown](extra_01-manifesto.md) e traduzido para o português do Brasil as regras do sistema de jogo **Cepheus Engine**, liberado sob os termos da [OGL](Licenciamento.md).
+Este site disponibiliza, no [formato markdown](extra_01-manifesto.md) e traduzido para o português do Brasil, as regras do sistema de jogo **Cepheus Engine**, liberadas sob os termos da [OGL](Licenciamento.md).
 
 **Cepheus Engine** é um RPG que compreende as regras básicas para um Sistema de Jogo Aberto de ficção científica espacial, com mecânica baseada na rolagem de 2D6. Inspirado pelos três livros originais do _Classic Traveller_ de 1977, o sistema Cepheus Engine foi densenvolvido a partir de diversos Conteúdos de Jogo Aberto mas, principalmente, do Traveller SRD da Mongoose Publishing (a 1ª edição).
 

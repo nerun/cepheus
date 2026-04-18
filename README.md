@@ -2,7 +2,7 @@
 
 **Conversão para markdown:** Daniel Dias Rodrigues.
 
-**Webdesign:** [mdbook](https://rust-lang.github.io/mdBook) para Linux, publicado via [branch github-pages](https://github.com/nerun/cepheus/tree/github-pages).
+**Webdesign:** [mdbook](https://rust-lang.github.io/mdBook) para Linux, publicado via github-pages a partir do diretório "docs" da master branch.
 
 Este site disponibiliza, no [formato markdown](extra_01-manifesto.md) e traduzido para o português do Brasil, as regras do sistema de jogo **Cepheus Engine**, liberadas sob os termos da [OGL](Licenciamento.md).
 

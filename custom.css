@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6 {
     display: block;
     background: url("ce-compatible.png") no-repeat center;
     background-size: contain;
-    height: 80px;
+    height: 160px;
     margin-bottom: 1rem;
 }
 

@@ -1,5 +1,3 @@
-![logo de compatibilidade](ce-compatible.png)
-
 # Cepheus Engine<br>Documento de Referência do Sistema
 
 _Um Sistema de Jogo Aberto, baseado em 2D6, de Ficção Científica na Era Clássica._
